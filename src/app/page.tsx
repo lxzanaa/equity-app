@@ -354,7 +354,7 @@ export default function Home() {
           <div className="dont_container">
             <div className="dont_left">
               <h2 className="varifable-basic bg-white">The Opportunity:</h2>
-              <h3 className="dont_title backgroundClip">Don't Just Trust AI</h3>
+              <h3 className="dont_title backgroundClip">Don&apos;t Just Trust AI</h3>
               <h4 className="dont_title_center">At Runtime, <span>Verify</span></h4>
               <div className="compute_bottom_card dont_bottom_card" style={{
                 backgroundImage: `url(${dont_card_bg.src})`,
@@ -436,7 +436,7 @@ export default function Home() {
                   { label: "Job Title", id: "jobtitle", name: "jobtitle" },
                   { label: "Business Email", id: "email", name: "email" },
                   { label: "Country", id: "country", name: "country" },
-                ].map((field, index) => (
+                ].map((field) => (
                   <div
                     key={field.id}
                     className="footer_inp_box"
@@ -485,7 +485,7 @@ export default function Home() {
                     { label: "Job Title", id: "jobtitle", name: "jobtitle" },
                     { label: "Business Email", id: "email", name: "email" },
                     { label: "Country", id: "country", name: "country" },
-                  ].map((field, index) => (
+                  ].map((field) => (
                     <div
                       key={field.id}
                       className="footer_inp_box"
