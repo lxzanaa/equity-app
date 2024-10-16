@@ -67,13 +67,6 @@ import icon2 from "./img/customer/icon2.svg"
 import icon3 from "./img/customer/icon3.svg"
 import right from "./img/customer/right.svg"
 
-
-
-
-
-
-
-
 export default function Home() {
   return (
     <>
@@ -85,17 +78,17 @@ export default function Home() {
 
       <header className="header">
         <div className="header_container">
-          <a href="#" className="header_logo_link">
+          <Link href={"#"} className="header_logo_link">
             <Image src={header_logo} alt="" />
-          </a>
+          </Link>
           <ul className="header_nav_list">
             <li className="list_nav_item">
-              <a href="#" className="header_nav_link">
+              <Link href={"#"} className="header_nav_link">
                 Why EQTY
-              </a>
+              </Link>
             </li>
             <li className="list_nav_item">
-              <a href="#" className="header_nav_link">
+              <Link href={"#"} className="header_nav_link">
                 Products
                 <svg
                   width="12"
@@ -110,10 +103,10 @@ export default function Home() {
                     strokeWidth="1.5"
                   />
                 </svg>
-              </a>
+              </Link>
             </li>
             <li className="list_nav_item">
-              <a href="#" className="header_nav_link">
+              <Link href={"#"} className="header_nav_link">
                 Technology
                 <svg
                   width="12"
@@ -128,10 +121,10 @@ export default function Home() {
                     strokeWidth="1.5"
                   />
                 </svg>
-              </a>
+              </Link>
             </li>
             <li className="list_nav_item">
-              <a href="#" className="header_nav_link">
+              <Link href={"#"} className="header_nav_link">
                 Solutions
                 <svg
                   width="12"
@@ -146,10 +139,10 @@ export default function Home() {
                     strokeWidth="1.5"
                   />
                 </svg>
-              </a>
+              </Link>
             </li>
             <li className="list_nav_item">
-              <a href="#" className="header_nav_link">
+              <Link href={"#"} className="header_nav_link">
                 About
                 <svg
                   width="12"
@@ -164,10 +157,10 @@ export default function Home() {
                     strokeWidth="1.5"
                   />
                 </svg>
-              </a>
+              </Link>
             </li>
             <li className="list_nav_item">
-              <a href="#" className="header_nav_link">
+              <Link href={"#"} className="header_nav_link">
                 Partners
                 <svg
                   width="12"
@@ -182,7 +175,7 @@ export default function Home() {
                     strokeWidth="1.5"
                   />
                 </svg>
-              </a>
+              </Link>
             </li>
           </ul>
           <button className="header_sign_up_btn">
@@ -213,24 +206,24 @@ export default function Home() {
           <nav className="nav">
             <ul className="nav_list">
               <li className="nav_item">
-                <a href="#" className="nav_link border_r">
+                <Link href={"#"} className="nav_link border_r">
                   Overview
-                </a>
+                </Link>
               </li>
               <li className="nav_item">
-                <a href="#" className="nav_link border_r pl-7">
+                <Link href={"#"} className="nav_link border_r pl-7">
                   Technology
-                </a>
+                </Link>
               </li>
               <li className="nav_item">
-                <a href="#" className="nav_link border_r pl-7">
+                <Link href={"#"} className="nav_link border_r pl-7">
                   Customer Testimonials
-                </a>
+                </Link>
               </li>
               <li className="nav_item">
-                <a href="#" className="nav_link pl-7">
+                <Link href={"#"} className="nav_link pl-7">
                   Resources
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
@@ -1508,7 +1501,7 @@ export default function Home() {
             </div>
           </div>
           <div className="footer_bottom">
-            <a href="#" className="header_logo_link">
+            <Link href={"#"} className="header_logo_link">
               <svg
                 width="171"
                 height="34"
@@ -1533,7 +1526,7 @@ export default function Home() {
                   fill="black"
                 />
               </svg>
-            </a>
+            </Link>
             <p className="footer_bottom_text">
               2024 EQTY Lab AG, All rights reserved.
             </p>
