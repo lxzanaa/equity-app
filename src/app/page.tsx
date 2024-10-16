@@ -724,11 +724,13 @@ export default function Home() {
           </div>
 
           <div className="revolution-section__images-and-text">
-            <Image
+           <div className="revolution-section__image_box">
+           <Image
               src={revolution_section__nvidia_logo}
               alt="NVIDIA Logo"
               className="revolution-section__image"
             />
+           </div>
 
             <div className="revolution-section__text">
               <p>
