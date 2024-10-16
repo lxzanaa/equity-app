@@ -1348,7 +1348,7 @@ export default function Home() {
                 <h2 className="resources__wrap__cart__title">
                   Announcement
                 </h2>
-                <p className="resources__wrap__cart__text2">EQTY joins the Linux Foundation's SLSA working group to
+                <p className="resources__wrap__cart__text2">EQTY joins the Linux Foundation&apos;s SLSA working group to
                   strengthen Agentic AI supply chains.</p>
                 <a href="" className="resources__wrap__cart__link">
                   Read
