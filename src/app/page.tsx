@@ -941,7 +941,7 @@ export default function Home() {
           <div className="compliant-ready-features">
             <div className="compliant-ready-feature">
               <p>
-                Confidential and{" "}
+                Confidential and{" "} <br />
                 <span className="compliant-ready-feature-highlight">
                   Privacy Preserving AI
                 </span>
@@ -950,7 +950,7 @@ export default function Home() {
 
             <div className="compliant-ready-feature">
               <p>
-                Alerts and Workflows for{" "}
+                Alerts and Workflows <br /> for{" "} 
                 <span className="compliant-ready-feature-highlight">
                   AI Remediation
                 </span>
@@ -961,7 +961,7 @@ export default function Home() {
               <p>
                 Pre-Configured for{" "}
                 <span className="compliant-ready-feature-highlight">
-                  AI 10+ Regulatory Frameworks
+                  AI 10+ <br /> Regulatory Frameworks
                 </span>
               </p>
             </div>
