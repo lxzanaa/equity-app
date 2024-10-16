@@ -132,6 +132,8 @@ body {
 
 .nav {
   width: 100%;
+  position: relative;
+  z-index: 30;
 }
 
 .nav_list {
