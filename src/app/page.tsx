@@ -416,26 +416,31 @@ export default function Home() {
             <div className="dont_right">
               <div className="dont_right_top"></div>
               <Swiper
-                modules={[Autoplay]}
-                slidesPerView={5}
-                spaceBetween={24}
                 slidesPerGroup={1}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                allowTouchMove={false}
+                breakpoints={{
+                  320: {
+                    slidesPerView: 5, 
+                    spaceBetween: 10,
+                    slidesPerGroup: 1
+                  },
+                  768: {
+                    slidesPerView: 5, 
+                    spaceBetween: 24,
+                    slidesPerGroup: 1
+                  },
+                }}
+                loop={true}
+                modules={[Autoplay]}
                 direction={'vertical'}
                 pagination={{
                   clickable: false,
                 }}
-                autoplay={{
-                  delay: 2500,
-                  disableOnInteraction: true,
-                }}
-                loop={true}
-                allowTouchMove={false}
-                breakpoints={{
-                  768: {
-                    slidesPerView: 1, // 3 ta slayd ko'rinadi
-                    spaceBetween: 15, // Slaydlar orasida 15px masofa bo'ladi
-                  },
-                }}
+              
                 className="mySwiper"
               >
                 <SwiperSlide>
