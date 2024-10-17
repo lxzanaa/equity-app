@@ -4,7 +4,7 @@ import "./globals.css"
 import "./swiper.css"
 
 import Link from "next/link";
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -67,218 +67,447 @@ import icon2 from "./img/customer/icon2.svg"
 import icon3 from "./img/customer/icon3.svg"
 import right from "./img/customer/right.svg"
 
+import hero from "./video/hero.mp4"
+import gsap from "gsap";
+
 export default function Home() {
+
+  const videoRef = useRef<HTMLVideoElement>(null);
+  
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+    gsap.to(".Header_top", {
+      y: 50,
+      duration: 0.2,
+      // ease: "power3.inOut",
+    })
+    gsap.to(".nav_item", {
+      x: -200,
+      opacity: 1,
+      duration: 0.5,
+      stagger: 0.1,
+    });
+    const timeline = gsap.timeline();
+
+    timeline
+      .to('.jump_animation', { scale: 1 }) // Scale 1.2 ga o'tadi
+      .to('.jump_animation', { scale: .9 }) // Scale 1.2 ga o'tadi
+      .to('.jump_animation', { scale: 1 }); // Scale 1 ga qaytadi
+
+    const time_line_navlist = gsap.timeline();
+
+    time_line_navlist
+      .to('.header_nav_list', { scale: 1 }) // Scale 0 ga ketadi
+      .to('.header_nav_list', { scale: .9 }) // Scale 1.2 ga o'tadi
+      .to('.header_nav_list', { scale: 1 }); // Scale 1 ga qaytadi
+
+    gsap.to(".hero_title_span", {
+      y: -100,
+      opacity: 1,
+      duration: 0.3,
+      stagger: 0.2,
+    });
+    gsap.to(".hero_text p", {
+      y: -30,
+      opacity: 1,
+      duration: 0.5,
+      stagger: 0.2,
+    });
+    gsap.to(".hero_bottom_text", {
+      y: -30,
+      opacity: 1,
+      duration: 0.2,
+      stagger: 0.1,
+    });
+    gsap.to(".hero_bottom_text span", {
+      y: -20,
+      opacity: 1,
+      duration: 0.3,
+      stagger: 0.2,
+    });
+    gsap.to(".hero_bottom_text_word", {
+      filter: "drop-shadow(0px 0px 5px #61FFB0)",
+      duration: 0.3,
+      delay: 0.3
+    });
+
+    const word_timeLine = gsap.timeline()
+    word_timeLine
+      .to(".hero_bottom_text_word", {
+        display: "none",
+        delay: 0.5
+      })
+      .to(".hero_bottom_text_word_2", {
+        display: "block",
+        filter: "drop-shadow(0px 0px 5px #29A2FF)",
+        duration: 0.3,
+      })
+      .to(".hero_bottom_text_word_2", {
+        display: "none",
+      })
+      .to(".hero_bottom_text_word_3", {
+        display: "block",
+        filter: "drop-shadow(0px 0px 5px #61FFB0)",
+        duration: 0.3,
+      })
+
+    gsap.to(".hero_big_wrapper", {
+      ease: "slow(0.3,0.7,false)",
+      duration: 0.5,
+      delay: 9,
+      scale: .5,
+      opacity: 0,
+    })
+    gsap.to(".top_animation", {
+      y: 30,
+      opacity: 0,
+      duration: 0.5,
+      delay: 9
+    })
+    gsap.to(".compute_center_logo", {
+      scale: 1,
+      opacity: 1,
+      duration: 0.5,
+      delay: 11
+    })
+    gsap.to(".compute_center_logo", {
+      scale: 1,
+      opacity: 1,
+      duration: 0.5,
+      delay: 11
+    })
+
+
+
+    const time_line_center_card = gsap.timeline()
+    time_line_center_card
+      .to(".compute_center_card_left", {
+        duration: 0.5,
+        delay: 11.5,
+        x: 250,
+        opacity: 1,
+      })
+      .to(".compute_center_card_left", {
+        // ease: "power4.out",
+        duration: 0.3,
+        x: 260,
+      })
+      .to(".compute_center_card_left", {
+        // ease: "power4.out",
+        duration: 0.3,
+        // duration:0.5,
+        x: 240,
+      })
+      .to(".compute_center_card_left", {
+        // ease: "power4.out",
+        duration: 0.5,
+        x: 255,
+      })
+      .to(".compute_center_card_left", {
+        // ease: "power4.out",
+        duration: 0.5,
+        // duration:0.5,
+        x: 245,
+      })
+      .to(".compute_center_card_left", {
+        // ease: "power4.out",
+        duration: 0.5,
+        x: 250,
+      })
+
+
+    const time_line_center_card2 = gsap.timeline()
+    time_line_center_card2
+      .to(".compute_center_card_left_right", {
+        duration: 0.5,
+        delay: 11.5,
+        x: -250,
+        opacity: 1,
+      })
+      .to(".compute_center_card_left_right", {
+        // ease: "power4.out",
+        duration: 0.3,
+        x: -260,
+      })
+      .to(".compute_center_card_left_right", {
+        // ease: "power4.out",
+        duration: 0.3,
+        // duration:0.5,
+        x: -240,
+      })
+      .to(".compute_center_card_left_right", {
+        // ease: "power4.out",
+        duration: 0.5,
+        x: -255,
+      })
+      .to(".compute_center_card_left_right", {
+        // ease: "power4.out",
+        duration: 0.5,
+        // duration:0.5,
+        x: -245,
+      })
+      .to(".compute_center_card_left_right", {
+        // ease: "power4.out",
+        duration: 0.5,
+        x: -250,
+      })
+
+
+    gsap.to(".compute_title span", {
+      delay: 11.5,
+      y: -60,
+      opacity: 1,
+      duration: 0.5,
+      stagger: 0.2,
+    });
+    gsap.to(".compute_text p", {
+      delay: 11.5,
+      y: -20,
+      opacity: 1,
+      duration: 0.5,
+      stagger: 0.2,
+    });
+    gsap.to(".compute_card_animation", {
+      delay: 11.5,
+      duration: 1,
+      opacity: 1,
+      scale: 1,
+      marginTop: -56,
+      rotate: -0
+    });
+  }, [])
+
   return (
     <>
-      <div className="Header_top">
-        <p className="Header_top_text">
-          Verifiable Builds Launches with GitLab and Github
-        </p>
-      </div>
-
-      <header className="header">
-        <div className="header_container">
-          <Link href={"#"} className="header_logo_link">
-            <Image src={header_logo} alt="" />
-          </Link>
-          <ul className="header_nav_list">
-            <li className="list_nav_item">
-              <Link href={"#"} className="header_nav_link">
-                Why EQTY
-              </Link>
-            </li>
-            <li className="list_nav_item">
-              <Link href={"#"} className="header_nav_link">
-                Products
-                <svg
-                  width="12"
-                  height="8"
-                  viewBox="0 0 12 8"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10.9858 1.50391L5.99288 6.49679L1 1.50391"
-                    stroke="white"
-                    strokeWidth="1.5"
-                  />
-                </svg>
-              </Link>
-            </li>
-            <li className="list_nav_item">
-              <Link href={"#"} className="header_nav_link">
-                Technology
-                <svg
-                  width="12"
-                  height="8"
-                  viewBox="0 0 12 8"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10.9858 1.50391L5.99288 6.49679L1 1.50391"
-                    stroke="white"
-                    strokeWidth="1.5"
-                  />
-                </svg>
-              </Link>
-            </li>
-            <li className="list_nav_item">
-              <Link href={"#"} className="header_nav_link">
-                Solutions
-                <svg
-                  width="12"
-                  height="8"
-                  viewBox="0 0 12 8"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10.9858 1.50391L5.99288 6.49679L1 1.50391"
-                    stroke="white"
-                    strokeWidth="1.5"
-                  />
-                </svg>
-              </Link>
-            </li>
-            <li className="list_nav_item">
-              <Link href={"#"} className="header_nav_link">
-                About
-                <svg
-                  width="12"
-                  height="8"
-                  viewBox="0 0 12 8"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10.9858 1.50391L5.99288 6.49679L1 1.50391"
-                    stroke="white"
-                    strokeWidth="1.5"
-                  />
-                </svg>
-              </Link>
-            </li>
-            <li className="list_nav_item">
-              <Link href={"#"} className="header_nav_link">
-                Partners
-                <svg
-                  width="12"
-                  height="8"
-                  viewBox="0 0 12 8"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10.9858 1.50391L5.99288 6.49679L1 1.50391"
-                    stroke="white"
-                    strokeWidth="1.5"
-                  />
-                </svg>
-              </Link>
-            </li>
-          </ul>
-          <button className="header_sign_up_btn">
-            <span className="header_sign_up_btn_round"></span>
-            Sign Up
-          </button>
-          <button className="hamburger">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
-              />
-            </svg>
-          </button>
+      <div className="hero_header_compute_bg">
+        <video src={hero} ref={videoRef} muted className="hero_bg_bideo"></video>
+        <div className="Header_top top_animation">
+          <p className="Header_top_text">
+            Verifiable Builds Launches with GitLab and Github
+          </p>
         </div>
-      </header>
 
-      <div className="hero_big_wrapper">
-        <div className="hero_big_container">
-          <nav className="nav">
-            <ul className="nav_list">
-              <li className="nav_item">
-                <Link href={"#"} className="nav_link border_r">
-                  Overview
+        <header className="header top_animation">
+          <div className="header_container">
+            <Link href={"#"} className="jump_animation header_logo_link">
+              <Image src={header_logo} alt="" />
+            </Link>
+            <ul className="header_nav_list">
+              <li className="list_nav_item">
+                <Link href={"#"} className="header_nav_link">
+                  Why EQTY
                 </Link>
               </li>
-              <li className="nav_item">
-                <Link href={"#"} className="nav_link border_r pl-7">
+              <li className="list_nav_item">
+                <Link href={"#"} className="header_nav_link">
+                  Products
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.9858 1.50391L5.99288 6.49679L1 1.50391"
+                      stroke="white"
+                      strokeWidth="1.5"
+                    />
+                  </svg>
+                </Link>
+              </li>
+              <li className="list_nav_item">
+                <Link href={"#"} className="header_nav_link">
                   Technology
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.9858 1.50391L5.99288 6.49679L1 1.50391"
+                      stroke="white"
+                      strokeWidth="1.5"
+                    />
+                  </svg>
                 </Link>
               </li>
-              <li className="nav_item">
-                <Link href={"#"} className="nav_link border_r pl-7">
-                  Customer Testimonials
+              <li className="list_nav_item">
+                <Link href={"#"} className="header_nav_link">
+                  Solutions
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.9858 1.50391L5.99288 6.49679L1 1.50391"
+                      stroke="white"
+                      strokeWidth="1.5"
+                    />
+                  </svg>
                 </Link>
               </li>
-              <li className="nav_item">
-                <Link href={"#"} className="nav_link pl-7">
-                  Resources
+              <li className="list_nav_item">
+                <Link href={"#"} className="header_nav_link">
+                  About
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.9858 1.50391L5.99288 6.49679L1 1.50391"
+                      stroke="white"
+                      strokeWidth="1.5"
+                    />
+                  </svg>
+                </Link>
+              </li>
+              <li className="list_nav_item">
+                <Link href={"#"} className="header_nav_link">
+                  Partners
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.9858 1.50391L5.99288 6.49679L1 1.50391"
+                      stroke="white"
+                      strokeWidth="1.5"
+                    />
+                  </svg>
                 </Link>
               </li>
             </ul>
-          </nav>
-          <section className="hero">
-            <div className="hero_container">
-              <h1 className="hero_title">Verify to Trust, AI</h1>
-              <p className="hero_text">
-                Introducing Verifiable Compute. <br />
-                Ready for Agentic AI.
-              </p>
-              <p className="hero_bottom_text">
-                Certify and Protect Agentic Workflows with{" "}
-                <br className="hero_bottom_text_br" /> the{" "}
-                <span>First Auditable Proof of Governance.</span>
-              </p>
-            </div>
-          </section>
-          <div className="hero_bg">
-            <Image src={hero_bg} alt="" className="hero_bg_image" />
-          </div>
-        </div>
-      </div>
-
-      <section className="compute" style={{
-        backgroundImage: `url(${compute_bg.src})`,
-      }}>
-        <div className="compute_container">
-          <h2 className="compute_title">A New Era of Compute</h2>
-          <p className="compute_text">Launching in 2025. <br /> Evolves Trust for Agentic AI</p>
-          <div className="compute_center">
-            <div className="compute_center_card">
-              <Image src={compute1} alt='' className='compute_card_img' />
-            </div>
-            <div className='compute_center_logo'>
-              <Image src={compute_center_logo} alt="" className="center_logo" />
-            </div>
-            <div className="compute_center_card compute_center_card_2">
-              <Image src={compute2} alt='' className='compute_card_img' />
-            </div>
-          </div>
-          <div className="compute_bottom_card" style={{
-            backgroundImage: `url(${varifable_card.src})`,
-          }}>
-            <h3 className="compute_card_title">
-              Introduction: <br />
-              Verifiable Compute
-            </h3>
-            <h4 className="compute_card_title_2 line_27">How does it work?</h4>
-            <button className='compute_card_btn'>
-              <span className='compute_card_btn_round'></span>
-              Video: Learn more
+            <button className="jump_animation header_sign_up_btn">
+              <span className="header_sign_up_btn_round"></span>
+              Sign Up
+            </button>
+            <button className="jump_animation hamburger">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
+                />
+              </svg>
             </button>
           </div>
+        </header>
+
+        <div className="hero_big_wrapper">
+          <div className="hero_big_container">
+            <nav className="nav">
+              <ul className="nav_list">
+                <li className="nav_item">
+                  <Link href={"#"} className="nav_link ">
+                    Overview
+                  </Link>
+                </li>
+                <li className="nav_item">
+                  <div className="border_r"></div>
+                </li>
+                <li className="nav_item">
+                  <Link href={"#"} className="nav_link  pl-7">
+                    Technology
+                  </Link>
+                </li>
+                <li className="nav_item">
+                  <div className="border_r"></div>
+                </li>
+                <li className="nav_item">
+                  <Link href={"#"} className="nav_link  pl-7">
+                    Customer Testimonials
+                  </Link>
+                </li>
+                <li className="nav_item">
+                  <div className="border_r"></div>
+                </li>
+                <li className="nav_item">
+                  <Link href={"#"} className="nav_link pl-7">
+                    Resources
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+            <section className="hero">
+              <div className="hero_container">
+                <h1 className="hero_title"><span className="hero_title_span">Verify</span> <span className="hero_title_span">to</span> <span className="hero_title_span">Trust,</span> <span className="hero_title_span">AI</span></h1>
+                <div className="hero_text">
+                  <p>Introducing Verifiable Compute.</p>
+                  <p>Ready for Agentic AI.</p>
+                </div>
+                <div className="hero_bottom_box">
+                  <p className="hero_bottom_text">Certify and Protect Agentic Workflows with{" "}</p>
+                  <span className="hero_bottom_text">
+                    <span>the</span>{" "}
+                    <span>First</span>
+                    <span className="hero_bottom_text_word">Auditable</span>
+                    <span className="hero_bottom_text_word_2">Persistent</span>
+                    <span className="hero_bottom_text_word_3">Secure</span>
+                    <span>Proof</span>
+                    <span>of</span>
+                    <span>Governance.</span>
+                  </span>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
-      </section>
+
+        <section className="compute">
+          <div className="compute_container">
+            <h2 className="compute_title"><span>A</span> <span>New</span> <span>Era</span> <span>of</span> <span>Compute</span></h2>
+            <div className="compute_text">
+              <p>Launching in 2025.</p>
+              <p>Evolves Trust for Agentic AI</p>
+            </div>
+            <div className="compute_center">
+              <div className="compute_center_card compute_center_card_left">
+                <Image src={compute1} alt='' className='compute_card_img' />
+              </div>
+              <div className='compute_center_logo'>
+                <Image src={compute_center_logo} alt="" className="center_logo" />
+              </div>
+              <div className="compute_center_card compute_center_card_2 compute_center_card_left_right">
+                <Image src={compute2} alt='' className='compute_card_img' />
+              </div>
+            </div>
+            <div className="compute_bottom_card compute_card_animation" style={{
+              backgroundImage: `url(${varifable_card.src})`,
+            }}>
+              <h3 className="compute_card_title">
+                Introduction: <br />
+                Verifiable Compute
+              </h3>
+              <h4 className="compute_card_title_2 line_27">How does it work?</h4>
+              <button className='compute_card_btn'>
+                <span className='compute_card_btn_round'></span>
+                Video: Learn more
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
 
       <section className="varifable">
         <div className="varifable-container">
@@ -393,7 +622,6 @@ export default function Home() {
         </div>
       </section>
 
-
       <section className="dont_bg">
         <div className="dont">
           <div className="dont_container">
@@ -424,12 +652,12 @@ export default function Home() {
                 allowTouchMove={false}
                 breakpoints={{
                   320: {
-                    slidesPerView: 5, 
+                    slidesPerView: 5,
                     spaceBetween: 10,
                     slidesPerGroup: 1
                   },
                   768: {
-                    slidesPerView: 5, 
+                    slidesPerView: 5,
                     spaceBetween: 24,
                     slidesPerGroup: 1
                   },
@@ -440,7 +668,7 @@ export default function Home() {
                 pagination={{
                   clickable: false,
                 }}
-              
+
                 className="mySwiper"
               >
                 <SwiperSlide>
@@ -729,13 +957,13 @@ export default function Home() {
           </div>
 
           <div className="revolution-section__images-and-text">
-           <div className="revolution-section__image_box">
-           <Image
-              src={revolution_section__nvidia_logo}
-              alt="NVIDIA Logo"
-              className="revolution-section__image"
-            />
-           </div>
+            <div className="revolution-section__image_box">
+              <Image
+                src={revolution_section__nvidia_logo}
+                alt="NVIDIA Logo"
+                className="revolution-section__image"
+              />
+            </div>
 
             <div className="revolution-section__text">
               <p>
@@ -797,32 +1025,32 @@ export default function Home() {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M31.4238 6.01953C30.1228 6.01953 28.8218 6.52978 27.8211 7.34617V6.12158H24.5186V19.1839H27.9211V10.8158C28.6217 9.79535 29.8226 9.18306 31.0235 9.18306C32.2244 9.18306 31.9242 9.18305 32.4246 9.38715V6.01953H31.4238Z"
                     fill="black"
                   />
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M1.60122 15.2065C2.60198 16.0229 3.8029 16.5331 5.10389 16.5331C6.40488 16.5331 6.70511 16.0229 6.70511 15.4106C6.70511 13.4716 0.500381 14.186 0.500381 9.89992C0.500381 5.61385 2.90221 5.81795 5.40412 5.81795C7.90602 5.81795 8.4064 6.3282 9.7074 7.14459L8.10618 9.69582C7.40564 9.18557 6.50496 8.87943 5.70435 8.77738C4.80366 8.77738 4.00305 9.18557 4.00305 9.79787C4.00305 11.5327 10.2078 10.8184 10.2078 15.3085C10.2078 19.7987 7.80595 19.3905 5.10389 19.3905C2.40183 19.3905 1.50114 18.7782 0 17.6557L1.7013 15.1044L1.60122 15.2065Z"
                     fill="black"
                   />
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M23.1182 12.5517C23.1182 8.87788 20.6163 5.81641 17.1137 5.81641C13.611 5.81641 10.9089 8.97993 10.9089 12.6537C10.8089 16.2254 13.5109 19.2869 17.0136 19.491H17.6141C19.6156 19.491 21.517 18.6746 22.818 17.1439L20.8165 15.1029C20.0159 16.0213 18.815 16.5316 17.6141 16.6336C15.8127 16.6336 14.3115 15.307 14.1114 13.5721H23.0182V12.5517H23.1182ZM14.3115 11.0209C14.6118 9.69428 15.7126 8.67378 17.0136 8.77583C18.3146 8.77583 19.4154 9.79632 19.5155 11.0209H14.2115H14.3115Z"
                     fill="black"
                   />
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M40.6308 14.183L44.1335 6.12109H47.7362L41.8317 19.2854H39.4299L33.5254 6.12109H37.1281L40.6308 14.183Z"
                     fill="black"
                   />
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M50.5396 0C51.7405 0 52.7412 1.02049 52.7412 2.24508C52.7412 3.46967 51.7405 4.49016 50.5396 4.49016C49.3386 4.49016 48.3379 3.46967 48.3379 2.24508C48.3379 1.02049 49.3386 0 50.5396 0Z"
                     fill="black"
                   />
@@ -831,32 +1059,32 @@ export default function Home() {
                     fill="black"
                   />
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M66.4514 16.5311C65.1504 18.47 62.9487 19.5926 60.647 19.4905C56.9442 19.4905 53.8418 16.6331 53.8418 12.8573C53.8418 9.08149 56.6439 5.91797 60.3468 5.91797H60.7471C62.8487 5.91797 64.8502 6.83641 66.1512 8.57125L63.7493 10.7143C63.0488 9.79584 61.948 9.18354 60.7471 9.18354C58.8456 9.18354 57.3445 10.7143 57.3445 12.6532C57.3445 14.5921 58.7455 16.1229 60.647 16.2249H60.9472C62.1481 16.2249 63.349 15.5106 64.0496 14.4901L66.6516 16.5311H66.4514Z"
                     fill="black"
                   />
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M78.8602 17.1439C77.5593 18.6746 75.6578 19.491 73.6563 19.491C70.1536 19.6951 67.1513 16.8377 66.9512 13.266V12.6537C66.9512 8.97993 69.353 5.81641 73.1559 5.81641C76.9588 5.81641 79.1605 8.87788 79.1605 12.5517V13.5721H70.2537C70.4538 15.409 71.955 16.7357 73.7564 16.6336C74.9573 16.6336 76.1582 16.0213 76.9588 15.1029L78.8602 17.1439ZM75.7579 11.0209C75.5577 9.69427 74.557 8.77583 73.256 8.77583C71.955 8.77583 70.7541 9.69427 70.5539 11.0209H75.858H75.7579Z"
                     fill="black"
                   />
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M80.5615 19.2869V6.12255H83.864V7.14305C84.8648 6.32665 86.1658 5.81641 87.4668 5.81641C88.7678 5.81641 90.7693 6.6328 91.8701 7.95944C92.8709 9.28608 93.3713 10.9189 93.1711 12.5517V19.1848H89.7685V12.2455C89.7685 11.3271 89.5684 10.5107 88.9679 9.79632C88.4675 9.28608 87.767 9.08198 87.0665 9.08198C85.8656 9.08198 84.6647 9.69427 83.9641 10.7148V19.1848H80.5615V19.2869Z"
                     fill="black"
                   />
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M102.078 5.91797C97.9749 5.91797 94.5723 9.28559 94.5723 13.5717C94.5723 17.8577 95.3729 17.6536 96.874 19.1844C98.3752 20.7151 98.175 19.6946 98.7755 19.2864C100.677 17.8577 103.279 17.8577 105.18 19.2864C105.781 19.6946 106.581 19.6946 107.082 19.1844C110.084 16.2249 110.184 11.4286 107.382 8.36715C105.981 6.83641 104.08 6.02002 101.978 6.02002M101.978 17.3475C99.9764 17.3475 98.2751 15.8167 98.2751 13.7758V13.5717C98.2751 11.4286 99.9764 9.79584 101.978 9.79584C103.979 9.79584 105.681 11.5307 105.681 13.5717C105.681 15.6126 104.18 17.3475 102.178 17.3475H101.978Z"
                     fill="black"
                   />
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M116.289 19.2854H113.687L108.684 6.12109H112.086L114.888 13.6727L117.59 6.12109H120.493L123.195 13.6727L125.997 6.12109H129.399L124.295 19.2854H121.794L118.991 11.7338L116.289 19.2854Z"
                     fill="black"
                   />
@@ -955,7 +1183,7 @@ export default function Home() {
 
             <div className="compliant-ready-feature">
               <p>
-                Alerts and Workflows <br /> for{" "} 
+                Alerts and Workflows <br /> for{" "}
                 <span className="compliant-ready-feature-highlight">
                   AI Remediation
                 </span>
@@ -1178,9 +1406,9 @@ export default function Home() {
                 <path
                   d="M13 6L7.5 11.5L5 9"
                   stroke="#1FFFA1"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </div>
@@ -1277,28 +1505,28 @@ export default function Home() {
             Customer Success Stories
           </h2>
           <div className="customer__wrap">
-            <a href="" className="customer__wrap__link" style={{backgroundImage: `url(${banner.src})`}}>
+            <a href="" className="customer__wrap__link" style={{ backgroundImage: `url(${banner.src})` }}>
               Public Sector
             </a>
-            <a href="" className="customer__wrap__link1" style={{backgroundImage: `url(${banner2.src})`}}>
+            <a href="" className="customer__wrap__link1" style={{ backgroundImage: `url(${banner2.src})` }}>
               Life Sciences
             </a>
-            <a href="" className="customer__wrap__link2" style={{backgroundImage: `url(${banner3.src})`}}>
+            <a href="" className="customer__wrap__link2" style={{ backgroundImage: `url(${banner3.src})` }}>
               Energy
             </a>
-            <a href="" className="customer__wrap__link3" style={{backgroundImage: `url(${banner4.src})`}}>
+            <a href="" className="customer__wrap__link3" style={{ backgroundImage: `url(${banner4.src})` }}>
               Arts
             </a>
-            <a href="" className="customer__wrap__link4" style={{backgroundImage: `url(${banner5.src})`}}>
+            <a href="" className="customer__wrap__link4" style={{ backgroundImage: `url(${banner5.src})` }}>
               Voiceover
             </a>
-            <a href="" className="customer__wrap__link5" style={{backgroundImage: `url(${banner6.src})`}}>
+            <a href="" className="customer__wrap__link5" style={{ backgroundImage: `url(${banner6.src})` }}>
               <Image src={icon} alt="" />
             </a>
-            <a href="" className="customer__wrap__link6" style={{backgroundImage: `url(${banner7.src})`}}>
+            <a href="" className="customer__wrap__link6" style={{ backgroundImage: `url(${banner7.src})` }}>
               <Image src={icon2} alt="" />
             </a>
-            <a href="" className="customer__wrap__link7" style={{backgroundImage: `url(${banner8.src})`}}>
+            <a href="" className="customer__wrap__link7" style={{ backgroundImage: `url(${banner8.src})` }}>
               <Image src={icon3} alt="" />
             </a>
           </div>
