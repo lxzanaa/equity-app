@@ -137,7 +137,7 @@ export default function Home() {
     word_timeLine
       .to(".hero_bottom_text_word", {
         display: "none",
-        delay: 0.5
+        delay: 1
       })
       .to(".hero_bottom_text_word_2", {
         display: "block",
@@ -151,6 +151,12 @@ export default function Home() {
         display: "block",
         filter: "drop-shadow(0px 0px 5px #61FFB0)",
         duration: 0.3,
+      })
+      .to(".hero_bottom_text_word_3", {
+        display: "block",
+        filter: "drop-shadow(0px 0px 0px #61FFB0)",
+        duration: 0.3,
+        delay: 0.3,
       })
 
     gsap.to(".hero_big_wrapper", {
@@ -269,14 +275,24 @@ export default function Home() {
       duration: 0.5,
       stagger: 0.2,
     });
-    gsap.to(".compute_card_animation", {
-      delay: 11.5,
-      duration: 1,
-      opacity: 1,
-      scale: 1,
-      marginTop: -56,
-      rotate: -0
-    });
+    gsap.fromTo(
+      ".compute_card_animation",
+      {
+        opacity: 0,
+        scale: 0,
+        rotate: 270,
+        marginTop: -266,
+      },
+      {
+        delay: 11.5,
+        duration: 1,
+        opacity: 1,
+        scale: 1,
+        rotate: 360,
+        marginTop: -56,
+      }
+    );
+    
   }, [])
 
   return (
@@ -492,7 +508,7 @@ export default function Home() {
                 <Image src={compute2} alt='' className='compute_card_img' />
               </div>
             </div>
-            <div className="compute_bottom_card compute_card_animation" style={{
+            <div className="compute_bottom_card compute_card_animation scale_0" style={{
               backgroundImage: `url(${varifable_card.src})`,
             }}>
               <h3 className="compute_card_title">

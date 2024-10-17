@@ -424,11 +424,12 @@ body {
   z-index: 20;
 }
 
-.compute_card_animation{
-  /* opacity: 0; */
-  transform: scale(0) rotate(90deg);
+.compute_card_animation {
+  opacity: 0;
   margin-top: -266px;
 }
+
+
 
 .compute_card_title {
   font-size: 24px;
