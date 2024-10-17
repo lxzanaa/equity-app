@@ -13,9 +13,7 @@ import { Autoplay } from 'swiper/modules';
 
 import Image from "next/image";
 import header_logo from "./img/header/header_logo.svg";
-import hero_bg from "./img/hero/hero_bg.png";
 import compute_card from "./img/compute/card.png"
-import compute_bg from "./img/compute/compute_bg.png"
 import compute1 from "./img/compute/compute_1.png"
 import compute2 from "./img/compute/compute_2.png"
 import compute_center_logo from "./img/compute/center_logo.svg"
