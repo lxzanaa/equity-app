@@ -4,14 +4,18 @@ import "./globals.css"
 import "./swiper.css"
 
 import Link from "next/link";
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import Image from "next/image";
+
+// swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import { Autoplay } from 'swiper/modules';
 
-import Image from "next/image";
+
+// Imgs
 import header_logo from "./img/header/header_logo.svg";
 import compute_card from "./img/compute/card.png"
 import compute1 from "./img/compute/compute_1.png"
@@ -66,12 +70,19 @@ import icon3 from "./img/customer/icon3.svg"
 import right from "./img/customer/right.svg"
 
 import hero from "./video/hero.mp4"
+
+// gsap
 import gsap from "gsap";
 
-export default function Home() {
+// conponents
+import Trust from "@/components/trust";
 
+export default function Home() {
+  const [site_conrtol_animation, set_site_conrtol_animation] = useState<boolean>(false)
   const videoRef = useRef<HTMLVideoElement>(null);
-  
+  console.log(site_conrtol_animation);
+
+
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.play();
@@ -140,7 +151,7 @@ export default function Home() {
       .to(".hero_bottom_text_word_2", {
         display: "block",
         filter: "drop-shadow(0px 0px 5px #29A2FF)",
-        duration: 0.3,
+        duration: 0.5,
       })
       .to(".hero_bottom_text_word_2", {
         display: "none",
@@ -148,7 +159,7 @@ export default function Home() {
       .to(".hero_bottom_text_word_3", {
         display: "block",
         filter: "drop-shadow(0px 0px 5px #61FFB0)",
-        duration: 0.3,
+        duration: 0.5,
       })
       .to(".hero_bottom_text_word_3", {
         display: "block",
@@ -161,7 +172,7 @@ export default function Home() {
       ease: "slow(0.3,0.7,false)",
       duration: 0.5,
       delay: 9,
-      scale: .5,
+      scale: 0.5,
       opacity: 0,
     })
     gsap.to(".top_animation", {
@@ -290,7 +301,7 @@ export default function Home() {
         marginTop: -56,
       }
     );
-    
+
   }, [])
 
   return (
@@ -834,7 +845,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="site-control-wrapper">
+      <section
+        onClick={() => set_site_conrtol_animation(!site_conrtol_animation)}
+        className={`site-control-wrapper`}
+      >
         <div className="container">
           <div className="site-control">
             <h2 className="site-control__title">
@@ -850,19 +864,23 @@ export default function Home() {
             </h3>
           </div>
           <ul className="site-control__list">
-            <li className="site-control__item">
-              <div className="site-control__list-img">
-                <Image
-                  className="site-control__img"
-                  src={media_1}
-                  alt="control-media"
-                  width={116}
-                  height={116}
-                />
-              </div>
-              <h2>Create</h2>
-              <h3>Agents</h3>
-            </li>
+            <div className="site-control__list_box">
+              <li className="site-control__item">
+                <div className="site-control__list-img">
+                  <Image
+                    className="site-control__img"
+                    src={media_1}
+                    alt="control-media"
+                    width={116}
+                    height={116}
+                  />
+                </div>
+                <h2>Create</h2>
+                <h3>Agents</h3>
+              </li>
+              {/* <p className="site_controll_text">Auditable records of an agent's components and training.</p> */}
+              <span className="border"></span>
+            </div>
             <li className="site-control__item">
               <div className="site-control__list-img">
                 <Image
@@ -952,9 +970,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="trust-evolves">
-        <h2 className="trust-evolves__title">Trust Evolves</h2>
-      </section>
+      <Trust/>
 
       <section className="revolution-section">
         <div className="revolution-section__container">

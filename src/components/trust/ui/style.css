@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.trust-evolves {
+  background-color: #fff;
+  /* height: 100vh; */
+  overflow: hidden;
+}
+
+.trust_evolves_container {
+  max-width: 1728px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  padding-top: 408px;
+  padding-bottom: 408px;
+}
+
+.trust-evolves__title {
+  text-align: center;
+  font-size: 140px;
+  font-weight: 400;
+  line-height: 140px;
+  letter-spacing: -0.01em;
+  color: transparent;
+  background: linear-gradient(106.37deg, #000000 7.38%, #8b8b8b 71.92%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-clip: text;
+  transform: scale(0);
+  position: relative;
+  z-index: 30;
+}
+
+.horse_img {
+  max-width: 422px;
+  position: absolute;
+  bottom: -465px;
+  left: 50%;
+  transform: translate(-50%) rotate(90deg);
+  z-index: 30;
+}
+
+
+.key {
+  max-width: 267px;
+  position: absolute;
+  left: 265px;
+  bottom: 280px;
+  z-index: 10;
+  transform: scale(0);
+}
+
+.fingerprint {
+  max-width: 248px;
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  left: 455px;
+  bottom: 280px;
+  transform: scale(0);
+}
+
+.news {
+  position: absolute;
+  bottom: 320px;
+  transform: scale(0);
+}
+
+.seyf {
+  max-width: 220px;
+  position: absolute;
+  left: 365px;
+  bottom: 380px;
+  transform: scale(0);
+}
+
+.pechat {
+  max-width: 300px;
+  width: 100%;
+  position: absolute;
+  transform: scale(0);
+  left: 365px;
+  bottom: 310px;
+}
+
+.tv {
+  max-width: 320px;
+  position: absolute;
+  right: 330px;
+  bottom: 390px;
+  transform: scale(0);
+}
+
+.protsessor {
+  position: absolute;
+  transform: scale(0);
+  right: 43%;
+  bottom: 430px;
+}
+
+.hello {
+  max-width: 407px;
+  position: absolute;
+  transform: scale(0);
+  right: 33.5%;
+  bottom: 250px;
+}
+
+.girls {
+  max-width: 300px;
+  width: 100%;
+  position: absolute;
+  right: 21.5%;
+  bottom: 320px;
+  transform: scale(0);
+}
+
+.chair {
+  max-width: 300px;
+  width: 100%;
+  position: absolute;
+  right: 9%;
+  transform: scale(0);
+}
+
+.card {
+  position: absolute;
+  transform: scale(0);
+  top: 34%;
+  left: 30%;
+}
+
+.bitcoin {
+  position: absolute;
+  transform: scale(0);
+  bottom: 33%;
+  left: 25%;
+}
+
+.verified {
+  position: absolute;
+  transform: scale(0);
+  left: 46%;
+  bottom: 29%;
+}
+
+.phone {
+  position: absolute;
+  transform: scale(0);
+  left: 51%;
+  bottom: 28%;
+}
+
+.input {
+  position: absolute;
+  transform: scale(0);
+  left: 51%;
+  top: 35%;
+}
+
+.button {
+  max-width: 767px;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(0);
+  top: 50%;
+}
+
+.cursor {
+  max-width: 132px;
+  width: 100%;
+  position: absolute;
+  /* right: -100%;
+  bottom: -100px; */
+  bottom: -135px;
+  right: -125px;
+  z-index: 30;
+}
+
+.text {
+  max-width: 1267px;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+  /* opacity: 0; */
+  
+  font-size: 112px;
+  font-weight: 400;
+  line-height: 112px;
+  letter-spacing: -0.01em;
+  background: linear-gradient(106.37deg, #000000 7.38%, #8B8B8B 71.92%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
