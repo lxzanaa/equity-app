@@ -408,10 +408,10 @@ export default function Trust() {
                 right: 0,
                 opacity: 1
             })
-            .to(['.logo_right_animation', '.logo_aimation', '.trust_title_3'], {
-                duration: 0.5,
-                opacity: 0,
-            })
+            // .to(['.logo_right_animation', '.logo_aimation', '.trust_title_3'], {
+            //     duration: 0.5,
+            //     opacity: 0,
+            // })
             .to(".trust-evolves", {
                 background: "radial-gradient(52.08% 133.33% at 50% 50%, #FFFFFF 0%, #C4C4C4 100%), radial-gradient(68.7% 68.7% at 50% 50%, #FFFFFF 0%, #C4C4C4 100%)"
             })
