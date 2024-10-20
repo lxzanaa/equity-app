@@ -29,8 +29,8 @@ import phone from "../img/trust_evolves/phone.png"
 import input from "../img/trust_evolves/input.png"
 import button from "../img/trust_evolves/button.svg"
 import cursor from "../img/trust_evolves/cursor.svg"
-import intel from "../img/trust_evolves/intel.svg"
-import nvidia from "../img/trust_evolves/nvidia.svg"
+// import intel from "../img/trust_evolves/intel.svg"
+// import nvidia from "../img/trust_evolves/nvidia.svg"
 
 export default function Trust() {
     useEffect(() => {
