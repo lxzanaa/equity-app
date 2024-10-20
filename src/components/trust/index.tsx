@@ -27,7 +27,6 @@ import phone from "../img/trust_evolves/phone.png"
 import input from "../img/trust_evolves/input.png"
 import button from "../img/trust_evolves/button.svg"
 import cursor from "../img/trust_evolves/cursor.svg"
-import text from "../img/trust_evolves/text.svg"
 
 export default function Trust() {
     useEffect(() => {
