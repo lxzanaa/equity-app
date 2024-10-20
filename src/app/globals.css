@@ -5266,13 +5266,7 @@ body {
   .revolution-section{
     display: none;
   }
-  .zero-trust-wrapper{
-    display: none;
-  }
   .compliant-ready-section{
-    display: none;
-  }
-  .zero-trust-wrapper{
     display: none;
   }
 }
