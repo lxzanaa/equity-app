@@ -295,6 +295,7 @@
   bottom: 298px;
   transform: rotate(-45deg);
   opacity: 0;
+  max-width: 438px;
 }
 
 .nvidia {
@@ -304,6 +305,7 @@
   bottom: 298px;
   transform: rotate(45deg);
   opacity: 0;
+  max-width: 498px;
 }
 
 .intel_info {
@@ -317,6 +319,7 @@
   bottom: 311px;
   transform: scale(0);
   z-index: 30;
+  max-width: 498px;
 }
 
 .intel_info_title {
@@ -406,8 +409,26 @@
   transform: scale(0);
 }
 
-@media(max-width: 1600px){
-  .trust-evolves{
+@media(max-width: 1024px) {
+  .trust-evolves {
     display: none;
+  }
+}
+
+@media(min-width: 1024px) {
+  .text {
+    font-size: 80px;
+    line-height: 80px;
+    text-align: center;
+  }
+
+  .trust_title_3 {
+    font-size: 120px;
+    line-height: 120px;
+    text-align: center;
+    top: 380px;
+  }
+  .text_logo_box{
+    bottom: 400px;
   }
 }

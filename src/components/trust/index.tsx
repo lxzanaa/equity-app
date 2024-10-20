@@ -5,8 +5,10 @@ import "./ui/style.css"
 import { useEffect } from "react"
 import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger";
-import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
+
+
+import Image from "next/image";
 
 // imgs
 import horse from "../img/trust_evolves/horse.png"
@@ -37,7 +39,7 @@ export default function Trust() {
                 trigger: ".trust-evolves",
                 start: "top top",
                 end: "top top",
-                // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
+                markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
                 toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
             }
         })
@@ -272,7 +274,7 @@ export default function Trust() {
             duration: 1,
             ease: "power1.inOut",
             x: "100%",
-            y: "-400%",
+            y: "-420%",
             scrollTrigger: {
                 trigger: ".trust-evolves",
                 start: "top top",
@@ -283,57 +285,57 @@ export default function Trust() {
         });
 
 
-        const timeline_3d = gsap.timeline({
-            delay: 5.7,
-            duration: 0.1,
-            // ease: "power4.inOut",
-            scrollTrigger: {
-                trigger: ".trust-evolves",
-                start: "top top",
-                end: "top top",
-                // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
-                toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
-            }
-        });
+        // const timeline_3d = gsap.timeline({
+        //     delay: 5.7,
+        //     duration: 0.1,
+        //     // ease: "power4.inOut",
+        //     scrollTrigger: {
+        //         trigger: ".trust-evolves",
+        //         start: "top top",
+        //         end: "top top",
+        //         // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
+        //         toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
+        //     }
+        // });
 
-        timeline_3d
-            .to('.button', {
-                scale: 1,
-                duration: 0.3,
-            }) // Scale 1.2 ga o'tadi
-            .to('.button', {
-                scale: .93,
-                duration: 0.3,
-            }) // Scale 1.2 ga o'tadi
-            .to('.button', {
-                scale: 1,
-                duration: 0.3,
-            })
-            .to('.button', {
-                scale: .97,
-                duration: 0.3,
-            })
-            .to('.button', {
-                scale: 1,
-                duration: 0.3,
-            })
-            .to(".cursor", {
-                // delay: 6.5,
-                duration: 1,
-                ease: "power1.inOut",
-                x: "-450%",
-                y: "-360%",
-            })
-            .to(['.button', '.cursor'], {
-                delay: 0.2,
-                scale: .85,
-                duration: 0.3,
-            })
-            .to(['.button', '.cursor'], {
-                duration: 0.5,
-                rotateY: 90,
-                opacity: 0
-            })
+        // timeline_3d
+        //     .to('.button', {
+        //         scale: 1,
+        //         duration: 0.3,
+        //     }) // Scale 1.2 ga o'tadi
+        //     .to('.button', {
+        //         scale: .93,
+        //         duration: 0.3,
+        //     }) // Scale 1.2 ga o'tadi
+        //     .to('.button', {
+        //         scale: 1,
+        //         duration: 0.3,
+        //     })
+        //     .to('.button', {
+        //         scale: .97,
+        //         duration: 0.3,
+        //     })
+        //     .to('.button', {
+        //         scale: 1,
+        //         duration: 0.3,
+        //     })
+        //     .to(".cursor", {
+        //         // delay: 6.5,
+        //         duration: 1,
+        //         ease: "power1.inOut",
+        //         x: "-450%",
+        //         y: "-360%",
+        //     })
+        //     .to(['.button', '.cursor'], {
+        //         delay: 0.2,
+        //         scale: .85,
+        //         duration: 0.3,
+        //     })
+        //     .to(['.button', '.cursor'], {
+        //         duration: 0.5,
+        //         rotateY: 90,
+        //         opacity: 0
+        //     })
 
         gsap.fromTo(".text",
             {
@@ -546,6 +548,118 @@ export default function Trust() {
                 opacity: 0,
                 x: "-100%",
             }, "<"); // "<" bu animatsiyani ham birinchi animatsiya bilan bir vaqtda boshlaydi
+
+        function payment() {
+            console.log(window.innerWidth);
+            
+            if (window.innerWidth > 1240) {
+                const timeline_3d = gsap.timeline({
+                    delay: 5.7,
+                    duration: 0.1,
+                    // ease: "power4.inOut",
+                    scrollTrigger: {
+                        trigger: ".trust-evolves",
+                        start: "top top",
+                        end: "top top",
+                        // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
+                        toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
+                    }
+                });
+
+                timeline_3d
+                    .to('.button', {
+                        scale: 1,
+                        duration: 0.3,
+                    }) // Scale 1.2 ga o'tadi
+                    .to('.button', {
+                        scale: .93,
+                        duration: 0.3,
+                    }) // Scale 1.2 ga o'tadi
+                    .to('.button', {
+                        scale: 1,
+                        duration: 0.3,
+                    })
+                    .to('.button', {
+                        scale: .97,
+                        duration: 0.3,
+                    })
+                    .to('.button', {
+                        scale: 1,
+                        duration: 0.3,
+                    })
+                    .to(".cursor", {
+                        // delay: 6.5,
+                        duration: 1,
+                        ease: "power1.inOut",
+                        x: "-450%",
+                        y: "-360%",
+                    })
+                    .to(['.button', '.cursor'], {
+                        delay: 0.2,
+                        scale: .85,
+                        duration: 0.3,
+                    })
+                    .to(['.button', '.cursor'], {
+                        duration: 0.5,
+                        rotateY: 90,
+                        opacity: 0
+                    })
+            }
+            else{
+                const timeline_3d = gsap.timeline({
+                    delay: 5.7,
+                    duration: 0.1,
+                    // ease: "power4.inOut",
+                    scrollTrigger: {
+                        trigger: ".trust-evolves",
+                        start: "top top",
+                        end: "top top",
+                        // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
+                        toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
+                    }
+                });
+                console.log('1024px dan kichik ekranda!');
+                timeline_3d
+                    .to('.button', {
+                        scale: 1,
+                        duration: 0.3,
+                    }) // Scale 1.2 ga o'tadi
+                    .to('.button', {
+                        scale: .93,
+                        duration: 0.3,
+                    }) // Scale 1.2 ga o'tadi
+                    .to('.button', {
+                        scale: 1,
+                        duration: 0.3,
+                    })
+                    .to('.button', {
+                        scale: .97,
+                        duration: 0.3,
+                    })
+                    .to('.button', {
+                        scale: 1,
+                        duration: 0.3,
+                    })
+                    .to(".cursor", {
+                        // delay: 6.5,
+                        duration: 1,
+                        ease: "power1.inOut",
+                        x: "-230%",
+                        y: "-360%",
+                    })
+                    .to(['.button', '.cursor'], {
+                        delay: 0.2,
+                        scale: .85,
+                        duration: 0.3,
+                    })
+                    .to(['.button', '.cursor'], {
+                        duration: 0.5,
+                        rotateY: 90,
+                        opacity: 0
+                    })
+            }
+        }
+        payment()
     }, [])
 
     return (
@@ -590,7 +704,8 @@ export default function Trust() {
                             </svg>
                         </div>
                     </div>
-                    <h4 className="trust_title_4">A Revolution.</h4>
+
+                    {/* <h4 className="trust_title_4">A Revolution.</h4>
                     <h5 className="trust_title_5">Two Powerhouses come together.</h5>
                     <Image src={intel} alt="" className="intel" />
                     <Image src={nvidia} alt="" className="nvidia" />
@@ -659,7 +774,7 @@ export default function Trust() {
                         <svg width="88" height="21" viewBox="0 0 88 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M21.4505 2.19666H26.9011C28.9231 2.19666 30.2417 2.28467 31.3846 3.51467C32.1758 4.39332 32.6154 5.44772 32.6154 6.67785C32.6154 7.90796 32.1758 8.96235 31.2967 9.84103C30.4176 10.7197 29.2747 11.2469 26.3736 11.2469H23.7362V18.5398H21.4505V2.19666ZM23.7362 9.40167H26.3736C27.8681 9.40167 30.1538 9.31401 30.1538 6.58999C30.1538 4.04187 28.0439 4.04188 26.8132 4.04188H23.7362V9.40167ZM39.9121 18.5398C39.7362 18.0126 39.7362 17.3975 39.7362 16.8703C38.6813 18.7155 37.1868 18.8912 36.2198 18.8912C33.5824 18.8912 32.1758 17.3975 32.1758 15.5523C32.1758 14.6737 32.5275 13.1799 34.1978 12.2134C35.4286 11.5105 37.1868 11.5105 38.1538 11.5105C38.6813 11.5105 39.033 11.5105 39.6483 11.5985C39.6483 10.1926 39.6483 9.57755 39.2088 9.05035C38.7692 8.52315 37.8901 8.34741 37.2747 8.34741C35.1648 8.34741 34.989 9.84117 34.989 10.2805H32.8791C32.967 9.66543 33.0549 8.87461 33.6703 8.1717C34.5494 7.20518 36.1319 6.94158 37.3626 6.94158C39.033 6.94158 40.7912 7.46877 41.4066 8.61104C41.7582 9.31398 41.7582 9.84117 41.7582 10.3684L41.6703 15.816C41.6703 15.9917 41.6703 17.4855 41.8461 18.6278H39.9121V18.5398ZM38.4176 12.9163C37.5384 12.9163 34.2857 12.9163 34.2857 15.2008C34.2857 15.9038 34.7253 17.1339 36.6593 17.1339C37.7143 17.1339 38.5934 16.6946 39.1209 15.9038C39.5604 15.113 39.6483 14.4979 39.6483 12.9163C39.2967 13.0043 38.945 12.9163 38.4176 12.9163ZM43.6044 2.19666H45.7143V18.5398H43.6044V2.19666ZM54.8571 18.5398C54.6813 18.0126 54.6813 17.3975 54.6813 16.8703C53.6264 18.7155 52.1319 18.8912 51.1648 18.8912C48.5275 18.8912 47.1209 17.3975 47.1209 15.5523C47.1209 14.6737 47.4725 13.1799 49.1428 12.2134C50.3736 11.5105 52.1319 11.5105 53.0989 11.5105C53.6264 11.5105 53.978 11.5105 54.5934 11.5985C54.5934 10.1926 54.5934 9.57755 54.1538 9.05035C53.7143 8.52315 52.8351 8.34741 52.2198 8.34741C50.1099 8.34741 49.934 9.84117 49.934 10.2805H47.8242C47.9121 9.66543 48 8.87461 48.6154 8.1717C49.4945 7.20518 51.0769 6.94158 52.3077 6.94158C53.978 6.94158 55.7362 7.46877 56.3516 8.61104C56.7033 9.31398 56.7033 9.84117 56.7033 10.3684L56.6154 15.816C56.6154 15.9917 56.6154 17.4855 56.7912 18.6278H54.8571V18.5398ZM53.4505 12.9163C52.5714 12.9163 49.3187 12.9163 49.3187 15.2008C49.3187 15.9038 49.7582 17.1339 51.6923 17.1339C52.7472 17.1339 53.6264 16.6946 54.1538 15.9038C54.5934 15.113 54.6813 14.4979 54.6813 12.9163C54.2417 13.0043 53.978 12.9163 53.4505 12.9163ZM58.6373 8.52302V7.20506H60.7472V9.05022C61.011 8.6109 61.8022 7.0293 64.3516 7.0293C65.4066 7.0293 68.4835 7.38077 68.4835 10.8954V18.6276H66.2857V11.4226C66.2857 10.7197 66.1978 10.0168 65.6703 9.48956C65.1428 8.96237 64.3516 8.69878 63.6483 8.69878C62.0659 8.69878 60.6593 9.84104 60.6593 12.1255V18.6276H58.5494V8.52302H58.6373ZM69.1868 7.20506H71.2088V4.74477L73.3187 4.04188V7.11719H75.8681V8.69878H73.3187V15.4644C73.3187 15.9916 73.3187 16.9582 74.8132 16.9582C75.2527 16.9582 75.6923 16.8702 75.8681 16.8702V18.5396C75.5165 18.6276 74.9011 18.7153 74.1099 18.7153C72.0879 18.7153 71.2088 18.1002 71.2088 16.255V8.69858H69.1868V7.20506ZM77.3626 2.19666H79.9121V4.56906H77.3626V2.19666ZM77.5385 7.20506H79.6483V18.5398H77.5385V7.20506ZM81.6703 9.48956C81.6703 8.69878 81.5824 7.90796 81.5824 7.20506H83.6923L83.7802 9.40167C84.2198 7.82008 85.5385 7.2929 86.5055 7.20506C87.1209 7.11705 87.6484 7.11704 88 7.11704V9.22583C87.9121 9.22583 87.7362 9.13784 87.5604 9.13784C87.3846 9.13784 87.2088 9.13784 86.9451 9.13784C84.3956 9.13784 83.8681 10.6316 83.8681 12.5646V18.6274H81.7582V9.48928L81.6703 9.48956ZM8.35165 0C3.95604 0 0.351647 3.60252 0.351647 7.99584C0.351647 12.3892 3.95604 15.9917 8.35165 15.9917C12.7473 15.9917 16.3516 12.3892 16.3516 7.99584C16.3516 3.60252 12.7473 0 8.35165 0ZM8.35165 13.5314C5.27472 13.5314 2.81319 11.0711 2.81319 7.99584C2.81319 4.92053 5.27472 2.46029 8.35165 2.46029C11.4286 2.46029 13.8901 4.92053 13.8901 7.99584C13.8022 11.0711 11.3407 13.5314 8.35165 13.5314ZM15.4725 15.2887L8.35165 18.364L1.23077 15.2887L0 17.4854L8.35165 21L16.7033 17.4854L15.4725 15.2887Z" fill="black" />
                         </svg>
-                    </div>
+                    </div> */}
                 </div>
             </section>
         </>
