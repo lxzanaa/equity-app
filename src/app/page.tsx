@@ -339,7 +339,6 @@ export default function Home() {
         markers: true, 
         pin: true, // Tepaga yopishtiradi
         pinSpacing: true, // Scroll joyini o'zgartirmaslik uchun
-        snap: true
       },
       scale: 0.5, // Kichraytirishni biroz kamaytirib qildim
       opacity: 0, // Ekrandan asta-sekin g'oyib bo'ladi
