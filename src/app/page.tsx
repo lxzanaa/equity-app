@@ -1292,7 +1292,7 @@ export default function Home() {
         <section
           className="ai"
           style={{
-            // backgroundImage: `url(${aiImage.src})`,
+            backgroundImage: `url(${aiImage.src})`,
             backgroundSize: "cover",
             backgroundPosition: "center center",
           }}
