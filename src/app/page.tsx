@@ -333,8 +333,8 @@ export default function Home() {
     gsap.to(".compliant-ready-content", {
       scrollTrigger: {
         trigger: ".compliant-ready-section",
-        start: "top center", // Ekranning o'rtasiga kelganda animatsiya boshlanadi
-        end: "bottom center", // Element yuqoriga chiqqanida animatsiya tugaydi
+        start: "top top", // Ekranning o'rtasiga kelganda animatsiya boshlanadi
+        end: "bottom top", // Element yuqoriga chiqqanida animatsiya tugaydi
         scrub: true,
         markers: true, 
         pin: true, // Tepaga yopishtiradi
