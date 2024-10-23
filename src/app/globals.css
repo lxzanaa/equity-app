@@ -3398,8 +3398,8 @@ body {
   padding-top: 338px;
   padding-bottom: 250px;
   border-radius: 60px;
-  background: rgb(0, 0, 0);
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.19789922805059523) 0%, rgba(0, 0, 0, 0.2007003484987745) 100%);
+  /* background: rgb(0, 0, 0);
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.19789922805059523) 0%, rgba(0, 0, 0, 0.2007003484987745) 100%); */
   background-position: right bottom;
   transform: scale(.8);
   height: 100%;

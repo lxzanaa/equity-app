@@ -338,12 +338,13 @@ export default function Home() {
         scrub: true,
         markers: true, 
         pin: true, // Tepaga yopishtiradi
-        pinSpacing: false // Scroll joyini o'zgartirmaslik uchun
+        pinSpacing: true, // Scroll joyini o'zgartirmaslik uchun
+        snap: true
       },
       scale: 0.5, // Kichraytirishni biroz kamaytirib qildim
       opacity: 0, // Ekrandan asta-sekin g'oyib bo'ladi
       duration: 1, // Asta-sekinlik bilan animatsiya bajariladi
-      ease: "power1.inOut"
+      // ease: "power1.inOut"
     });
     
     
@@ -1292,7 +1293,7 @@ export default function Home() {
         <section
           className="ai"
           style={{
-            backgroundImage: `url(${aiImage.src})`,
+            // backgroundImage: `url(${aiImage.src})`,
             backgroundSize: "cover",
             backgroundPosition: "center center",
           }}
