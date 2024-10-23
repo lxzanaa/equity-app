@@ -3392,6 +3392,7 @@ body {
 .ai_bg_div {
   background-color: white;
   font-family: sans-serif;
+  position: relative;
 }
 
 .ai {
