@@ -345,11 +345,6 @@ export default function Home() {
       duration: 1, // Asta-sekinlik bilan animatsiya bajariladi
       ease: "power1.inOut"
     });
-    
-    
-    
-    
-
   }, [])
 
   return (
