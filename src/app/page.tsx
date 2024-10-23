@@ -333,32 +333,21 @@ export default function Home() {
     gsap.to(".compliant-ready-content", {
       scrollTrigger: {
         trigger: ".compliant-ready-section",
-        start: "top top", // Ekranning yuqori qismiga kelganda animatsiya boshlanadi
+        start: "top top", // Ekranning o'rtasiga kelganda animatsiya boshlanadi
         end: "bottom top", // Element yuqoriga chiqqanida animatsiya tugaydi
         scrub: true,
-        markers: true,
-        pin: true, // Pin qilish (tepaga yopishtirish)
-        pinSpacing: false, // Pin joyini o'zgartirmaslik
+        markers: true, 
+        pin: true, // Tepaga yopishtiradi
+        pinSpacing: false // Scroll joyini o'zgartirmaslik uchun
       },
-      scale: 0.5, // Elementni kichraytirish
-      opacity: 0, // Ekrandan asta-sekin g'oyib bo'lish
-      duration: 1,
+      scale: 0.5, // Kichraytirishni biroz kamaytirib qildim
+      opacity: 0, // Ekrandan asta-sekin g'oyib bo'ladi
+      duration: 1, // Asta-sekinlik bilan animatsiya bajariladi
+      ease: "power1.inOut"
     });
     
-    // 2. ai_bg_div uchun animatsiya
-    gsap.to(".ai", {
-      scrollTrigger: {
-        trigger: ".compliant-ready-section",
-        start: "top top", // Shu bo'lim boshlanganda animatsiya boshlanadi
-        end: "bottom top", // Bo'lim scroll bo'lganda animatsiya tugaydi
-        scrub: true,
-        markers: true,
-        pin: true, // Pin qilamiz
-        pinSpacing: false, // Scroll bo'sh joyini o'zgartirmaslik uchun
-      },
-      scale: 1, // Scale 1 ga teng bo'ladi
-      duration: 1,
-    });
+    
+    
     
 
   }, [])
