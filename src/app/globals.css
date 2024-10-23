@@ -1374,6 +1374,8 @@ body {
   border-top-left-radius: 60px;
   padding-top: 48px;
   padding-bottom: 3px;
+  position: relative;
+  z-index: 20;
 }
 
 .dont_container {
@@ -1718,6 +1720,9 @@ body {
 .runtime {
   padding-top: 271px;
   padding-bottom: 141px;
+  background-color: #fff;
+  position: relative;
+  z-index: 20;
 }
 
 .runtime__container {
@@ -3330,6 +3335,7 @@ body {
 
 .compliant-ready-section {
   background: #f5f5f7;
+  position: relative;
 }
 
 .compliant-ready-content {
@@ -3396,6 +3402,8 @@ body {
   background: rgb(0, 0, 0);
   background: linear-gradient(45deg, rgba(0, 0, 0, 0.19789922805059523) 0%, rgba(0, 0, 0, 0.2007003484987745) 100%);
   background-position: right bottom;
+  transform: scale(.8);
+  height: 100%;
 }
 
 .ai_container {
@@ -5264,9 +5272,6 @@ body {
 
 @media(min-width:1180px){
   .revolution-section{
-    display: none;
-  }
-  .compliant-ready-section{
     display: none;
   }
 }

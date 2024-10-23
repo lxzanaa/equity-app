@@ -76,6 +76,7 @@ import gsap from "gsap";
 
 // conponents
 import Trust from "@/components/trust";
+import Protsessor from "@/components/protsesor";
 
 export default function Home() {
   const [site_conrtol_animation, set_site_conrtol_animation] = useState<boolean>(false)
@@ -301,6 +302,53 @@ export default function Home() {
         marginTop: -56,
       }
     );
+
+    // gsap.to(".dont", {
+    //   marginTop: "-40%",
+    //   duration: 1,
+    //   scrollTrigger: {
+    //     trigger: ".risk",
+    //     start: "30% 10%", 
+    //     end: "50% -10%",
+    //     scrub: 1.5,
+    //     // markers: true, 
+    //     // pin: true, 
+    //   }
+    // });
+    // gsap.to(".ai", {
+    //   scrollTrigger: {
+    //     trigger: ".compliant-ready-section",
+    //     start: "-100% top", 
+    //     end: "-80% top",
+    //     scrub: true,
+    //     markers: true, 
+    //     pin: true, 
+    //     // anticipatePin: 1
+    //   },
+    //   scale: 1,
+    //   marginTop: "-100%",
+    //   // yPercent: -100,
+    //   ease: "none"
+    // });
+    gsap.to(".compliant-ready-content", {
+      scrollTrigger: {
+        trigger: ".compliant-ready-section",
+        start: "top center", // Ekranning o'rtasiga kelganda animatsiya boshlanadi
+        end: "bottom center", // Element yuqoriga chiqqanida animatsiya tugaydi
+        scrub: true,
+        markers: true, 
+        pin: true, // Tepaga yopishtiradi
+        pinSpacing: false // Scroll joyini o'zgartirmaslik uchun
+      },
+      scale: 0.5, // Kichraytirishni biroz kamaytirib qildim
+      opacity: 0, // Ekrandan asta-sekin g'oyib bo'ladi
+      duration: 1, // Asta-sekinlik bilan animatsiya bajariladi
+      ease: "power1.inOut"
+    });
+    
+    
+    
+    
 
   }, [])
 
@@ -971,6 +1019,8 @@ export default function Home() {
       </section>
 
       <Trust/>
+
+      <Protsessor/>
 
       <section className="revolution-section">
         <div className="revolution-section__container">
