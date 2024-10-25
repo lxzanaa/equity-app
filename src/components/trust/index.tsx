@@ -39,7 +39,6 @@ export default function Trust() {
                 start: "-40% top",
                 end: "-40% top",
                 // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
-                toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
             }
         })
         title_time_line
@@ -64,7 +63,6 @@ export default function Trust() {
                 start: "-40% top",
                 end: "-40% top",
                 // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
-                toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
             }
         });
 
@@ -102,7 +100,6 @@ export default function Trust() {
                 start: "-40% top",
                 end: "-40% top",
                 // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
-                toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
             }
         });
         gsap.to(".news", {
@@ -116,7 +113,6 @@ export default function Trust() {
                 start: "-40% top",
                 end: "-40% top",
                 // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
-                toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
             }
         });
 
@@ -132,7 +128,6 @@ export default function Trust() {
                 start: "-40% top",
                 end: "-40% top",
                 // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
-                toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
             }
         });
         gsap.to(".pechat", {
@@ -147,7 +142,6 @@ export default function Trust() {
                 start: "-40% top",
                 end: "-40% top",
                 // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
-                toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
             }
         });
         gsap.to(".tv", {
@@ -162,7 +156,6 @@ export default function Trust() {
                 start: "-40% top",
                 end: "-40% top",
                 // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
-                toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
             }
         });
         gsap.to(".protsessor", {
@@ -176,7 +169,6 @@ export default function Trust() {
                 start: "-40% top",
                 end: "-40% top",
                 // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
-                toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
             }
         });
         gsap.to(".hello", {
@@ -190,7 +182,6 @@ export default function Trust() {
                 start: "-40% top",
                 end: "-40% top",
                 // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
-                toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
             }
         });
         gsap.to(".girls", {
@@ -205,7 +196,7 @@ export default function Trust() {
                 start: "-40% top",
                 end: "-40% top",
                 // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
-                toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
+                 // animatsiya faqat bir marta ishlaydi
             }
         });
         gsap.to(".chair", {
@@ -219,7 +210,7 @@ export default function Trust() {
                 start: "-40% top",
                 end: "-40% top",
                 // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
-                toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
+                 // animatsiya faqat bir marta ishlaydi
             }
         });
         gsap.to(".card", {
@@ -234,7 +225,7 @@ export default function Trust() {
                 start: "-40% top",
                 end: "-40% top",
                 // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
-                toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
+                 // animatsiya faqat bir marta ishlaydi
             }
         });
         gsap.to(".bitcoin", {
@@ -249,7 +240,7 @@ export default function Trust() {
                 start: "-40% top",
                 end: "-40% top",
                 // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
-                toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
+                 // animatsiya faqat bir marta ishlaydi
             }
         });
         gsap.to(".verified", {
@@ -264,7 +255,7 @@ export default function Trust() {
                 start: "-40% top",
                 end: "-40% top",
                 // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
-                toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
+                 // animatsiya faqat bir marta ishlaydi
             }
         });
         gsap.to(".input", {
@@ -279,7 +270,7 @@ export default function Trust() {
                 start: "-40% top",
                 end: "-40% top",
                 // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
-                toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
+                 // animatsiya faqat bir marta ishlaydi
             }
         });
 
@@ -298,7 +289,7 @@ export default function Trust() {
                     start: "-40% top",
                     end: "-40% top",
                     // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
-                    toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
+                     // animatsiya faqat bir marta ishlaydi
                 }
             }
         )
@@ -312,7 +303,7 @@ export default function Trust() {
                 start: "-40% top",
                 end: "-40% top",
                 // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
-                toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
+                 // animatsiya faqat bir marta ishlaydi
             }
         })
 
@@ -326,7 +317,7 @@ export default function Trust() {
                 start: "-40% top",
                 end: "-40% top",
                 // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
-                toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
+                 // animatsiya faqat bir marta ishlaydi
             }
         })
 
@@ -337,7 +328,7 @@ export default function Trust() {
                 start: "-40% top",
                 end: "-40% top",
                 // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
-                toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
+                 // animatsiya faqat bir marta ishlaydi
             }
         })
         logo_box_time_line
@@ -368,7 +359,7 @@ export default function Trust() {
                         start: "-40% top",
                         end: "-40% top",
                         // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
-                        toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
+                         // animatsiya faqat bir marta ishlaydi
                     }
                 });
 
@@ -421,7 +412,7 @@ export default function Trust() {
                         start: "-40% top",
                         end: "-40% top",
                         // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
-                        toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
+                         // animatsiya faqat bir marta ishlaydi
                     }
                 });
                 console.log('1024px dan kichik ekranda!');

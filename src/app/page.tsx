@@ -1,16 +1,10 @@
 "use client"
 
 import "./globals.css"
-import "./swiper.css"
 
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from 'react';
 import Image from "next/image";
-
-// swiper
-
-
-// Imgs
 import header_logo from "./img/header/header_logo.svg";
 import compute_card from "./img/compute/card.png"
 import compute1 from "./img/compute/compute_1.png"
@@ -61,7 +55,7 @@ import banner8 from "./img/customer/bannner8.png"
 import icon from "./img/customer/icon.svg"
 import icon2 from "./img/customer/icon2.svg"
 import icon3 from "./img/customer/icon3.svg"
-import right from "./img/customer/right.svg"
+import line from "./img/controll/line.svg"
 
 import hero from "./video/hero.mp4"
 import evolved_bg from "./video/evolved_bg.mp4"
@@ -72,11 +66,16 @@ import gsap from "gsap";
 // conponents
 import Trust from "@/components/trust";
 import Protsessor from "@/components/protsesor";
+import Resources from "@/components/resources/resources";
+// import Header_hero from "@/components/header_hero/header_hero";
+
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const [site_conrtol_animation, set_site_conrtol_animation] = useState<boolean>(false)
+  const [across_text, setAcross_text] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null);
-  console.log(site_conrtol_animation);
 
 
   useEffect(() => {
@@ -299,16 +298,13 @@ export default function Home() {
     );
     gsap.to(".compliant-ready-content", {
       scrollTrigger: {
-        trigger: ".compliant-ready-section",
+        trigger: ".compliant-ready-content",
         start: "top top", // Ekranning o'rtasiga kelganda animatsiya boshlanadi
         end: "bottom top", // Element yuqoriga chiqqanida animatsiya tugaydi
         scrub: true,
-        pin: true, // Tepaga yopishtiradi
-        pinSpacing: false // Scroll joyini o'zgartirmaslik uchun
       },
       scale: 0.5, // Kichraytirishni biroz kamaytirib qildim
       opacity: 0, // Ekrandan asta-sekin g'oyib bo'ladi
-      markers: true
     });
     gsap.to(".ai", {
       scrollTrigger: {
@@ -318,7 +314,6 @@ export default function Home() {
         scrub: true,
         pin: true, // Tepaga yopishtiradi
         pinSpacing: false, // Scroll joyini o'zgartirmaslik uchun
-        markers: true
       },
       scale: 1, // Kichraytirishni biroz kamaytirib qildim
     });
@@ -333,28 +328,46 @@ export default function Home() {
         pinSpacing: false // Scroll joyini o'zgartirmaslik uchun
       },
     })
+    gsap.to(".customer_card_animation", {
+      scrollTrigger: {
+        trigger: ".customer",
+        start: "top top", // Ekranning o'rtasiga kelganda animatsiya boshlanadi
+        end: "bottom top", // Element yuqoriga chiqqanida animatsiya tugaydi
+      },
+      scale: 1,
+      opacity:1,
+      duration: .5,
+    })
   }, [])
 
-  if(site_conrtol_animation == true){
+  if (site_conrtol_animation == true) {
     gsap.to(".site_controll_text", {
-      duration:.5,
+      duration: .5,
       translateY: "60",
       opacity: 1,
     })
     gsap.to(".site_controll_card_line", {
-      duration:.5,
+      duration: .5,
       height: 64,
     })
+    gsap.to(".site_controll_card_line_1", {
+      duration: .5,
+      maxWidth: 120
+    })
   }
-  else{
+  else {
     gsap.to(".site_controll_text", {
-      duration:0.5,
+      duration: 0.5,
       translateY: "93",
       opacity: 0,
     })
     gsap.to(".site_controll_card_line", {
-      duration:.5,
+      duration: .5,
       height: 0,
+    })
+    gsap.to(".site_controll_card_line_1", {
+      duration: .5,
+      maxWidth: 0
     })
   }
   return (
@@ -586,6 +599,8 @@ export default function Home() {
           </div>
         </section>
       </div>
+
+      {/* <Header_hero/> */}
 
       <section className="varifable">
         <div className="varifable-container">
@@ -847,6 +862,7 @@ export default function Home() {
                 </div>
                 <h2>Create</h2>
                 <h3>Agents</h3>
+                <Image src={line} className="site_controll_card_line_1" alt="" />
               </li>
               <span className="site_controll_card_line"></span>
               <p className="site_controll_text">Auditable records of an agent`&apos;s components and training.</p>
@@ -866,6 +882,7 @@ export default function Home() {
                 <h3>Agents</h3>
               </li>
               <span className="site_controll_card_line"></span>
+              <Image src={line} className="site_controll_card_line_1" alt="" />
               <p className="site_controll_text">Authenticate what an agent is doing and control their dataflow and actions.</p>
             </div>
             <div className="site-control__list_box">
@@ -883,6 +900,7 @@ export default function Home() {
                 <h3>Agents</h3>
               </li>
               <span className="site_controll_card_line"></span>
+              <Image src={line} className="site_controll_card_line_1" alt="" />
               <p className="site_controll_text">Tamper-proof credentials that can be validated in any environment.</p>
 
             </div>
@@ -901,6 +919,7 @@ export default function Home() {
                 <h3>Agents</h3>
               </li>
               <span className="site_controll_card_line"></span>
+              <Image src={line} className="site_controll_card_line_1" alt="" />
               <p className="site_controll_text">Align agent-to-agent interactions to policies at runtime.</p>
 
             </div>
@@ -1324,23 +1343,44 @@ export default function Home() {
             <Image src={acros} alt="" className="across_arrow_img" />
           </div>
           <div className="across_center">
-            <p className="across_text">
+            <div className={`across_text ${across_text ? "h-189" : "h-80"}`}>
               <span>AI Endpoints</span>
-            </p>
-            <p className="across_text">
+              <p>
+                From ChatGPT to Claude, verify the exact payload sent to closed source AI endpoints.
+              </p>
+            </div>
+            <div className={`across_text ${across_text ? "h-189" : "h-80"}`}>
               <span>RAG</span>
-            </p>
-            <p className="across_text">
+              <p>
+                Verify exactly which embeddings were retrieved from RAG database and used in inference.
+              </p>
+            </div>
+            <div className={`across_text ${across_text ? "h-189" : "h-80"}`}>
               <span>Fine Tuning AI</span>
-            </p>
-            <p className="across_text">
+              <p>
+                Verify what data was used to fine tune an LLM, train a SLM, and prove it was accurately benchmarked
+              </p>
+            </div>
+            <div className={`across_text ${across_text ? "h-189" : "h-80"}`}>
               <span>Open Source AI</span>
-            </p>
+              <p>
+                Verify the model and its parameters were locally deployed at inference.
+              </p>
+            </div>
           </div>
-          <button className="across_btn">
-            <span className="across_round"></span>
-            Read Case Study
-          </button>
+          {across_text ?
+            <button className="across_btn_vlose" onClick={() => setAcross_text(!across_text)}>
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 20C1 9.50659 9.50659 1 20 1C30.4934 1 39 9.50659 39 20C39 30.4934 30.4934 39 20 39C9.50659 39 1 30.4934 1 20Z" stroke="#34869D" stroke-width="2" />
+                <path d="M26 14L14 26M14 14L26 26" stroke="#34869D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            :
+            <button className="across_btn" onClick={() => setAcross_text(!across_text)}>
+              <span className="across_round"></span>
+              Learn More
+            </button>
+          }
         </div>
       </section>
 
@@ -1503,9 +1543,9 @@ export default function Home() {
               <h2 className="progressive__box__title">
                 Explore deployment <br />options for
               </h2>
-              <a href="" className="progressive__box__link">
+              <Link href="#" className="progressive__box__link">
                 Verifiable AI
-              </a>
+              </Link>
               <button className="progressive__box__btn">
                 <div className="progressive__box__span"></div>
                 Download White paper
@@ -1521,134 +1561,35 @@ export default function Home() {
             Customer Success Stories
           </h2>
           <div className="customer__wrap">
-            <a href="" className="customer__wrap__link" style={{ backgroundImage: `url(${banner.src})` }}>
+            <Link href="#" className="customer_card_animation customer__wrap__link" style={{ backgroundImage: `url(${banner.src})` }}>
               Public Sector
-            </a>
-            <a href="" className="customer__wrap__link1" style={{ backgroundImage: `url(${banner2.src})` }}>
+            </Link>
+            <Link href="#" className="customer_card_animation customer__wrap__link1" style={{ backgroundImage: `url(${banner2.src})` }}>
               Life Sciences
-            </a>
-            <a href="" className="customer__wrap__link2" style={{ backgroundImage: `url(${banner3.src})` }}>
+            </Link>
+            <Link href="#" className="customer_card_animation customer__wrap__link2" style={{ backgroundImage: `url(${banner3.src})` }}>
               Energy
-            </a>
-            <a href="" className="customer__wrap__link3" style={{ backgroundImage: `url(${banner4.src})` }}>
+            </Link>
+            <Link href="#" className="customer_card_animation customer__wrap__link3" style={{ backgroundImage: `url(${banner4.src})` }}>
               Arts
-            </a>
-            <a href="" className="customer__wrap__link4" style={{ backgroundImage: `url(${banner5.src})` }}>
+            </Link>
+            <Link href="#" className="customer_card_animation customer__wrap__link4" style={{ backgroundImage: `url(${banner5.src})` }}>
               Voiceover
-            </a>
-            <a href="" className="customer__wrap__link5" style={{ backgroundImage: `url(${banner6.src})` }}>
+            </Link>
+            <Link href="#" className="customer_card_animation customer__wrap__link5" style={{ backgroundImage: `url(${banner6.src})` }}>
               <Image src={icon} alt="" />
-            </a>
-            <a href="" className="customer__wrap__link6" style={{ backgroundImage: `url(${banner7.src})` }}>
+            </Link>
+            <Link href="#" className="customer_card_animation customer__wrap__link6" style={{ backgroundImage: `url(${banner7.src})` }}>
               <Image src={icon2} alt="" />
-            </a>
-            <a href="" className="customer__wrap__link7" style={{ backgroundImage: `url(${banner8.src})` }}>
+            </Link>
+            <Link href="#" className="customer_card_animation customer__wrap__link7" style={{ backgroundImage: `url(${banner8.src})` }}>
               <Image src={icon3} alt="" />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="resources">
-        <div className="resources__container">
-          <h2 className="resources__title">
-            Resources
-          </h2>
-          <div className="resources__wrap">
-            <div className="resources__wrap__cart">
-              <div className="resources__wrap__cart__container">
-                <h2 className="resources__wrap__cart__title">
-                  Report
-                </h2>
-                <p className="resources__wrap__cart__text">Trail of Bits and EQTY survey the security risk in
-                  your
-                  agentic AI workflows.</p>
-                <a href="" className="resources__wrap__cart__link">
-                  Read
-                  <Image src={right} alt="" className="resources__wrap__cart__icon" />
-                </a>
-              </div>
-            </div>
-            <div className="resources__wrap__cart">
-              <div className="resources__wrap__cart__container">
-                <h2 className="resources__wrap__cart__title">
-                  Announcement
-                </h2>
-                <p className="resources__wrap__cart__text">EQTY Partners with Foundry to bring verifiable compute
-                  across North America.</p>
-                <a href="" className="resources__wrap__cart__link">
-                  Read
-                  <Image src={right} alt="" className="resources__wrap__cart__icon" />
-                </a>
-              </div>
-            </div>
-            <div className="resources__wrap__cart">
-              <div className="resources__wrap__cart__container">
-                <h2 className="resources__wrap__cart__title">
-                  Whitepaper
-                </h2>
-                <p className="resources__wrap__cart__text1">EQTY + NVIDIA + Intel Verifiable Compute whitepaper</p>
-                <a href="" className="resources__wrap__cart__link">
-                  Read
-                  <Image src={right} alt="" className="resources__wrap__cart__icon" />
-                </a>
-              </div>
-            </div>
-            <div className="resources__wrap__cart">
-              <div className="resources__wrap__cart__container">
-                <h2 className="resources__wrap__cart__title">
-                  Announcement
-                </h2>
-                <p className="resources__wrap__cart__text2">EQTY joins the Linux Foundation&apos;s SLSA working group to
-                  strengthen Agentic AI supply chains.</p>
-                <a href="" className="resources__wrap__cart__link">
-                  Read
-                  <Image src={right} alt="" className="resources__wrap__cart__icon" />
-                </a>
-              </div>
-            </div>
-            <div className="resources__wrap__cart">
-              <div className="resources__wrap__cart__container">
-                <h2 className="resources__wrap__cart__title">
-                  Announcement
-                </h2>
-                <p className="resources__wrap__cart__text">EQTY announces new cryptographic features across the
-                  Hedera ecosystem.</p>
-                <a href="" className="resources__wrap__cart__link">
-                  Read
-                  <Image src={right} alt="" className="resources__wrap__cart__icon" />
-                </a>
-              </div>
-            </div>
-            <div className="resources__wrap__cart">
-              <div className="resources__wrap__cart__container">
-                <h2 className="resources__wrap__cart__title">
-                  Announcement
-                </h2>
-                <p className="resources__wrap__cart__text">EQTY partners with Databricks to unlock verifiable
-                  agentic governance.</p>
-                <a href="" className="resources__wrap__cart__link">
-                  Read
-                  <Image src={right} alt="" className="resources__wrap__cart__icon" />
-                </a>
-              </div>
-            </div>
-            <div className="resources__wrap__cart">
-              <div className="resources__wrap__cart__container">
-                <h2 className="resources__wrap__cart__title">
-                  Report
-                </h2>
-                <p className="resources__wrap__cart__text">Learn how EQTY brings new levels of verifiability to
-                  agentic workflows.</p>
-                <a href="" className="resources__wrap__cart__link">
-                  Read
-                  <Image src={right} alt="" className="resources__wrap__cart__icon" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Resources/>
 
       <div className="footer_top_responsive">
         <div className="footer_top_responsive_container">

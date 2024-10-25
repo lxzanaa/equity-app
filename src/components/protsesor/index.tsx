@@ -20,7 +20,6 @@ export default function Protsessor() {
                 start: "top top",
                 end: "top top",
                 // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
-                toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
             }
         })
         card_box_time_line

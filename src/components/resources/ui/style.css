@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.resources {
+    padding-top: 60px !important;
+    margin-bottom: 72px;
+    position: relative;
+    overflow: hidden;
+    padding-top: 160px;
+  }
+  
+  .resources__container {
+    max-width: 1608px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .resources__title {
+    font-family: TWK Lausanne, sans-serif;
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 80px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    background: linear-gradient(100.04deg, #000000 -8.29%, #8B8B8B 66.36%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    display: inline-block;
+    margin-bottom: 80px;
+  }
+  
+  .resources__wrap {
+    width: 100%;
+    display: flex;
+    gap: 24px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    height: 286px;
+    right: -70%;
+  }
+  
+  .resources__wrap__cart {
+    width: 286px;
+    background-color: #F5F5F7;
+    border-radius: 16px;
+    border: none;
+  }
+  
+  .resources__wrap__cart:hover {
+    background: rgba(213, 235, 252, 1);
+  }
+  
+  
+  .resources__wrap__cart__container {
+    padding-top: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+  }
+  
+  .resources__wrap__cart__title {
+    font-family: TWK Lausanne, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.1px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: #00000099;
+    margin-bottom: 24px;
+    width: 254px;
+  }
+  
+  .resources__wrap__cart__text {
+    font-family: TWK Lausanne, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20.7px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    margin-bottom: 122px;
+  }
+  
+  .resources__wrap__cart__text1 {
+    font-family: TWK Lausanne, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20.7px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    margin-bottom: 143px;
+  }
+  
+  .resources__wrap__cart__text2 {
+    font-family: TWK Lausanne, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20.7px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    margin-bottom: 101px;
+  }
+  
+  .resources__wrap__cart__link {
+    color: #34869D;
+    text-decoration: none;
+    font-family: TWK Lausanne, sans-serif;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 25.2px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .resources__wrap__cart__icon {
+    display: flex;
+  }
+  
+  @media(max-width:380px) {
+    .resources {
+      margin-bottom: 40px;
+    }
+  
+    .resources__container {
+      max-width: 380px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  
+    .resources__title {
+      font-family: TWK Lausanne, sans-serif;
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 80px;
+      letter-spacing: -0.01em;
+      text-align: left;
+      background: linear-gradient(100.04deg, #000000 -8.29%, #8B8B8B 66.36%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+  
+    .resources__wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+  
+    .resources__wrap__cart {
+      width: 286px;
+      background-color: #F5F5F7;
+      border-radius: 16px;
+      border: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .resources__wrap__cart:hover {
+      background: rgba(213, 235, 252, 1);
+    }
+  
+  
+    .resources__wrap__cart__container {
+      padding-top: 16px;
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-bottom: 16px;
+    }
+  
+    .resources__wrap__cart__title {
+      font-family: TWK Lausanne, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16.1px;
+      letter-spacing: -0.02em;
+      text-align: left;
+      color: #00000099;
+      margin-bottom: 24px;
+      width: 254px;
+    }
+  
+    .resources__wrap__cart__text {
+      font-family: TWK Lausanne, sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 25.7px;
+      letter-spacing: -0.02em;
+      text-align: left;
+      margin-bottom: 80px;
+  
+    }
+  
+    .resources__wrap__cart__link {
+      color: #34869D;
+      text-decoration: none;
+      font-family: TWK Lausanne, sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 25.2px;
+      letter-spacing: 0.02em;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+  
+    .resources__wrap__cart__icon {
+      display: flex;
+    }
+  }
+  
