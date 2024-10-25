@@ -21,6 +21,13 @@ body {
   overflow-x: hidden;
 }
 
+button{
+  cursor: pointer;
+}
+a{
+  cursor: pointer;
+}
+
 
 .hero_header_compute_bg {
   position: relative;
@@ -71,6 +78,7 @@ body {
   padding-top: 24px;
   padding-bottom: 18px;
   position: relative;
+  z-index: 30;
 }
 
 .header_container {
@@ -165,7 +173,7 @@ body {
 .nav {
   width: 100%;
   position: relative;
-  z-index: 30;
+  z-index: 40;
 }
 
 .nav_list {
@@ -183,6 +191,7 @@ body {
   font-weight: 350;
   text-decoration: none;
   color: white;
+  cursor: pointer;
 }
 
 .border_r {
@@ -3464,6 +3473,7 @@ body {
   background-position: right bottom;
   transform: scale(.7);
   height: 100%;
+  background-color: transparent;
 }
 
 .ai_container {
@@ -3668,7 +3678,7 @@ body {
   text-align: center;
   color: #34869d;
 }
-.across_btn_vlose{
+.across_btn_close{
   border: none;
   background-color: transparent;
 }

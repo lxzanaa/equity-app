@@ -12,18 +12,20 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Resources() {
     useEffect(() => {
-        gsap.to(".resources__wrap",{
-            scrollTrigger: {
+        if (window.innerWidth > 768) {
+            gsap.to(".resources__wrap", {
+              scrollTrigger: {
                 trigger: ".resources",
                 start: "top top",
                 end: "600% top",
                 scrub: true,
                 pin: true,
                 pinSpacing: true,
-                markers: true
-            },
-            right: "80%"
-        })
+              },
+              right: "80%"
+            });
+        }
+
     }, [])
     
     return (

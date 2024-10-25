@@ -1369,7 +1369,7 @@ export default function Home() {
             </div>
           </div>
           {across_text ?
-            <button className="across_btn_vlose" onClick={() => setAcross_text(!across_text)}>
+            <button className="across_btn_close" onClick={() => setAcross_text(!across_text)}>
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 20C1 9.50659 9.50659 1 20 1C30.4934 1 39 9.50659 39 20C39 30.4934 30.4934 39 20 39C9.50659 39 1 30.4934 1 20Z" stroke="#34869D" stroke-width="2" />
                 <path d="M26 14L14 26M14 14L26 26" stroke="#34869D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />

@@ -347,7 +347,6 @@ export default function Trust() {
             })
            
         function buttonAnimation() {
-            console.log(window.innerWidth);
             
             if (window.innerWidth > 1240) {
                 const timeline_3d = gsap.timeline({
