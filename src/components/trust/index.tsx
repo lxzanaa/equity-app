@@ -414,7 +414,6 @@ export default function Trust() {
                          // animatsiya faqat bir marta ishlaydi
                     }
                 });
-                console.log('1024px dan kichik ekranda!');
                 timeline_3d
                     .to('.button', {
                         scale: 1,

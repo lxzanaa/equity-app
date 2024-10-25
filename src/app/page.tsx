@@ -340,36 +340,39 @@ export default function Home() {
     })
   }, [])
 
-  if (site_conrtol_animation == true) {
-    gsap.to(".site_controll_text", {
-      duration: .5,
-      translateY: "60",
-      opacity: 1,
-    })
-    gsap.to(".site_controll_card_line", {
-      duration: .5,
-      height: 64,
-    })
-    gsap.to(".site_controll_card_line_1", {
-      duration: .5,
-      maxWidth: 120
-    })
-  }
-  else {
-    gsap.to(".site_controll_text", {
-      duration: 0.5,
-      translateY: "93",
-      opacity: 0,
-    })
-    gsap.to(".site_controll_card_line", {
-      duration: .5,
-      height: 0,
-    })
-    gsap.to(".site_controll_card_line_1", {
-      duration: .5,
-      maxWidth: 0
-    })
-  }
+  useEffect(() => {
+    if (site_conrtol_animation == true) {
+      gsap.to(".site_controll_text", {
+        duration: .5,
+        translateY: "60",
+        opacity: 1,
+      })
+      gsap.to(".site_controll_card_line", {
+        duration: .5,
+        height: 64,
+      })
+      gsap.to(".site_controll_card_line_1", {
+        duration: .5,
+        maxWidth: 120
+      })
+    }
+    else {
+      gsap.to(".site_controll_text", {
+        duration: 0.5,
+        translateY: "93",
+        opacity: 0,
+      })
+      gsap.to(".site_controll_card_line", {
+        duration: .5,
+        height: 0,
+      })
+      gsap.to(".site_controll_card_line_1", {
+        duration: .5,
+        maxWidth: 0
+      })
+    }
+  }, [site_conrtol_animation])
+  
   return (
     <>
       <div className="hero_header_compute_bg">
@@ -383,7 +386,7 @@ export default function Home() {
         <header className="header top_animation">
           <div className="header_container">
             <Link href={"#"} className="jump_animation header_logo_link">
-              <Image src={header_logo} alt="" />
+              <Image style={{ height: "auto" }} src={header_logo} alt="" />
             </Link>
             <ul className="header_nav_list">
               <li className="list_nav_item">
@@ -574,13 +577,13 @@ export default function Home() {
             </div>
             <div className="compute_center">
               <div className="compute_center_card compute_center_card_left">
-                <Image src={compute1} alt='' className='compute_card_img' />
+                <Image style={{ height: "auto" }} src={compute1} alt='' className='compute_card_img' />
               </div>
               <div className='compute_center_logo'>
-                <Image src={compute_center_logo} alt="" className="center_logo" />
+                <Image style={{ height: "auto" }} src={compute_center_logo} alt="" className="center_logo" />
               </div>
               <div className="compute_center_card compute_center_card_2 compute_center_card_left_right">
-                <Image src={compute2} alt='' className='compute_card_img' />
+                <Image style={{ height: "auto" }} src={compute2} alt='' className='compute_card_img' />
               </div>
             </div>
             <div className="compute_bottom_card compute_card_animation scale_0" style={{
@@ -612,8 +615,8 @@ export default function Home() {
               <div className="verify-cards">
                 <div className="verify-card">
                   <div className="verify-card-img">
-                    <Image src={database} alt="" />
-                    <Image className="arrows" src={arrow} alt="" />
+                    <Image style={{ height: "auto" }} src={database} alt="" />
+                    <Image style={{ height: "auto" }} className="arrows" src={arrow} alt="" />
                   </div>
                   <div>
                     <p className="verify-card-text">
@@ -625,8 +628,8 @@ export default function Home() {
                 </div>
                 <div className="verify-card">
                   <div className="verify-card-img">
-                    <Image src={cpu} alt="" />
-                    <Image className="arrows" src={arrow} alt="" />
+                    <Image style={{ height: "auto" }} src={cpu} alt="" />
+                    <Image style={{ height: "auto" }} className="arrows" src={arrow} alt="" />
                   </div>
                   <div>
                     <p className="verify-card-text">
@@ -637,8 +640,8 @@ export default function Home() {
                 </div>
                 <div className="verify-card">
                   <div className="verify-card-img">
-                    <Image src={fingerprint} alt="" />
-                    <Image className="arrows" src={arrow} alt="" />
+                    <Image style={{ height: "auto" }} src={fingerprint} alt="" />
+                    <Image style={{ height: "auto" }} className="arrows" src={arrow} alt="" />
                   </div>
                   <div>
                     <p className="verify-card-text">
@@ -648,7 +651,7 @@ export default function Home() {
                 </div>
                 <div className="verify-card">
                   <div className="verify-card-img">
-                    <Image src={certificate} alt="" />
+                    <Image style={{ height: "auto" }} src={certificate} alt="" />
                   </div>
                   <div>
                     <p className="verify-card-text">
@@ -788,10 +791,10 @@ export default function Home() {
             </h2>
             <div className="runtime_left_bottom">
               <div className="runtime_bottom_card runtime_bottom_card_1">
-                <Image src={top_runtime_card} alt="" className="runtime_bottom_card_img" />
+                <Image style={{ height: "auto" }} src={top_runtime_card}  alt="" className="runtime_bottom_card_img" />
               </div>
               <div className="runtime_bottom_card runtime_bottom_card_2">
-                <Image src={bottom_runtime_card} alt="" className="runtime_bottom_card_img" />
+                <Image style={{ height: "auto" }} src={bottom_runtime_card} alt="" className="runtime_bottom_card_img" />
               </div>
             </div>
           </div>
@@ -803,25 +806,25 @@ export default function Home() {
             <ul className="runtime__right__list1">
               <li className="runtime__right__item">
                 <p className="runtime__right__link">
-                  <Image src={runtimeRightImage} alt="" />
+                  <Image style={{ height: "auto" }} src={runtimeRightImage} alt="" />
                   Minimize Risks
                 </p>
               </li>
               <li className="runtime__right__item">
                 <p className="runtime__right__link">
-                  <Image src={runtimeRightImage} alt="" />
+                  <Image style={{ height: "auto" }} src={runtimeRightImage} alt="" />
                   Automate Auditing
                 </p>
               </li>
               <li className="runtime__right__item">
                 <p className="runtime__right__link">
-                  <Image src={runtimeRightImage} alt="" />
+                  <Image style={{ height: "auto" }} src={runtimeRightImage} alt="" />
                   Respond to Incidents
                 </p>
               </li>
               <li className="runtime__right__item">
                 <p className="runtime__right__link">
-                  <Image src={runtimeRightImage} alt="" />
+                  <Image style={{ height: "auto" }} src={runtimeRightImage} alt="" />
                   Align Collaboration
                 </p>
               </li>
@@ -852,17 +855,16 @@ export default function Home() {
             <div className="site-control__list_box site_control__list_box_1">
               <li className="site-control__item">
                 <div className="site-control__list-img">
-                  <Image
+                  <Image style={{ height: "auto" }}
                     className="site-control__img"
                     src={media_1}
                     alt="control-media"
                     width={116}
-                    height={116}
                   />
                 </div>
                 <h2>Create</h2>
                 <h3>Agents</h3>
-                <Image src={line} className="site_controll_card_line_1" alt="" />
+                <Image style={{ height: "auto" }} src={line} className="site_controll_card_line_1" alt="" />
               </li>
               <span className="site_controll_card_line"></span>
               <p className="site_controll_text">Auditable records of an agent`&apos;s components and training.</p>
@@ -870,56 +872,53 @@ export default function Home() {
             <div className="site-control__list_box">
               <li className="site-control__item">
                 <div className="site-control__list-img">
-                  <Image
+                  <Image style={{ height: "auto" }}
                     className="site-control__img"
                     src={media_2}
                     alt="control-media"
                     width={116}
-                    height={116}
                   />
                 </div>
                 <h2>Provision</h2>
                 <h3>Agents</h3>
               </li>
               <span className="site_controll_card_line"></span>
-              <Image src={line} className="site_controll_card_line_1" alt="" />
+              <Image style={{ height: "auto" }} src={line} className="site_controll_card_line_1" alt="" />
               <p className="site_controll_text">Authenticate what an agent is doing and control their dataflow and actions.</p>
             </div>
             <div className="site-control__list_box">
               <li className="site-control__item">
                 <div className="site-control__list-img">
-                  <Image
+                  <Image style={{ height: "auto" }}
                     className="site-control__img"
                     src={media_3}
                     alt="control-media"
                     width={116}
-                    height={116}
                   />
                 </div>
                 <h2>Operate</h2>
                 <h3>Agents</h3>
               </li>
               <span className="site_controll_card_line"></span>
-              <Image src={line} className="site_controll_card_line_1" alt="" />
+              <Image style={{ height: "auto" }} src={line} className="site_controll_card_line_1" alt="" />
               <p className="site_controll_text">Tamper-proof credentials that can be validated in any environment.</p>
 
             </div>
             <div className="site-control__list_box">
               <li className="site-control__item">
                 <div className="site-control__list-img">
-                  <Image
+                  <Image style={{ height: "auto" }}
                     className="site-control__img"
                     src={media_4}
                     alt="control-media"
                     width={116}
-                    height={116}
                   />
                 </div>
                 <h2>Network</h2>
                 <h3>Agents</h3>
               </li>
               <span className="site_controll_card_line"></span>
-              <Image src={line} className="site_controll_card_line_1" alt="" />
+              <Image style={{ height: "auto" }} src={line} className="site_controll_card_line_1" alt="" />
               <p className="site_controll_text">Align agent-to-agent interactions to policies at runtime.</p>
 
             </div>
@@ -942,7 +941,7 @@ export default function Home() {
             </button>
           </div>
           <div className="build_cenrer_line">
-            <Image src={build_center_line} alt="" className="build_cenrer_line_svg" />
+            <Image style={{ height: "auto" }} src={build_center_line} alt="" className="build_cenrer_line_svg" />
           </div>
           <div className="build_bottom">
             <div className="compute_bottom_card dont_bottom_card bulid_bottom_card max_lg_hidden" style={{
@@ -957,16 +956,16 @@ export default function Home() {
             </div>
             <div className="build_bottom_right">
               <div className="build_bottom_right_logo_box mr-118">
-                <Image src={build_logo_1} alt="logo" className="build_bottom_right_logo" />
+                <Image style={{ height: "auto" }} src={build_logo_1} alt="logo" className="build_bottom_right_logo" />
               </div>
               <div className="build_bottom_right_logo_box mr-118">
-                <Image src={build_logo_2} alt="logo" className="build_bottom_right_logo" />
+                <Image style={{ height: "auto" }} src={build_logo_2} alt="logo" className="build_bottom_right_logo" />
               </div>
               <div className="build_bottom_right_logo_box mr-87">
-                <Image src={build_logo_3} alt="logo" className="build_bottom_right_logo" />
+                <Image style={{ height: "auto" }} src={build_logo_3} alt="logo" className="build_bottom_right_logo" />
               </div>
               <div className="build_bottom_right_logo_box">
-                <Image src={build_logo_4} alt="logo" className="build_bottom_right_logo" />
+                <Image style={{ height: "auto" }} src={build_logo_4} alt="logo" className="build_bottom_right_logo" />
               </div>
             </div>
           </div>
@@ -993,7 +992,7 @@ export default function Home() {
 
           <div className="revolution-section__images-and-text">
             <div className="revolution-section__image_box">
-              <Image
+              <Image style={{ height: "auto" }}
                 src={revolution_section__nvidia_logo}
                 alt="NVIDIA Logo"
                 className="revolution-section__image"
@@ -1011,7 +1010,7 @@ export default function Home() {
               </p>
             </div>
 
-            <Image
+            <Image style={{ height: "auto" }}
               src={revolution_cpu_img}
               alt="CPU Image"
               className="revolution-section__image_cpu"
@@ -1193,7 +1192,7 @@ export default function Home() {
           </div>
 
           <div className="zero-trust__image-container">
-            <Image
+            <Image style={{ height: "auto" }}
               src={mother_board}
               alt="Mother Board"
               className="zero-trust__image"
@@ -1235,7 +1234,7 @@ export default function Home() {
             </div>
           </div>
 
-          <Image
+          <Image style={{ height: "auto" }}
             src={dell_server}
             alt="Dell Server Image"
             className="compliant-ready-image"
@@ -1286,7 +1285,7 @@ export default function Home() {
               </p>
             </div>
             <div className="turst_right">
-              <Image
+              <Image style={{ height: "auto" }}
                 src={trust_right}
                 alt="trust_right"
                 className="turst_right_img"
@@ -1340,7 +1339,7 @@ export default function Home() {
         <div className="across_container">
           <h2 className="across_title">Across Any Deployment.</h2>
           <div className="across_arrow">
-            <Image src={acros} alt="" className="across_arrow_img" />
+            <Image style={{ height: "auto" }} src={acros} alt="" className="across_arrow_img" />
           </div>
           <div className="across_center">
             <div className={`across_text ${across_text ? "h-189" : "h-80"}`}>
@@ -1387,7 +1386,7 @@ export default function Home() {
       <section className="certificate">
         <div className="sertificate_container">
           <div className="sertificate_container_bg">
-            <Image
+            <Image style={{ height: "auto" }}
               src={sertificate_container_bg}
               alt=""
               className="sertificate_container_bg_img"
@@ -1398,7 +1397,7 @@ export default function Home() {
             <div className="sertificate_left_bottom">
               <div className="sertificate_left_bottom_card">
                 <div className="sertificate_left_bottom_card_img_box">
-                  <Image
+                  <Image style={{ height: "auto" }}
                     src={sertificate_3}
                     alt=""
                     className="sertificate_left_bottom_card_img"
@@ -1411,7 +1410,7 @@ export default function Home() {
               </div>
               <div className="sertificate_left_bottom_card">
                 <div className="sertificate_left_bottom_card_img_box">
-                  <Image
+                  <Image style={{ height: "auto" }}
                     src={sertificate_2}
                     alt=""
                     className="sertificate_left_bottom_card_img"
@@ -1424,7 +1423,7 @@ export default function Home() {
               </div>
               <div className="sertificate_left_bottom_card">
                 <div className="sertificate_left_bottom_card_img_box">
-                  <Image
+                  <Image style={{ height: "auto" }}
                     src={sertificate_1}
                     alt=""
                     className="sertificate_left_bottom_card_img"
@@ -1484,7 +1483,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="sertificate_right-right">
-                <Image
+                <Image style={{ height: "auto" }}
                   src={sertificate_right}
                   alt=""
                   className="sertificate_right-left_img"
@@ -1577,13 +1576,13 @@ export default function Home() {
               Voiceover
             </Link>
             <Link href="#" className="customer_card_animation customer__wrap__link5" style={{ backgroundImage: `url(${banner6.src})` }}>
-              <Image src={icon} alt="" />
+              <Image style={{ height: "auto" }} src={icon} alt="" />
             </Link>
             <Link href="#" className="customer_card_animation customer__wrap__link6" style={{ backgroundImage: `url(${banner7.src})` }}>
-              <Image src={icon2} alt="" />
+              <Image style={{ height: "auto" }} src={icon2} alt="" />
             </Link>
             <Link href="#" className="customer_card_animation customer__wrap__link7" style={{ backgroundImage: `url(${banner8.src})` }}>
-              <Image src={icon3} alt="" />
+              <Image style={{ height: "auto" }} src={icon3} alt="" />
             </Link>
           </div>
         </div>
