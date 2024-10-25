@@ -70,6 +70,7 @@ import icon3 from "./img/customer/icon3.svg"
 import right from "./img/customer/right.svg"
 
 import hero from "./video/hero.mp4"
+import evolved_bg from "./video/evolved_bg.mp4"
 
 // gsap
 import gsap from "gsap";
@@ -302,51 +303,66 @@ export default function Home() {
         marginTop: -56,
       }
     );
-
-    // gsap.to(".dont", {
-    //   marginTop: "-40%",
-    //   duration: 1,
-    //   scrollTrigger: {
-    //     trigger: ".risk",
-    //     start: "30% 10%", 
-    //     end: "50% -10%",
-    //     scrub: 1.5,
-    //     // markers: true, 
-    //     // pin: true, 
-    //   }
-    // });
-    // gsap.to(".ai", {
-    //   scrollTrigger: {
-    //     trigger: ".compliant-ready-section",
-    //     start: "-100% top", 
-    //     end: "-80% top",
-    //     scrub: true,
-    //     markers: true, 
-    //     pin: true, 
-    //     // anticipatePin: 1
-    //   },
-    //   scale: 1,
-    //   marginTop: "-100%",
-    //   // yPercent: -100,
-    //   ease: "none"
-    // });
     gsap.to(".compliant-ready-content", {
       scrollTrigger: {
         trigger: ".compliant-ready-section",
         start: "top top", // Ekranning o'rtasiga kelganda animatsiya boshlanadi
         end: "bottom top", // Element yuqoriga chiqqanida animatsiya tugaydi
         scrub: true,
-        markers: true, 
         pin: true, // Tepaga yopishtiradi
         pinSpacing: false // Scroll joyini o'zgartirmaslik uchun
       },
       scale: 0.5, // Kichraytirishni biroz kamaytirib qildim
       opacity: 0, // Ekrandan asta-sekin g'oyib bo'ladi
-      duration: 1, // Asta-sekinlik bilan animatsiya bajariladi
-      ease: "power1.inOut"
+      markers: true
     });
+    gsap.to(".ai", {
+      scrollTrigger: {
+        trigger: ".compliant-ready-section",
+        start: "top top", // Ekranning o'rtasiga kelganda animatsiya boshlanadi
+        end: "bottom top", // Element yuqoriga chiqqanida animatsiya tugaydi
+        scrub: true,
+        pin: true, // Tepaga yopishtiradi
+        pinSpacing: false, // Scroll joyini o'zgartirmaslik uchun
+        markers: true
+      },
+      scale: 1, // Kichraytirishni biroz kamaytirib qildim
+    });
+
+    gsap.to(".dont_bg", {
+      scrollTrigger: {
+        trigger: ".risk",
+        start: "top top", // Ekranning o'rtasiga kelganda animatsiya boshlanadi
+        end: "bottom top", // Element yuqoriga chiqqanida animatsiya tugaydi
+        scrub: true,
+        pin: true, // Tepaga yopishtiradi
+        pinSpacing: false // Scroll joyini o'zgartirmaslik uchun
+      },
+    })
   }, [])
 
+  if(site_conrtol_animation == true){
+    gsap.to(".site_controll_text", {
+      duration:.5,
+      translateY: "60",
+      opacity: 1,
+    })
+    gsap.to(".site_controll_card_line", {
+      duration:.5,
+      height: 64,
+    })
+  }
+  else{
+    gsap.to(".site_controll_text", {
+      duration:0.5,
+      translateY: "93",
+      opacity: 0,
+    })
+    gsap.to(".site_controll_card_line", {
+      duration:.5,
+      height: 0,
+    })
+  }
   return (
     <>
       <div className="hero_header_compute_bg">
@@ -653,11 +669,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="risk"
-        style={{
-          backgroundImage: `url(${risk_bg.src})`,
-        }}
-      >
+      <section className="risk">
+        <video src={evolved_bg} muted loop autoPlay className="evolved_bg_bideo"></video>
         <div className="risk_container">
           <div className="risk-info">
             <p className="risk-text-one">
@@ -711,105 +724,6 @@ export default function Home() {
             </div>
             <div className="dont_right">
               <div className="dont_right_top"></div>
-              <Swiper
-                slidesPerGroup={1}
-                autoplay={{
-                  delay: 2500,
-                  disableOnInteraction: false,
-                }}
-                allowTouchMove={false}
-                breakpoints={{
-                  320: {
-                    slidesPerView: 5,
-                    spaceBetween: 10,
-                    slidesPerGroup: 1
-                  },
-                  768: {
-                    slidesPerView: 5,
-                    spaceBetween: 24,
-                    slidesPerGroup: 1
-                  },
-                }}
-                loop={true}
-                modules={[Autoplay]}
-                direction={'vertical'}
-                pagination={{
-                  clickable: false,
-                }}
-
-                className="mySwiper"
-              >
-                <SwiperSlide>
-                  <div className="dont_right_card">
-                    <h3 className="dont_right_title">AI Training and Inference</h3>
-                    <p className="dont_right_text">Proof AI deployments are untampered</p>
-                  </div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                  <div className="dont_right_card">
-                    <h3 className="dont_right_title">AI Privacy</h3>
-                    <p className="dont_right_text">Proof AI models and data are confidential</p>
-                  </div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                  <div className="dont_right_card dont_right_card_active">
-                    <h3 className="dont_right_title">AI Safeguards</h3>
-                    <p className="dont_right_text">Proof AI guardrails are implemented</p>
-                  </div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                  <div className="dont_right_card">
-                    <h3 className="dont_right_title">AI Benchmarks</h3>
-                    <p className="dont_right_text">Proof AI systems are performant</p>
-                  </div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                  <div className="dont_right_card">
-                    <h3 className="dont_right_title">AI FinOps</h3>
-                    <p className="dont_right_text">Proof AI workloads stay in budget</p>
-                  </div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                  <div className="dont_right_card">
-                    <h3 className="dont_right_title">AI Training and Inference</h3>
-                    <p className="dont_right_text">Proof AI deployments are untampered</p>
-                  </div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                  <div className="dont_right_card">
-                    <h3 className="dont_right_title">AI Privacy</h3>
-                    <p className="dont_right_text">Proof AI models and data are confidential</p>
-                  </div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                  <div className="dont_right_card dont_right_card_active">
-                    <h3 className="dont_right_title">AI Safeguards</h3>
-                    <p className="dont_right_text">Proof AI guardrails are implemented</p>
-                  </div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                  <div className="dont_right_card">
-                    <h3 className="dont_right_title">AI Benchmarks</h3>
-                    <p className="dont_right_text">Proof AI systems are performant</p>
-                  </div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                  <div className="dont_right_card">
-                    <h3 className="dont_right_title">AI FinOps</h3>
-                    <p className="dont_right_text">Proof AI workloads stay in budget</p>
-                  </div>
-                </SwiperSlide>
-              </Swiper>
-              {/* 
               <div className="dont_right_card">
                 <h3 className="dont_right_title">AI Training and Inference</h3>
                 <p className="dont_right_text">Proof AI deployments are untampered</p>
@@ -829,8 +743,27 @@ export default function Home() {
               <div className="dont_right_card">
                 <h3 className="dont_right_title">AI FinOps</h3>
                 <p className="dont_right_text">Proof AI workloads stay in budget</p>
-              </div> 
-              */}
+              </div>
+              <div className="dont_right_card">
+                <h3 className="dont_right_title">AI Training and Inference</h3>
+                <p className="dont_right_text">Proof AI deployments are untampered</p>
+              </div>
+              <div className="dont_right_card">
+                <h3 className="dont_right_title">AI Privacy</h3>
+                <p className="dont_right_text">Proof AI models and data are confidential</p>
+              </div>
+              <div className="dont_right_card dont_right_card_active">
+                <h3 className="dont_right_title">AI Safeguards</h3>
+                <p className="dont_right_text">Proof AI guardrails are implemented</p>
+              </div>
+              <div className="dont_right_card">
+                <h3 className="dont_right_title">AI Benchmarks</h3>
+                <p className="dont_right_text">Proof AI systems are performant</p>
+              </div>
+              <div className="dont_right_card">
+                <h3 className="dont_right_title">AI FinOps</h3>
+                <p className="dont_right_text">Proof AI workloads stay in budget</p>
+              </div>
               <div className="dont_right_bottom"></div>
             </div>
           </div>
@@ -855,7 +788,7 @@ export default function Home() {
           </div>
           <div className="runtime__right__box">
             <div className="dont_right_card dont_right_card_active">
-              <h3 className="dont_right_title">Governance</h3>
+              <h3 className="dont_right_title">AI Governance</h3>
               <p className="dont_right_text">Proof AI processes are compliant</p>
             </div>
             <ul className="runtime__right__list1">
@@ -907,7 +840,7 @@ export default function Home() {
             </h3>
           </div>
           <ul className="site-control__list">
-            <div className="site-control__list_box">
+            <div className="site-control__list_box site_control__list_box_1">
               <li className="site-control__item">
                 <div className="site-control__list-img">
                   <Image
@@ -921,48 +854,62 @@ export default function Home() {
                 <h2>Create</h2>
                 <h3>Agents</h3>
               </li>
-              {/* <p className="site_controll_text">Auditable records of an agent's components and training.</p> */}
-              <span className="border"></span>
+              <span className="site_controll_card_line"></span>
+              <p className="site_controll_text">Auditable records of an agent's components and training.</p>
             </div>
-            <li className="site-control__item">
-              <div className="site-control__list-img">
-                <Image
-                  className="site-control__img"
-                  src={media_2}
-                  alt="control-media"
-                  width={116}
-                  height={116}
-                />
-              </div>
-              <h2>Provision</h2>
-              <h3>Agents</h3>
-            </li>
-            <li className="site-control__item">
-              <div className="site-control__list-img">
-                <Image
-                  className="site-control__img"
-                  src={media_3}
-                  alt="control-media"
-                  width={116}
-                  height={116}
-                />
-              </div>
-              <h2>Operate</h2>
-              <h3>Agents</h3>
-            </li>
-            <li className="site-control__item">
-              <div className="site-control__list-img">
-                <Image
-                  className="site-control__img"
-                  src={media_4}
-                  alt="control-media"
-                  width={116}
-                  height={116}
-                />
-              </div>
-              <h2>Network</h2>
-              <h3>Agents</h3>
-            </li>
+            <div className="site-control__list_box">
+              <li className="site-control__item">
+                <div className="site-control__list-img">
+                  <Image
+                    className="site-control__img"
+                    src={media_2}
+                    alt="control-media"
+                    width={116}
+                    height={116}
+                  />
+                </div>
+                <h2>Provision</h2>
+                <h3>Agents</h3>
+              </li>
+              <span className="site_controll_card_line"></span>
+              <p className="site_controll_text">Authenticate what an agent is doing and control their dataflow and actions.</p>
+            </div>
+            <div className="site-control__list_box">
+              <li className="site-control__item">
+                <div className="site-control__list-img">
+                  <Image
+                    className="site-control__img"
+                    src={media_3}
+                    alt="control-media"
+                    width={116}
+                    height={116}
+                  />
+                </div>
+                <h2>Operate</h2>
+                <h3>Agents</h3>
+              </li>
+              <span className="site_controll_card_line"></span>
+              <p className="site_controll_text">Tamper-proof credentials that can be validated in any environment.</p>
+
+            </div>
+            <div className="site-control__list_box">
+              <li className="site-control__item">
+                <div className="site-control__list-img">
+                  <Image
+                    className="site-control__img"
+                    src={media_4}
+                    alt="control-media"
+                    width={116}
+                    height={116}
+                  />
+                </div>
+                <h2>Network</h2>
+                <h3>Agents</h3>
+              </li>
+              <span className="site_controll_card_line"></span>
+              <p className="site_controll_text">Align agent-to-agent interactions to policies at runtime.</p>
+
+            </div>
           </ul>
         </div>
       </section>
@@ -1013,9 +960,9 @@ export default function Home() {
         </div>
       </section>
 
-      <Trust/>
+      <Trust />
 
-      <Protsessor/>
+      <Protsessor />
 
       <section className="revolution-section">
         <div className="revolution-section__container">

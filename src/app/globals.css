@@ -1052,10 +1052,18 @@ body {
 }
 
 .risk {
-  background-size: cover;
   background-color: #000000;
-  background-position: center center;
   padding-top: 99px;
+  position: relative;
+}
+
+.evolved_bg_bideo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  bottom: 0;
+  left: 0;
 }
 
 .risk_container {
@@ -1376,6 +1384,7 @@ body {
   padding-bottom: 3px;
   position: relative;
   z-index: 20;
+  height: 100%;
 }
 
 .dont_container {
@@ -1441,6 +1450,9 @@ body {
   position: relative;
   max-height: 895px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .dont_right_top {
@@ -2364,11 +2376,12 @@ body {
 
 .site-control-wrapper {
   padding-top: 100px;
-  padding-bottom: 200px;
+  padding-bottom: 248px;
   background: linear-gradient(103.52deg,
       rgba(97, 255, 176, 0.4) 3.11%,
       rgba(6, 135, 241, 0.4) 97.33%),
     #ffffff;
+  position: relative;
 }
 
 .container {
@@ -2452,7 +2465,7 @@ body {
   text-align: center;
 }
 
-.site-control__item:nth-child(2n) {
+.site-control__list_box:nth-child(2n) {
   margin-top: 100px;
 }
 
@@ -2469,8 +2482,6 @@ body {
 .site_controll_text {
   max-width: 271px;
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
   text-align: center;
   font-size: 24px;
   font-weight: 250;
@@ -2478,6 +2489,24 @@ body {
   letter-spacing: 0.02em;
   color: #000;
   margin-top: 9px;
+  transform: translateY(93px) translateX(-50%);
+  left: 50%;
+  position: absolute;
+  opacity: 0;
+}
+
+.site-control__list_box {
+  position: relative;
+}
+
+.site_controll_card_line {
+  display: block;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  width: 1px;
+  height: 0px;
+  background: linear-gradient(180deg, #03C48B 0%, rgba(3, 196, 139, 0) 100%);
 }
 
 .control__list_box {
@@ -3390,7 +3419,7 @@ body {
 
 
 .ai_bg_div {
-  background-color: white;
+  background: #f5f5f7;
   font-family: sans-serif;
   position: relative;
 }
@@ -3402,7 +3431,7 @@ body {
   /* background: rgb(0, 0, 0);
   background: linear-gradient(45deg, rgba(0, 0, 0, 0.19789922805059523) 0%, rgba(0, 0, 0, 0.2007003484987745) 100%); */
   background-position: right bottom;
-  transform: scale(.8);
+  transform: scale(.7);
   height: 100%;
 }
 
@@ -5270,8 +5299,8 @@ body {
   }
 }
 
-@media(min-width:1180px){
-  .revolution-section{
+@media(min-width:1180px) {
+  .revolution-section {
     display: none;
   }
 }

@@ -17,8 +17,8 @@ export default function Protsessor() {
         const card_box_time_line = gsap.timeline({
             scrollTrigger: {
                 trigger: ".protsessor_section",
-                start: "-55% top",
-                end: "-55% top",
+                start: "top top",
+                end: "top top",
                 // markers: true, // markerlarni ko‘rsatadi, bu diagnostika uchun foydali
                 toggleActions: "play none reset none", // animatsiya faqat bir marta ishlaydi
             }
