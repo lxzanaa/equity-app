@@ -8,11 +8,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import Image from "next/image";
 
 // swiper
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
-import { Autoplay } from 'swiper/modules';
 
 
 // Imgs
@@ -27,7 +22,6 @@ import cpu from "./img/varifable/cpu.svg"
 import database from "./img/varifable/database.svg"
 import fingerprint from "./img/varifable/fingerprint.svg"
 import varifable_card from "./img/varifable/varifable_card.png"
-import risk_bg from "./img/risk/bg.png"
 import dont_card_bg from "./img/dont/card_bg.png"
 import runtimeRightImage from "./img/runtime/runtime_ptichka.svg"
 import top_runtime_card from "./img/runtime/top_runtime.png"
@@ -855,7 +849,7 @@ export default function Home() {
                 <h3>Agents</h3>
               </li>
               <span className="site_controll_card_line"></span>
-              <p className="site_controll_text">Auditable records of an agent's components and training.</p>
+              <p className="site_controll_text">Auditable records of an agent`&apos;s components and training.</p>
             </div>
             <div className="site-control__list_box">
               <li className="site-control__item">
