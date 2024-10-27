@@ -329,7 +329,7 @@ export default function Home() {
     gsap.to(".dont_bg", {
       scrollTrigger: {
         trigger: ".risk",
-        start: "65% top", // Ekranning o'rtasiga kelganda animatsiya boshlanadi
+        start: "50% top", // Ekranning o'rtasiga kelganda animatsiya boshlanadi
         end: "bottom top", // Element yuqoriga chiqqanida animatsiya tugaydi
         scrub: true,
         pin: true, // Tepaga yopishtiradi
