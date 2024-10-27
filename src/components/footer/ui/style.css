@@ -171,7 +171,7 @@
     width: 100%;
 }
 
-.input-container input[type="text"] {
+.input-container input {
     font-size: 20px;
     width: 100%;
     border: none;
@@ -180,6 +180,7 @@
     background-color: transparent;
     outline: none;
 }
+
 
 .input-container .label {
     position: absolute;
@@ -205,16 +206,16 @@
     top: -20px;
 }
 
-.input-container input[type="text"]:focus~.label,
-.input-container input[type="text"]:valid~.label {
+.input-container input:focus~.label,
+.input-container input:valid~.label {
     top: -20px;
     font-size: 16px;
     color: #000000;
 }
 
 
-.input-container input[type="text"]:focus ~ .input_round,
-.input-container input[type="text"]:valid ~ .input_round {
+.input-container input:focus ~ .input_round,
+.input-container input:valid ~ .input_round {
     animation: pulse 1s infinite ease-in-out;
 }
 
