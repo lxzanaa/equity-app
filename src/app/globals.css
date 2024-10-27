@@ -2161,6 +2161,7 @@ a{
       rgba(6, 135, 241, 0.4) 97.33%),
     #ffffff;
   position: relative;
+  cursor: pointer;
 }
 
 .container {

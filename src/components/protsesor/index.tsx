@@ -83,6 +83,7 @@ export default function Protsessor() {
                 duration: 0.5,
                 "filter": "blur(0px)",
                 scale: 1.5,
+                x: 130
             }, "-=0.5")
             .to(".nvidia_info", {
                 duration: 0.5,
@@ -101,12 +102,13 @@ export default function Protsessor() {
                 duration: 0.5,
                 delay: 0.2,
                 scale: 0,
-                opacity: 0
+                opacity: 0,
+                x: 0
             })
             .to(".nvidia", {
                 duration: 0.5,
                 scale: 1,
-                right: 120,
+                right:220
             }, "-=0.5")
             .to(".intel", {
                 duration: 0.5,
