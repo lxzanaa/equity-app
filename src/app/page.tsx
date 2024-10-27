@@ -346,7 +346,7 @@ export default function Home() {
       opacity: 1,
       duration: .5,
     })
-  }, [window.innerWidth])
+  }, [])
 
   useEffect(() => {
     if (site_conrtol_animation == true) {

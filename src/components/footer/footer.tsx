@@ -1,33 +1,6 @@
 import Link from "next/link";
 import "./ui/style.css";
-import { useState } from "react";
-
-type InputField = "firstname" | "lastname" | "company" | "jobtitle" | "email" | "country";
-
 export default function Footer() {
-    const [inputStates, setInputStates] = useState<Record<InputField, boolean>>({
-        firstname: false,
-        lastname: false,
-        company: false,
-        jobtitle: false,
-        email: false,
-        country: false,
-    });
-
-    const handleFocus = (field: InputField) => {
-        setInputStates((prevStates) => ({
-            ...prevStates,
-            [field]: true,
-        }));
-    };
-
-    const handleBlur = (field: InputField) => {
-        setInputStates((prevStates) => ({
-            ...prevStates,
-            [field]: false,
-        }));
-    };
-
     return (
         <>
             <div className="footer_top_responsive">
