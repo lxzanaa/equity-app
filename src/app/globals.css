@@ -2310,12 +2310,11 @@ a{
 .site_controll_card_line_1 {
   display: block;
   position: absolute;
-  top: 0;
-  height: 302px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  max-width: 0px;
-  width: 100%;
+  width: 0;
+  height: 302px;
   object-fit: cover;
 }
 
@@ -3157,6 +3156,7 @@ a{
 .compliant-ready-section {
   background: #f5f5f7;
   position: relative;
+  padding-bottom: 100px;
 }
 
 .compliant-ready-content {
@@ -3227,6 +3227,10 @@ a{
   background-size: cover;
   height: 100%;
   background-color: transparent;
+  max-width: 991px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .ai_container {
@@ -3302,6 +3306,7 @@ a{
   .ai {
     padding-top: 150px;
     padding-bottom: 150px;
+    max-width: 900px;
   }
 
   .ai_title {
@@ -3520,6 +3525,10 @@ a{
 }
 
 @media(max-width: 525px) {
+  .ai{
+    max-width: 234px;
+    border-radius: 20px;
+  }
   .across {
     padding-top: 50px;
     padding-bottom: 75px;
@@ -3562,6 +3571,9 @@ a{
 @media(max-width:378px) {
   .across_title {
     font-size: 28px;
+  }
+  .ai{
+    max-width: 234px;
   }
 }
 
@@ -5040,9 +5052,4 @@ a{
   .hero_mobile_bottom_text > span{
     color: #61FFB0;
   }
-}
-.ai{
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
 }

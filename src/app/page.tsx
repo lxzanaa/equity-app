@@ -329,7 +329,7 @@ export default function Home() {
     gsap.to(".dont_bg", {
       scrollTrigger: {
         trigger: ".risk",
-        start: "top top", // Ekranning o'rtasiga kelganda animatsiya boshlanadi
+        start: "65% top", // Ekranning o'rtasiga kelganda animatsiya boshlanadi
         end: "bottom top", // Element yuqoriga chiqqanida animatsiya tugaydi
         scrub: true,
         pin: true, // Tepaga yopishtiradi
@@ -361,7 +361,7 @@ export default function Home() {
       })
       gsap.to(".site_controll_card_line_1", {
         duration: .5,
-        maxWidth: 120
+        width: 300
       })
     }
     else {
@@ -376,7 +376,7 @@ export default function Home() {
       })
       gsap.to(".site_controll_card_line_1", {
         duration: .5,
-        maxWidth: 0
+        width: 0
       })
     }
   }, [site_conrtol_animation])
@@ -892,9 +892,9 @@ export default function Home() {
                 </div>
                 <h2>Provision</h2>
                 <h3>Agents</h3>
+              <Image style={{ height: "auto" }} src={line} className="site_controll_card_line_1" alt="" />
               </li>
               <span className="site_controll_card_line"></span>
-              <Image style={{ height: "auto" }} src={line} className="site_controll_card_line_1" alt="" />
               <p className="site_controll_text">Authenticate what an agent is doing and control their dataflow and actions.</p>
             </div>
             <div className="site-control__list_box">
@@ -909,9 +909,9 @@ export default function Home() {
                 </div>
                 <h2>Operate</h2>
                 <h3>Agents</h3>
+              <Image style={{ height: "auto" }} src={line} className="site_controll_card_line_1" alt="" />
               </li>
               <span className="site_controll_card_line"></span>
-              <Image style={{ height: "auto" }} src={line} className="site_controll_card_line_1" alt="" />
               <p className="site_controll_text">Tamper-proof credentials that can be validated in any environment.</p>
 
             </div>
@@ -927,11 +927,10 @@ export default function Home() {
                 </div>
                 <h2>Network</h2>
                 <h3>Agents</h3>
+              <Image style={{ height: "auto" }} src={line} className="site_controll_card_line_1" alt="" />
               </li>
               <span className="site_controll_card_line"></span>
-              <Image style={{ height: "auto" }} src={line} className="site_controll_card_line_1" alt="" />
               <p className="site_controll_text">Align agent-to-agent interactions to policies at runtime.</p>
-
             </div>
           </ul>
         </div>

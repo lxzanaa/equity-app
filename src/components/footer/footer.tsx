@@ -30,7 +30,7 @@ export default function Footer() {
                                 </div>
                                 ))}
                             </div>
-                            <button type="button" className="footer_sign_up_btn">
+                            <button type="submit" className="footer_sign_up_btn">
                                 <span className="footer_sign_up_btn_round"></span>
                                 Sign Up
                             </button>
@@ -67,7 +67,7 @@ export default function Footer() {
                                     ))}
 
                                 </div>
-                                <button type="button" className="footer_sign_up_btn">
+                                <button type="submit" className="footer_sign_up_btn">
                                     <span className="footer_sign_up_btn_round"></span>
                                     Sign Up
                                 </button>
