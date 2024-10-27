@@ -14,20 +14,20 @@ export default function Footer() {
                     <div className="footer_right_responsive">
                         <form className="footer_form_responsive">
                             <div className="footer_form_box_responsive">
-                                {[
-                                    { label: "First Name", id: "firstname", name: "firstname" },
-                                    { label: "Last Name", id: "lastname", name: "lastname" },
-                                    { label: "Company", id: "company", name: "company" },
-                                    { label: "Job Title", id: "jobtitle", name: "jobtitle" },
-                                    { label: "Business Email", id: "email", name: "email" },
-                                    { label: "Country", id: "country", name: "country" },
-                                ].map((field) => (
+                                {([
+                                    { label: "First Name", id: "firstname", type: "text" },
+                                    { label: "Last Name", id: "lastname", type: "text" },
+                                    { label: "Company", id: "company", type: "text" },
+                                    { label: "Job Title", id: "jobtitle", type: "text" },
+                                    { label: "Business Email", id: "email", type: "email" },
+                                    { label: "Country", id: "country", type: "text" },
+                                ] as const).map((field) => (
                                     <div key={field.id} className="input-container">
-                                    <input type="text" id="input" required />
-                                    <label htmlFor="input" className="label">{field.label}</label>
-                                    <span className="input_round"></span>
-                                    <div className="underline"></div>
-                                </div>
+                                        <input type={field.type} id="input" required />
+                                        <label htmlFor="input" className="label">{field.label}</label>
+                                        <span className="input_round"></span>
+                                        <div className="underline"></div>
+                                    </div>
                                 ))}
                             </div>
                             <button type="submit" className="footer_sign_up_btn">
@@ -51,15 +51,15 @@ export default function Footer() {
                             <form className="footer_form">
                                 <div className="footer_form_box">
                                     {([
-                                        { label: "First Name", id: "firstname" },
-                                        { label: "Last Name", id: "lastname" },
-                                        { label: "Company", id: "company" },
-                                        { label: "Job Title", id: "jobtitle" },
-                                        { label: "Business Email", id: "email" },
-                                        { label: "Country", id: "country" },
+                                        { label: "First Name", id: "firstname", type: "text" },
+                                        { label: "Last Name", id: "lastname", type: "text" },
+                                        { label: "Company", id: "company", type: "text" },
+                                        { label: "Job Title", id: "jobtitle", type: "text" },
+                                        { label: "Business Email", id: "email", type: "email" },
+                                        { label: "Country", id: "country", type: "text" },
                                     ] as const).map((field) => (
                                         <div key={field.id} className="input-container">
-                                            <input type="text" id="input" required />
+                                            <input type={field.type} id="input" required />
                                             <label htmlFor="input" className="label">{field.label}</label>
                                             <span className="input_round"></span>
                                             <div className="underline"></div>
