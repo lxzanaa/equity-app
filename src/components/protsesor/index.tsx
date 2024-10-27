@@ -126,24 +126,24 @@ export default function Protsessor() {
                 duration: .5,
                 scale: 1
             })
-            .to(['.trust_info_text', '.trust_logo_box'], {
-                delay: 0.2, // Bu kechikish faqat birinchi animatsiyada qo'llanadi
-                duration: 0.5,
-                scale: 2.5,
-                opacity: 0,
-            })
-            .to(['.nvidia'], {
-                duration: 0.5,
-                scale: 2,
-                opacity: 0,
-                x: "100%",
-            }, "<") // "<" bu animatsiyani birinchi animatsiya bilan bir vaqtda boshlaydi
-            .to(['.intel'], {
-                duration: 0.5,
-                scale: 2,
-                opacity: 0,
-                x: "-100%",
-            }, "<"); // "<" bu animatsiyani ham birinchi animatsiya bilan bir vaqtda boshlaydi
+            // .to(['.trust_info_text', '.trust_logo_box'], {
+            //     delay: 0.2, // Bu kechikish faqat birinchi animatsiyada qo'llanadi
+            //     duration: 0.5,
+            //     scale: 2.5,
+            //     opacity: 0,
+            // })
+            // .to(['.nvidia'], {
+            //     duration: 0.5,
+            //     scale: 2,
+            //     opacity: 0,
+            //     x: "100%",
+            // }, "<") // "<" bu animatsiyani birinchi animatsiya bilan bir vaqtda boshlaydi
+            // .to(['.intel'], {
+            //     duration: 0.5,
+            //     scale: 2,
+            //     opacity: 0,
+            //     x: "-100%",
+            // }, "<"); // "<" bu animatsiyani ham birinchi animatsiya bilan bir vaqtda boshlaydi
 
     }, [])
 

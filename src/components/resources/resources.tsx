@@ -25,8 +25,7 @@ export default function Resources() {
               right: "80%"
             });
         }
-
-    }, [])
+    }, [window.innerWidth])
     
     return (
         <section className="resources">
