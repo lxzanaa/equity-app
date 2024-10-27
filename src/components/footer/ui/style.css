@@ -212,11 +212,23 @@
     color: #000000;
 }
 
-.input-container input[type="text"]:focus~.input_round,
-.input-container input[type="text"]:valid~.input_round {
-    transform: scale(1);
+
+.input-container input[type="text"]:focus ~ .input_round,
+.input-container input[type="text"]:valid ~ .input_round {
+    animation: pulse 1s infinite ease-in-out;
 }
 
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 
 
 .input-container .underline {
