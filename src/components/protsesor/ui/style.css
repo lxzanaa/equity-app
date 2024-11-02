@@ -1,38 +1,38 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.protsessor_wrap {
+    height: 500lvh;
 }
 
-
 .protsessor_section {
-    background: radial-gradient(52.08% 133.33% at 50% 50%, #FFFFFF 0%, #C4C4C4 100%),
-        radial-gradient(68.7% 68.7% at 50% 50%, #FFFFFF 0%, #C4C4C4 100%);
+    position: sticky;
+    top: 0;
+    height: 100lvh;
+    width: 100%;
+
+    background: radial-gradient(52.08% 133.33% at 50% 50%, #ffffff 0%, #c4c4c4 100%), radial-gradient(68.7% 68.7% at 50% 50%, #ffffff 0%, #c4c4c4 100%);
 }
 
 .protsessor_container {
-    max-width: 1728px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    position: relative;
     height: 100%;
+    max-width: 1700px;
+    margin-inline: auto;
+
     padding-top: 408px;
     padding-bottom: 408px;
-    height: 1080px;
-  }
+}
 
 .trust_title_4 {
     font-size: 80px;
     font-weight: 400;
     line-height: 80px;
     text-align: center;
-    background: linear-gradient(101.96deg, #000000 38.51%, #8B8B8B 91.31%);
-    background: linear-gradient(101.96deg, #000000 38.51%, #8B8B8B 91.31%);
+    background: linear-gradient(101.96deg, #000000 38.51%, #8b8b8b 91.31%);
+    background: linear-gradient(101.96deg, #000000 38.51%, #8b8b8b 91.31%);
     background-clip: text;
     -webkit-background-clip: text;
     position: absolute;
@@ -45,8 +45,8 @@
     font-weight: 400;
     line-height: 64px;
     text-align: center;
-    background: linear-gradient(101.96deg, #000000 38.51%, #8B8B8B 91.31%);
-    background: linear-gradient(101.96deg, #000000 38.51%, #8B8B8B 91.31%);
+    background: linear-gradient(101.96deg, #000000 38.51%, #8b8b8b 91.31%);
+    background: linear-gradient(101.96deg, #000000 38.51%, #8b8b8b 91.31%);
     background-clip: text;
     -webkit-background-clip: text;
     position: absolute;
@@ -76,7 +76,7 @@
 
 .intel_info {
     padding: 40px;
-    background: linear-gradient(180deg, #BFBFBF 0%, #FFFFFF 50%, #D7D7D5 100%);
+    background: linear-gradient(180deg, #bfbfbf 0%, #ffffff 50%, #d7d7d5 100%);
     border-radius: 64px;
     overflow: hidden;
     max-width: 610px;
@@ -95,7 +95,7 @@
     color: #00000080;
 }
 
-.intel_info_title>b {
+.intel_info_title > b {
     color: #000;
 }
 
@@ -106,7 +106,7 @@
     opacity: 0;
 }
 
-.intel_info_title>b {
+.intel_info_title > b {
     color: #000;
 }
 
@@ -120,7 +120,7 @@
 
 .nvidia_info {
     padding: 75px 40px;
-    background: linear-gradient(180deg, #BFBFBF 0%, #FFFFFF 50%, #D7D7D5 100%);
+    background: linear-gradient(180deg, #bfbfbf 0%, #ffffff 50%, #d7d7d5 100%);
     border-radius: 64px;
     overflow: hidden;
     max-width: 492px;
@@ -143,11 +143,11 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%) scale(.8);
+    transform: translateX(-50%) translateY(-50%) scale(0.8);
     opacity: 0;
 }
 
-.trust_info_center_title>b {
+.trust_info_center_title > b {
     color: #000;
     display: block;
 }
@@ -174,9 +174,8 @@
     right: 634px;
     transform: scale(0);
 }
-@media(max-width: 1680px){
-    .protsessor_section{
+@media (max-width: 1680px) {
+    .protsessor_section {
         display: none;
     }
 }
-

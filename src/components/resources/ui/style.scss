@@ -1,15 +1,14 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.resourcesWrap {
+    position: relative;
 }
 
-
 .resources {
+    position: sticky;
+    overflow-x: hidden;
+    top: 0;
+
     padding-top: 60px !important;
     margin-bottom: 72px;
-    position: relative;
-    overflow: hidden;
     padding-top: 160px;
 }
 
@@ -28,7 +27,7 @@
     line-height: 80px;
     letter-spacing: -0.01em;
     text-align: left;
-    background: linear-gradient(100.04deg, #000000 -8.29%, #8B8B8B 66.36%);
+    background: linear-gradient(100.04deg, #000000 -8.29%, #8b8b8b 66.36%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -38,28 +37,52 @@
 }
 
 .resources__wrap {
-    width: 100%;
+    width: fit-content;
     display: flex;
     gap: 24px;
     position: relative;
-    width: 100%;
-    bottom: 0;
-    right: -70%;
 }
 
 .resources__wrap__cart {
+    position: relative;
+    overflow: hidden;
     width: 286px;
-    background-color: #F5F5F7;
+    background-color: #f5f5f7;
     border-radius: 16px;
     border: none;
-}
 
-.resources__wrap__cart:hover {
-    background: rgba(213, 235, 252, 1);
-}
+    &:hover {
+        &::before {
+            opacity: 1;
+            translate: 0 0;
+        }
+    }
 
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background: rgba(213, 235, 252, 1);
+        border-radius: inherit;
+        translate: 0 100%;
+
+        transition: 0.5s ease-in-out;
+        transition-property: opacity, translate;
+    }
+}
 
 .resources__wrap__cart__container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
     padding-top: 16px;
     padding-left: 16px;
     padding-right: 16px;
@@ -88,16 +111,6 @@
     margin-bottom: 122px;
 }
 
-.resources__wrap__cart__text1 {
-    font-family: TWK Lausanne, sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 20.7px;
-    letter-spacing: -0.02em;
-    text-align: left;
-    margin-bottom: 143px;
-}
-
 .resources__wrap__cart__text2 {
     font-family: TWK Lausanne, sans-serif;
     font-size: 18px;
@@ -109,7 +122,7 @@
 }
 
 .resources__wrap__cart__link {
-    color: #34869D;
+    color: #34869d;
     text-decoration: none;
     font-family: TWK Lausanne, sans-serif;
     font-size: 21px;
@@ -120,13 +133,24 @@
     display: flex;
     align-items: center;
     gap: 12px;
+
+    img {
+        transition: 0.2s ease-in-out;
+        transition-property: translate;
+    }
+
+    &:hover {
+        img {
+            translate: 50%;
+        }
+    }
 }
 
 .resources__wrap__cart__icon {
     display: flex;
 }
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
     .resources__wrap {
         position: static;
         display: grid;
@@ -137,20 +161,19 @@
     }
 }
 
-
-@media(max-width:640px) {
+@media (max-width: 640px) {
     .resources__wrap {
         grid-template-columns: repeat(1, 1fr);
         grid-column-gap: 20px;
         grid-row-gap: 20px;
     }
-    .resources__wrap__cart{
+    .resources__wrap__cart {
         max-width: none;
         width: 100%;
     }
 }
 
-@media(max-width:380px) {
+@media (max-width: 380px) {
     .resources {
         margin-bottom: 40px;
     }
@@ -170,7 +193,7 @@
         line-height: 80px;
         letter-spacing: -0.01em;
         text-align: left;
-        background: linear-gradient(100.04deg, #000000 -8.29%, #8B8B8B 66.36%);
+        background: linear-gradient(100.04deg, #000000 -8.29%, #8b8b8b 66.36%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         margin-bottom: 20px;
@@ -185,7 +208,7 @@
 
     .resources__wrap__cart {
         width: 286px;
-        background-color: #F5F5F7;
+        background-color: #f5f5f7;
         border-radius: 16px;
         border: none;
         margin-left: auto;
@@ -195,7 +218,6 @@
     .resources__wrap__cart:hover {
         background: rgba(213, 235, 252, 1);
     }
-
 
     .resources__wrap__cart__container {
         padding-top: 16px;
@@ -224,11 +246,10 @@
         letter-spacing: -0.02em;
         text-align: left;
         margin-bottom: 80px;
-
     }
 
     .resources__wrap__cart__link {
-        color: #34869D;
+        color: #34869d;
         text-decoration: none;
         font-family: TWK Lausanne, sans-serif;
         font-size: 18px;
