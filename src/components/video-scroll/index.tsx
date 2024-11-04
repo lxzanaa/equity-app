@@ -44,16 +44,17 @@ export const VideoScroll: FC<IVideoScroll> = () => {
                 scrollTrigger: {
                     trigger: refRoot.current,
                     start: "top top",
-                    end: "bottom+=100% bottom",
+                    end: "bottom bottom",
                     // scrub: 1.2,
                     // scrub: 1.1,
                     scrub: 2,
-                    // markers: true,
+                    markers: true,
                 },
             })
 
             once(video, "loadedmetadata", () => {
-                tl.fromTo(video, { currentTime: 0 }, { currentTime: video.duration || 1 }).fromTo(".nutrition_image_points_item", { opacity: 0 }, { opacity: 1, stagger: 0.2 }, "<80%")
+                tl.fromTo(video, { currentTime: 0 }, { currentTime: video.duration * 1, ease: "none" })
+                // .fromTo(video, { opacity: 0 }, { opacity: 1, stagger: 0.2 }, "<80%")
             })
 
             setTimeout(() => {
@@ -97,7 +98,8 @@ export const VideoScroll: FC<IVideoScroll> = () => {
             })
 
             once(video, "loadedmetadata", () => {
-                tl.fromTo(video, { currentTime: 0 }, { currentTime: video.duration || 1 }).fromTo(".nutrition_image_points_item", { opacity: 0 }, { opacity: 1, stagger: 0.2 }, "<90%")
+                tl.fromTo(video, { currentTime: 0 }, { currentTime: video.duration || 1 })
+                // .fromTo(".nutrition_image_points_item", { opacity: 0 }, { opacity: 1, stagger: 0.2 }, "<90%")
             })
 
             setTimeout(() => {
