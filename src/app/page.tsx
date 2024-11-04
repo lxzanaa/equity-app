@@ -76,233 +76,243 @@ import { Navigation, Autoplay } from "swiper/modules"
 import { dataHeroOpportunity } from "@/data/dataHeroOpportunity"
 import clsx from "clsx"
 import { Ai } from "@/components/ai"
+import { VideoScroll } from "@/components/video-scroll"
+import { ControlPlane } from "@/components/control-plane"
+import { Hero } from "@/components/hero"
+import { Varifable } from "@/components/varifable"
+import { Risk } from "@/components/risk"
+
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
     const [site_conrtol_animation, set_site_conrtol_animation] = useState<boolean>(false)
     const [across_text, setAcross_text] = useState(false)
+<<<<<<< HEAD
     const videoRef = useRef<HTMLVideoElement>(null)
     const [trust, setTrust] = useState(false)
+=======
+>>>>>>> b00479d1a7e263b743bd66cd7daa6c3d9e603923
 
     useEffect(() => {
-        function header_hero_animation_fun() {
-            if (window.innerWidth > 1024) {
-                if (videoRef.current) {
-                    videoRef.current.play()
-                }
-                gsap.to(".Header_top", {
-                    y: 50,
-                    duration: 0.2,
-                    // ease: "power3.inOut",
-                })
-                gsap.to(".nav_item", {
-                    x: -200,
-                    opacity: 1,
-                    duration: 0.5,
-                    stagger: 0.1,
-                })
-                const timeline = gsap.timeline()
+        // function header_hero_animation_fun() {
+        //     if (window.innerWidth > 1024) {
+        //         if (videoRef.current) {
+        //             videoRef.current.play()
+        //         }
+        //         gsap.to(".Header_top", {
+        //             y: 50,
+        //             duration: 0.2,
+        //             // ease: "power3.inOut",
+        //         })
+        //         gsap.to(".nav_item", {
+        //             x: -200,
+        //             opacity: 1,
+        //             duration: 0.5,
+        //             stagger: 0.1,
+        //         })
+        //         const timeline = gsap.timeline()
 
-                timeline
-                    .to(".jump_animation", { scale: 1 }) // Scale 1.2 ga o'tadi
-                    .to(".jump_animation", { scale: 0.9 }) // Scale 1.2 ga o'tadi
-                    .to(".jump_animation", { scale: 1 }) // Scale 1 ga qaytadi
+        //         timeline
+        //             .to(".jump_animation", { scale: 1 }) // Scale 1.2 ga o'tadi
+        //             .to(".jump_animation", { scale: 0.9 }) // Scale 1.2 ga o'tadi
+        //             .to(".jump_animation", { scale: 1 }) // Scale 1 ga qaytadi
 
-                const time_line_navlist = gsap.timeline()
+        //         const time_line_navlist = gsap.timeline()
 
-                time_line_navlist
-                    .to(".header_nav_list", { scale: 1 }) // Scale 0 ga ketadi
-                    .to(".header_nav_list", { scale: 0.9 }) // Scale 1.2 ga o'tadi
-                    .to(".header_nav_list", { scale: 1 }) // Scale 1 ga qaytadi
+        //         time_line_navlist
+        //             .to(".header_nav_list", { scale: 1 }) // Scale 0 ga ketadi
+        //             .to(".header_nav_list", { scale: 0.9 }) // Scale 1.2 ga o'tadi
+        //             .to(".header_nav_list", { scale: 1 }) // Scale 1 ga qaytadi
 
-                gsap.to(".hero_title_span", {
-                    y: -100,
-                    opacity: 1,
-                    duration: 0.3,
-                    stagger: 0.2,
-                })
-                gsap.to(".hero_text p", {
-                    y: -30,
-                    opacity: 1,
-                    duration: 0.5,
-                    stagger: 0.2,
-                })
-                gsap.to(".hero_bottom_text", {
-                    y: -30,
-                    opacity: 1,
-                    duration: 0.2,
-                    stagger: 0.1,
-                })
-                gsap.to(".hero_bottom_text span", {
-                    y: -20,
-                    opacity: 1,
-                    duration: 0.3,
-                    stagger: 0.2,
-                })
-                gsap.to(".hero_bottom_text_word", {
-                    filter: "drop-shadow(0px 0px 5px #61FFB0)",
-                    duration: 0.3,
-                    delay: 0.3,
-                })
+        //         gsap.to(".hero_title_span", {
+        //             y: -100,
+        //             opacity: 1,
+        //             duration: 0.3,
+        //             stagger: 0.2,
+        //         })
+        //         gsap.to(".hero_text p", {
+        //             y: -30,
+        //             opacity: 1,
+        //             duration: 0.5,
+        //             stagger: 0.2,
+        //         })
+        //         gsap.to(".hero_bottom_text", {
+        //             y: -30,
+        //             opacity: 1,
+        //             duration: 0.2,
+        //             stagger: 0.1,
+        //         })
+        //         gsap.to(".hero_bottom_text span", {
+        //             y: -20,
+        //             opacity: 1,
+        //             duration: 0.3,
+        //             stagger: 0.2,
+        //         })
+        //         gsap.to(".hero_bottom_text_word", {
+        //             filter: "drop-shadow(0px 0px 5px #61FFB0)",
+        //             duration: 0.3,
+        //             delay: 0.3,
+        //         })
 
-                const word_timeLine = gsap.timeline()
-                word_timeLine
-                    .to(".hero_bottom_text_word", {
-                        display: "none",
-                        delay: 1,
-                    })
-                    .to(".hero_bottom_text_word_2", {
-                        display: "block",
-                        filter: "drop-shadow(0px 0px 5px #29A2FF)",
-                        duration: 0.5,
-                    })
-                    .to(".hero_bottom_text_word_2", {
-                        display: "none",
-                    })
-                    .to(".hero_bottom_text_word_3", {
-                        display: "block",
-                        filter: "drop-shadow(0px 0px 5px #61FFB0)",
-                        duration: 0.5,
-                    })
-                    .to(".hero_bottom_text_word_3", {
-                        display: "block",
-                        filter: "drop-shadow(0px 0px 0px #61FFB0)",
-                        duration: 0.3,
-                        delay: 0.3,
-                    })
+        //         const word_timeLine = gsap.timeline()
+        //         word_timeLine
+        //             .to(".hero_bottom_text_word", {
+        //                 display: "none",
+        //                 delay: 1,
+        //             })
+        //             .to(".hero_bottom_text_word_2", {
+        //                 display: "block",
+        //                 filter: "drop-shadow(0px 0px 5px #29A2FF)",
+        //                 duration: 0.5,
+        //             })
+        //             .to(".hero_bottom_text_word_2", {
+        //                 display: "none",
+        //             })
+        //             .to(".hero_bottom_text_word_3", {
+        //                 display: "block",
+        //                 filter: "drop-shadow(0px 0px 5px #61FFB0)",
+        //                 duration: 0.5,
+        //             })
+        //             .to(".hero_bottom_text_word_3", {
+        //                 display: "block",
+        //                 filter: "drop-shadow(0px 0px 0px #61FFB0)",
+        //                 duration: 0.3,
+        //                 delay: 0.3,
+        //             })
 
-                gsap.to(".hero_big_wrapper", {
-                    ease: "slow(0.3,0.7,false)",
-                    duration: 0.5,
-                    delay: 9,
-                    scale: 0.5,
-                    opacity: 0,
-                })
-                gsap.to(".top_animation", {
-                    y: 30,
-                    opacity: 0,
-                    duration: 0.5,
-                    delay: 9,
-                })
-                gsap.to(".compute_center_logo", {
-                    scale: 1,
-                    opacity: 1,
-                    duration: 0.5,
-                    delay: 11,
-                })
-                gsap.to(".compute_center_logo", {
-                    scale: 1,
-                    opacity: 1,
-                    duration: 0.5,
-                    delay: 11,
-                })
+        //         gsap.to(".hero_big_wrapper", {
+        //             ease: "slow(0.3,0.7,false)",
+        //             duration: 0.5,
+        //             delay: 9,
+        //             scale: 0.5,
+        //             opacity: 0,
+        //         })
+        //         gsap.to(".top_animation", {
+        //             y: 30,
+        //             opacity: 0,
+        //             duration: 0.5,
+        //             delay: 9,
+        //         })
+        //         gsap.to(".compute_center_logo", {
+        //             scale: 1,
+        //             opacity: 1,
+        //             duration: 0.5,
+        //             delay: 11,
+        //         })
+        //         gsap.to(".compute_center_logo", {
+        //             scale: 1,
+        //             opacity: 1,
+        //             duration: 0.5,
+        //             delay: 11,
+        //         })
 
-                const time_line_center_card = gsap.timeline()
-                time_line_center_card
-                    .to(".compute_center_card_left", {
-                        duration: 0.5,
-                        delay: 11.5,
-                        x: 250,
-                        opacity: 1,
-                    })
-                    .to(".compute_center_card_left", {
-                        // ease: "power4.out",
-                        duration: 0.3,
-                        x: 260,
-                    })
-                    .to(".compute_center_card_left", {
-                        // ease: "power4.out",
-                        duration: 0.3,
-                        // duration:0.5,
-                        x: 240,
-                    })
-                    .to(".compute_center_card_left", {
-                        // ease: "power4.out",
-                        duration: 0.5,
-                        x: 255,
-                    })
-                    .to(".compute_center_card_left", {
-                        // ease: "power4.out",
-                        duration: 0.5,
-                        // duration:0.5,
-                        x: 245,
-                    })
-                    .to(".compute_center_card_left", {
-                        // ease: "power4.out",
-                        duration: 0.5,
-                        x: 250,
-                    })
+        //         const time_line_center_card = gsap.timeline()
+        //         time_line_center_card
+        //             .to(".compute_center_card_left", {
+        //                 duration: 0.5,
+        //                 delay: 11.5,
+        //                 x: 250,
+        //                 opacity: 1,
+        //             })
+        //             .to(".compute_center_card_left", {
+        //                 // ease: "power4.out",
+        //                 duration: 0.3,
+        //                 x: 260,
+        //             })
+        //             .to(".compute_center_card_left", {
+        //                 // ease: "power4.out",
+        //                 duration: 0.3,
+        //                 // duration:0.5,
+        //                 x: 240,
+        //             })
+        //             .to(".compute_center_card_left", {
+        //                 // ease: "power4.out",
+        //                 duration: 0.5,
+        //                 x: 255,
+        //             })
+        //             .to(".compute_center_card_left", {
+        //                 // ease: "power4.out",
+        //                 duration: 0.5,
+        //                 // duration:0.5,
+        //                 x: 245,
+        //             })
+        //             .to(".compute_center_card_left", {
+        //                 // ease: "power4.out",
+        //                 duration: 0.5,
+        //                 x: 250,
+        //             })
 
-                const time_line_center_card2 = gsap.timeline()
-                time_line_center_card2
-                    .to(".compute_center_card_left_right", {
-                        duration: 0.5,
-                        delay: 11.5,
-                        x: -250,
-                        opacity: 1,
-                    })
-                    .to(".compute_center_card_left_right", {
-                        // ease: "power4.out",
-                        duration: 0.3,
-                        x: -260,
-                    })
-                    .to(".compute_center_card_left_right", {
-                        // ease: "power4.out",
-                        duration: 0.3,
-                        // duration:0.5,
-                        x: -240,
-                    })
-                    .to(".compute_center_card_left_right", {
-                        // ease: "power4.out",
-                        duration: 0.5,
-                        x: -255,
-                    })
-                    .to(".compute_center_card_left_right", {
-                        // ease: "power4.out",
-                        duration: 0.5,
-                        // duration:0.5,
-                        x: -245,
-                    })
-                    .to(".compute_center_card_left_right", {
-                        // ease: "power4.out",
-                        duration: 0.5,
-                        x: -250,
-                    })
+        //         const time_line_center_card2 = gsap.timeline()
+        //         time_line_center_card2
+        //             .to(".compute_center_card_left_right", {
+        //                 duration: 0.5,
+        //                 delay: 11.5,
+        //                 x: -250,
+        //                 opacity: 1,
+        //             })
+        //             .to(".compute_center_card_left_right", {
+        //                 // ease: "power4.out",
+        //                 duration: 0.3,
+        //                 x: -260,
+        //             })
+        //             .to(".compute_center_card_left_right", {
+        //                 // ease: "power4.out",
+        //                 duration: 0.3,
+        //                 // duration:0.5,
+        //                 x: -240,
+        //             })
+        //             .to(".compute_center_card_left_right", {
+        //                 // ease: "power4.out",
+        //                 duration: 0.5,
+        //                 x: -255,
+        //             })
+        //             .to(".compute_center_card_left_right", {
+        //                 // ease: "power4.out",
+        //                 duration: 0.5,
+        //                 // duration:0.5,
+        //                 x: -245,
+        //             })
+        //             .to(".compute_center_card_left_right", {
+        //                 // ease: "power4.out",
+        //                 duration: 0.5,
+        //                 x: -250,
+        //             })
 
-                gsap.to(".compute_title span", {
-                    delay: 11.5,
-                    y: -60,
-                    opacity: 1,
-                    duration: 0.5,
-                    stagger: 0.2,
-                })
-                gsap.to(".compute_text p", {
-                    delay: 11.5,
-                    y: -20,
-                    opacity: 1,
-                    duration: 0.5,
-                    stagger: 0.2,
-                })
-                gsap.fromTo(
-                    ".compute_card_animation",
-                    {
-                        opacity: 0,
-                        scale: 0,
-                        rotate: 270,
-                        marginTop: -266,
-                    },
-                    {
-                        delay: 11.5,
-                        duration: 1,
-                        opacity: 1,
-                        scale: 1,
-                        rotate: 360,
-                        marginTop: -56,
-                    }
-                )
-            }
-        }
-        header_hero_animation_fun()
+        //         gsap.to(".compute_title span", {
+        //             delay: 11.5,
+        //             y: -60,
+        //             opacity: 1,
+        //             duration: 0.5,
+        //             stagger: 0.2,
+        //         })
+        //         gsap.to(".compute_text p", {
+        //             delay: 11.5,
+        //             y: -20,
+        //             opacity: 1,
+        //             duration: 0.5,
+        //             stagger: 0.2,
+        //         })
+        //         gsap.fromTo(
+        //             ".compute_card_animation",
+        //             {
+        //                 opacity: 0,
+        //                 scale: 0,
+        //                 rotate: 270,
+        //                 marginTop: -266,
+        //             },
+        //             {
+        //                 delay: 11.5,
+        //                 duration: 1,
+        //                 opacity: 1,
+        //                 scale: 1,
+        //                 rotate: 360,
+        //                 marginTop: -56,
+        //             }
+        //         )
+        //     }
+        // }
+        // header_hero_animation_fun()
+
         gsap.fromTo(
             ".compliant-ready-content",
             {
@@ -355,6 +365,7 @@ export default function Home() {
             }
         )
 
+<<<<<<< HEAD
         gsap.timeline({
             scrollTrigger: {
                 trigger: ".site-control-wrapper",
@@ -415,6 +426,8 @@ export default function Home() {
                 ease: "linear" // Smooth continuous rotation
             }, "<");
 
+=======
+>>>>>>> b00479d1a7e263b743bd66cd7daa6c3d9e603923
         const varifable = gsap.utils.toArray(`.varifable-basic`) as HTMLDivElement[]
 
         varifable.map((e, i) => {
@@ -464,7 +477,6 @@ export default function Home() {
     return (
         <>
             <div className="hero_header_compute_bg">
-                <video src={hero} ref={videoRef} muted className="hero_bg_bideo"></video>
                 <div className="Header_top top_animation">
                     <p className="Header_top_text">Verifiable Builds Launches with GitLab and Github</p>
                 </div>
@@ -532,215 +544,15 @@ export default function Home() {
                         </button>
                     </div>
                 </header>
-
-                <div className="hero_big_wrapper">
-                    <div className="hero_big_container">
-                        <nav className="nav">
-                            <ul className="nav_list">
-                                <li className="nav_item">
-                                    <Link href={"#"} className="nav_link ">
-                                        Overview
-                                    </Link>
-                                </li>
-                                <li className="nav_item">
-                                    <div className="border_r"></div>
-                                </li>
-                                <li className="nav_item">
-                                    <Link href={"#"} className="nav_link  pl-7">
-                                        Technology
-                                    </Link>
-                                </li>
-                                <li className="nav_item">
-                                    <div className="border_r"></div>
-                                </li>
-                                <li className="nav_item">
-                                    <Link href={"#"} className="nav_link  pl-7">
-                                        Customer Testimonials
-                                    </Link>
-                                </li>
-                                <li className="nav_item">
-                                    <div className="border_r"></div>
-                                </li>
-                                <li className="nav_item">
-                                    <Link href={"#"} className="nav_link pl-7">
-                                        Resources
-                                    </Link>
-                                </li>
-                            </ul>
-                        </nav>
-                        <section className="hero">
-                            <div className="hero_container">
-                                <h1 className="hero_title">
-                                    <span className="hero_title_span">Verify</span> <span className="hero_title_span">to</span> <span className="hero_title_span">Trust,</span>{" "}
-                                    <span className="hero_title_span">AI</span>
-                                </h1>
-                                <div className="hero_text">
-                                    <p>Introducing Verifiable Compute.</p>
-                                    <p>Ready for Agentic AI.</p>
-                                </div>
-                                <div className="hero_bottom_box">
-                                    <p className="hero_bottom_text">Certify and Protect Agentic Workflows with </p>
-                                    <span className="hero_bottom_text">
-                                        <span>the</span> <span>First</span>
-                                        <span className="hero_bottom_text_word">Auditable</span>
-                                        <span className="hero_bottom_text_word_2">Persistent</span>
-                                        <span className="hero_bottom_text_word_3">Secure</span>
-                                        <span>Proof</span>
-                                        <span>of</span>
-                                        <span>Governance.</span>
-                                    </span>
-                                </div>
-                                <p className="hero_mobile_bottom_text">
-                                    Certify and Protect Agentic Workflows with the First <span>Auditable</span> Proof of Governance.
-                                </p>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-
-                <section className="compute">
-                    <div className="compute_container">
-                        <h2 className="compute_title">
-                            <span>A</span> <span>New</span> <span>Era</span> <span>of</span> <span>Compute</span>
-                        </h2>
-                        <div className="compute_text">
-                            <p>Launching in 2025.</p>
-                            <p>Evolves Trust for Agentic AI</p>
-                        </div>
-                        <div className="compute_center">
-                            <div className="compute_center_card compute_center_card_left">
-                                <Image style={{ height: "auto" }} src={compute1} alt="" className="compute_card_img" />
-                            </div>
-                            <div className="compute_center_logo">
-                                <Image style={{ height: "auto" }} src={compute_center_logo} alt="" className="center_logo" />
-                            </div>
-                            <div className="compute_center_card compute_center_card_2 compute_center_card_left_right">
-                                <Image style={{ height: "auto" }} src={compute2} alt="" className="compute_card_img" />
-                            </div>
-                        </div>
-                        <div
-                            className="compute_bottom_card compute_card_animation scale_0"
-                            style={{
-                                backgroundImage: `url(${varifable_card.src})`,
-                            }}
-                        >
-                            <h3 className="compute_card_title">
-                                Introduction: <br />
-                                Verifiable Compute
-                            </h3>
-                            <h4 className="compute_card_title_2 line_27">How does it work?</h4>
-                            <button className="compute_card_btn">
-                                <span className="compute_card_btn_round"></span>
-                                Video: Learn more
-                            </button>
-                        </div>
-                    </div>
-                </section>
             </div>
 
             {/* <Header_hero/> */}
 
-            <section className="varifable">
-                <div className="varifable-container">
-                    <div className="varifable-info">
-                        <h2 className="varifable-basic">The Basics</h2>
-                        <h2 className="varifable-title reveal">Verifiable Compute</h2>
-                        <div className="verify reveal">
-                            <p className="verify-text">Let&apos;s you Verify:</p>
-                            <div className="verify-cards">
-                                <div className="verify-card">
-                                    <div className="verify-card-img">
-                                        <Image style={{ height: "auto" }} src={database} alt="" />
-                                        <Image style={{ height: "auto" }} className="arrows" src={arrow} alt="" />
-                                    </div>
-                                    <div>
-                                        <p className="verify-card-text">
-                                            What data <br />
-                                            goes into an <br />
-                                            AI workflow
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="verify-card">
-                                    <div className="verify-card-img">
-                                        <Image style={{ height: "auto" }} src={cpu} alt="" />
-                                        <Image style={{ height: "auto" }} className="arrows" src={arrow} alt="" />
-                                    </div>
-                                    <div>
-                                        <p className="verify-card-text">What code is run and where it is executed</p>
-                                    </div>
-                                </div>
-                                <div className="verify-card">
-                                    <div className="verify-card-img">
-                                        <Image style={{ height: "auto" }} src={fingerprint} alt="" />
-                                        <Image style={{ height: "auto" }} className="arrows" src={arrow} alt="" />
-                                    </div>
-                                    <div>
-                                        <p className="verify-card-text">The AI output is genuine and secure</p>
-                                    </div>
-                                </div>
-                                <div className="verify-card">
-                                    <div className="verify-card-img">
-                                        <Image style={{ height: "auto" }} src={certificate} alt="" />
-                                    </div>
-                                    <div>
-                                        <p className="verify-card-text">AI is governed by policies and regulations</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            className="compute_bottom_card varifable_bottom_card reveal"
-                            style={{
-                                backgroundImage: `url(${compute_card.src})`,
-                            }}
-                        >
-                            <span className="varifable_free_text">Free</span>
-                            <h4 className="compute_card_title_2 varifable_bottom_card_text">See Verifiable Compute implementations.</h4>
-                            <button className="compute_card_btn">
-                                <span className="compute_card_btn_round"></span>
-                                View Demo
-                            </button>
-                        </div>
-                    </div>
-                    <div className="evolved">
-                        <div className="evolved-info">
-                            <h2 className="varifable-basic">The Problem</h2>
-                        </div>
-                        <h2 className="evolved-title reveal">Evolved AI = Evolved Threats</h2>
-                    </div>
-                </div>
-            </section>
+            <Hero />
 
-            <section className="risk">
-                <video src={evolved_bg} muted loop autoPlay className="evolved_bg_bideo"></video>
-                <div className="risk_container">
-                    <div className="risk-info reveal">
-                        <p className="risk-text-one">
-                            <span className="risk-span">91% of enterprises</span> face software
-                        </p>
-                        <p className="risk-text-two ">supply chain attacks each year.</p>
-                        <p className="risk_title mb-2 ">91% of enterprises face software</p>
-                        <p className="risk_title mb-10 ">supply chain attacks each year.</p>
-                        <div
-                            style={{
-                                maxWidth: "533px",
-                            }}
-                        >
-                            <p className="risk-text-three risk_center_text mb-10 reveal">
-                                This problem will grow exponentially software as billions of autonomous AI agents are assembled and provisioned in the next 5 years.
-                            </p>
-                            <p className="risk-text-four risk_center_text mb-100 reveal">
-                                You need new solutions to address new vulnerabilities distributed across your AI developers, partners, and suppliers.
-                            </p>
+            <Varifable />
 
-                            <p className="risk-text-five reveal">
-                                You can&apos;t risk <br /> blind trust of AI
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <Risk />
 
             <section className="dont_bg">
                 <div className="dont">
@@ -848,69 +660,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className={`site-control-wrapper_wrap`}>
-                <section className={`site-control-wrapper`}>
-                    <div className="container">
-                        <div className="site-control">
-                            <h2 className="site-control__title reveal">A Control Plane for Autonomous AI</h2>
-                            <button className="site-control__btn reveal">
-                                <span className="site-control__span" /> Learn More about Agentic AI
-                            </button>
-                            <h3 className="site-control__title-text reveal">Verifiable Compute enables best-in-class compliance as you:</h3>
-                        </div>
-                        <ul className="site-control__list reveal">
-                            <div className="site-control__list_box site_control__list_box_1">
-                                <li className="site-control__item">
-                                    <div className="site-control__list-img">
-                                        <Image style={{ height: "auto" }} className="site-control__img" src={media_1} alt="control-media" width={116} />
-                                    </div>
-                                    <h2>Create</h2>
-                                    <h3>Agents</h3>
-                                    <Image style={{ height: "auto" }} src={line} className="site_controll_card_line_1" alt="" />
-                                </li>
-                                <span className="site_controll_card_line"></span>
-                                <p className="site_controll_text">Auditable records of an agent`&apos;s components and training.</p>
-                            </div>
-                            <div className="site-control__list_box">
-                                <li className="site-control__item">
-                                    <div className="site-control__list-img">
-                                        <Image style={{ height: "auto" }} className="site-control__img" src={media_2} alt="control-media" width={116} />
-                                    </div>
-                                    <h2>Provision</h2>
-                                    <h3>Agents</h3>
-                                    <Image style={{ height: "auto" }} src={line} className="site_controll_card_line_1" alt="" />
-                                </li>
-                                <span className="site_controll_card_line"></span>
-                                <p className="site_controll_text">Authenticate what an agent is doing and control their dataflow and actions.</p>
-                            </div>
-                            <div className="site-control__list_box">
-                                <li className="site-control__item">
-                                    <div className="site-control__list-img">
-                                        <Image style={{ height: "auto" }} className="site-control__img" src={media_3} alt="control-media" width={116} />
-                                    </div>
-                                    <h2>Operate</h2>
-                                    <h3>Agents</h3>
-                                    <Image style={{ height: "auto" }} src={line} className="site_controll_card_line_1" alt="" />
-                                </li>
-                                <span className="site_controll_card_line"></span>
-                                <p className="site_controll_text">Tamper-proof credentials that can be validated in any environment.</p>
-                            </div>
-                            <div className="site-control__list_box">
-                                <li className="site-control__item">
-                                    <div className="site-control__list-img">
-                                        <Image style={{ height: "auto" }} className="site-control__img" src={media_4} alt="control-media" width={116} />
-                                    </div>
-                                    <h2>Network</h2>
-                                    <h3>Agents</h3>
-                                    <Image style={{ height: "auto" }} src={line} className="site_controll_card_line_1" alt="" />
-                                </li>
-                                <span className="site_controll_card_line"></span>
-                                <p className="site_controll_text">Align agent-to-agent interactions to policies at runtime.</p>
-                            </div>
-                        </ul>
-                    </div>
-                </section>
-            </section>
+            <ControlPlane />
 
             <section className="bulid">
                 <div className="build_container">
@@ -970,9 +720,11 @@ export default function Home() {
 
             <Trust />
 
-            <Protsessor />
+            <VideoScroll />
 
-            <section className="revolution-section">
+            {/* <Protsessor /> */}
+
+            {/* <section className="revolution-section">
                 <div className="revolution-section__container">
                     <div className="revolution-section__content">
                         <div className="revolution-section__header">
@@ -1123,9 +875,9 @@ export default function Home() {
                         <h3 className="secure-ai-infrastructure__description">Rooted in the Silicon of the Most Powerful AI Processors.</h3>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
-            <section className="zero-trust-wrapper">
+            {/* <section className="zero-trust-wrapper">
                 <div className="zero-trust">
                     <div className="zero-trust__content">
                         <h3 className="zero-trust__title reveal">Zero-trust </h3>
@@ -1136,9 +888,9 @@ export default function Home() {
                         <Image style={{ height: "auto" }} src={mother_board} alt="Mother Board" className="zero-trust__image" />
                     </div>
                 </div>
-            </section>
+            </section> */}
 
-            <section className="compliant-ready-section">
+            {/* <section className="compliant-ready-section">
                 <div className="compliant-ready-content">
                     <h3 className="compliant-ready-title reveal">Compliant Ready</h3>
 
@@ -1168,9 +920,9 @@ export default function Home() {
 
                     <Image style={{ height: "auto" }} src={dell_server} alt="Dell Server Image" className="compliant-ready-image reveal" />
                 </div>
-            </section>
+            </section> */}
 
-            <Ai />
+            {/* <Ai /> */}
 
             <section className="trust">
                 <div className="trust_container">

@@ -1,6 +1,6 @@
 "use client"
 
-import "./ui/style.css"
+import "./ui/style.scss"
 
 import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
