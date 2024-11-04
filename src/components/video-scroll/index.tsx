@@ -48,7 +48,7 @@ export const VideoScroll: FC<IVideoScroll> = () => {
                     // scrub: 1.2,
                     // scrub: 1.1,
                     scrub: 2,
-                    markers: true,
+                    // markers: true,
                 },
             })
 

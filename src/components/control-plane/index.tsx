@@ -6,6 +6,7 @@ import styles from "./index.module.scss"
 import Image from "next/image"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
+import { dataList } from "./data/dataList"
 
 interface IControlPlane {}
 
@@ -76,54 +77,21 @@ export const ControlPlane: FC<IControlPlane> = () => {
                     <h3 className="site-control__title-text reveal">Verifiable Compute enables best-in-class compliance as you:</h3>
                 </div>
                 <ul className="site-control__list reveal">
-                    <div className="site-control__list_box site_control__list_box_1">
-                        <li className="site-control__item">
-                            <div className="site-control__list-img">
-                                <Image className="site-control__img" src={"/assets/home/control-plane/media-1.png"} alt="control-media" width={116} height={116} />
-                            </div>
-                            <h2>Create</h2>
-                            <h3>Agents</h3>
-                            <Image style={{ height: "auto" }} src={"/assets/home/control-plane/line.svg"} className="site_controll_card_line_1" width={116} height={116} alt="" />
-                        </li>
-                        <span className="site_controll_card_line"></span>
-                        <p className="site_controll_text">Auditable records of an agent`&apos;s components and training.</p>
-                    </div>
-                    <div className="site-control__list_box">
-                        <li className="site-control__item">
-                            <div className="site-control__list-img">
-                                <Image style={{ height: "auto" }} className="site-control__img" src={"/assets/home/control-plane/media-2.png"} alt="control-media" width={116} height={116} />
-                            </div>
-                            <h2>Provision</h2>
-                            <h3>Agents</h3>
-                            <Image style={{ height: "auto" }} src={"/assets/home/control-plane/line.svg"} className="site_controll_card_line_1" width={116} height={116} alt="" />
-                        </li>
-                        <span className="site_controll_card_line"></span>
-                        <p className="site_controll_text">Authenticate what an agent is doing and control their dataflow and actions.</p>
-                    </div>
-                    <div className="site-control__list_box">
-                        <li className="site-control__item">
-                            <div className="site-control__list-img">
-                                <Image style={{ height: "auto" }} className="site-control__img" src={"/assets/home/control-plane/media-3.png"} alt="control-media" width={116} height={116} />
-                            </div>
-                            <h2>Operate</h2>
-                            <h3>Agents</h3>
-                            <Image style={{ height: "auto" }} src={"/assets/home/control-plane/line.svg"} className="site_controll_card_line_1" width={116} height={116} alt="" />
-                        </li>
-                        <span className="site_controll_card_line"></span>
-                        <p className="site_controll_text">Tamper-proof credentials that can be validated in any environment.</p>
-                    </div>
-                    <div className="site-control__list_box">
-                        <li className="site-control__item">
-                            <div className="site-control__list-img">
-                                <Image style={{ height: "auto" }} className="site-control__img" src={"/assets/home/control-plane/media-4.png"} alt="control-media" width={116} height={116} />
-                            </div>
-                            <h2>Network</h2>
-                            <h3>Agents</h3>
-                            <Image style={{ height: "auto" }} src={"/assets/home/control-plane/line.svg"} className="site_controll_card_line_1" width={116} height={116} alt="" />
-                        </li>
-                        <span className="site_controll_card_line"></span>
-                        <p className="site_controll_text">Align agent-to-agent interactions to policies at runtime.</p>
-                    </div>
+                    {dataList.map((e, i) => (
+                        <div className="site-control__list_box site_control__list_box_1" key={i}>
+                            <li className="site-control__item">
+                                <div className="site-control__list-img">
+                                    <Image className="site-control__img" src={e.image} alt="control-media" width={116} height={116} quality={100} />
+                                    {/* <video src={e.video} autoPlay loop playsInline /> */}
+                                </div>
+                                <h2>{e.title}</h2>
+                                <h3>{e.subtitle}</h3>
+                                <Image style={{ height: "auto" }} src={"/assets/home/control-plane/line.svg"} className="site_controll_card_line_1" width={116} height={116} alt="" />
+                            </li>
+                            <span className="site_controll_card_line"></span>
+                            <p className="site_controll_text">{e.text}</p>
+                        </div>
+                    ))}
                 </ul>
             </div>
         </section>
