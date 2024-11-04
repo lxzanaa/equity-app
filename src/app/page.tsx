@@ -79,6 +79,7 @@ import { VideoScroll } from "@/components/video-scroll"
 import { ControlPlane } from "@/components/control-plane"
 import { Hero } from "@/components/hero"
 import { Varifable } from "@/components/varifable"
+import { Risk } from "@/components/risk"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -482,35 +483,7 @@ export default function Home() {
 
             <Varifable />
 
-            <section className="risk">
-                <video src={evolved_bg} muted loop autoPlay className="evolved_bg_bideo"></video>
-                <div className="risk_container">
-                    <div className="risk-info reveal">
-                        <p className="risk-text-one">
-                            <span className="risk-span">91% of enterprises</span> face software
-                        </p>
-                        <p className="risk-text-two ">supply chain attacks each year.</p>
-                        <p className="risk_title mb-2 ">91% of enterprises face software</p>
-                        <p className="risk_title mb-10 ">supply chain attacks each year.</p>
-                        <div
-                            style={{
-                                maxWidth: "533px",
-                            }}
-                        >
-                            <p className="risk-text-three risk_center_text mb-10 reveal">
-                                This problem will grow exponentially software as billions of autonomous AI agents are assembled and provisioned in the next 5 years.
-                            </p>
-                            <p className="risk-text-four risk_center_text mb-100 reveal">
-                                You need new solutions to address new vulnerabilities distributed across your AI developers, partners, and suppliers.
-                            </p>
-
-                            <p className="risk-text-five reveal">
-                                You can&apos;t risk <br /> blind trust of AI
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <Risk />
 
             <section className="dont_bg">
                 <div className="dont">
