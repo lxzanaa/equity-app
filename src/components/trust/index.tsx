@@ -2,10 +2,8 @@
 
 import "./ui/style.css"
 
-import { useEffect } from "react"
 import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
-gsap.registerPlugin(ScrollTrigger)
 
 import Image from "next/image"
 
@@ -28,7 +26,10 @@ import phone from "../img/trust_evolves/phone.png"
 import input from "../img/trust_evolves/input.png"
 import button from "../img/trust_evolves/button.svg"
 import cursor from "../img/trust_evolves/cursor.svg"
+
 import { useGSAP } from "@gsap/react"
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Trust() {
     useGSAP(() => {
@@ -58,7 +59,7 @@ export default function Trust() {
             .to(".trust-evolves__title", {
                 delay: 3.9, // Bu yerda kechiktirishni tugatish qismiga qo'shing
                 scale: 1.7,
-                opacity: 0,
+                autoAlpha: 0,
                 duration: 1,
                 ease: "power3.inOut",
             })
@@ -319,13 +320,13 @@ export default function Trust() {
                 ".text",
                 {
                     rotateY: 90,
-                    opacity: 0,
+                    autoAlpha: 0,
                 },
                 {
                     delay: 9,
                     duration: 0.5,
                     rotateY: 0,
-                    opacity: 1,
+                    autoAlpha: 1,
                     // scrollTrigger: {
                     //     trigger: ".trust-evolves",
                     //     start: "-40% top",
@@ -351,17 +352,21 @@ export default function Trust() {
         )
 
         mainTL.add(
-            gsap.to(".trust_title_3", {
-                delay: 10.1,
-                duration: 0.5,
-                y: 60,
-                opacity: 1,
-                // scrollTrigger: {
-                //     trigger: ".trust-evolves",
-                //     start: "-40% top",
-                //     end: "-40% top",
-                // },
-            }),
+            gsap.fromTo(
+                ".trust_title_3",
+                { yPercent: 50 },
+                {
+                    delay: 10.1,
+                    duration: 0.5,
+                    yPercent: 0,
+                    autoAlpha: 1,
+                    // scrollTrigger: {
+                    //     trigger: ".trust-evolves",
+                    //     start: "-40% top",
+                    //     end: "-40% top",
+                    // },
+                }
+            ),
             0
         )
 
@@ -373,17 +378,23 @@ export default function Trust() {
                 //     end: "-40% top",
                 // },
             })
-            .to(".logo_aimation", {
-                delay: 10.1,
-                duration: 0.5,
-                marginBottom: 0,
-                stagger: 0.1,
-                ease: "power1.inOut",
-            })
+            .fromTo(
+                ".logo_aimation",
+                {
+                    yPercent: 120,
+                },
+                {
+                    delay: 10.1,
+                    duration: 0.5,
+                    yPercent: 0,
+                    stagger: 0.1,
+                    ease: "power1.inOut",
+                }
+            )
             .to(".logo_right_animation", {
                 duration: 0.5,
                 right: 0,
-                opacity: 1,
+                autoAlpha: 1,
             })
 
         mainTL.add(logo_box_time_line, 0)
@@ -435,7 +446,7 @@ export default function Trust() {
                     .to([".button", ".cursor"], {
                         duration: 0.5,
                         rotateY: 90,
-                        opacity: 0,
+                        autoAlpha: 0,
                     })
 
                 mainTL.add(timeline_3d, 5.7)
@@ -486,7 +497,7 @@ export default function Trust() {
                     .to([".button", ".cursor"], {
                         duration: 0.5,
                         rotateY: 90,
-                        opacity: 0,
+                        autoAlpha: 0,
                     })
 
                 mainTL.add(timeline_3d, 5.7)

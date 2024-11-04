@@ -42,6 +42,7 @@ import sertificate_container_bg from "./img/ai/sertificate_container_bg.png"
 import sertificate_right from "./img/ai/sertificate_right_img.png"
 
 import trust_right from "@/app/img/trust/trust_right.svg"
+import trust_right_active from "@/app/img/trust/trust_right_active.svg"
 import banner from "./img/customer/banner.png"
 import banner2 from "./img/customer/banner2.png"
 import banner3 from "./img/customer/banner3.png"
@@ -81,6 +82,7 @@ export default function Home() {
     const [site_conrtol_animation, set_site_conrtol_animation] = useState<boolean>(false)
     const [across_text, setAcross_text] = useState(false)
     const videoRef = useRef<HTMLVideoElement>(null)
+    const [trust, setTrust] = useState(false)
 
     useEffect(() => {
         function header_hero_animation_fun() {
@@ -359,7 +361,6 @@ export default function Home() {
                 start: "top top",
                 end: "top+=100% top",
                 scrub: 2,
-
                 toggleActions: "play none none reset",
             },
         })
@@ -391,12 +392,28 @@ export default function Home() {
                 },
                 {
                     duration: 0.5,
-                    translateY: "60",
+                    yPercent: "-30",
                     opacity: 1,
                     stagger: 0.5,
                 },
                 "<"
             )
+
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".site-control-wrapper",
+                start: "top top",
+                end: "top+=100% top",
+                scrub: 2,
+                toggleActions: "play none none reset",
+            },
+        })
+            .to(".control__img_1", {
+                duration: 1,
+                rotate: 360,
+                ease: "linear" // Smooth continuous rotation
+            }, "<");
 
         const varifable = gsap.utils.toArray(`.varifable-basic`) as HTMLDivElement[]
 
@@ -1166,16 +1183,20 @@ export default function Home() {
                             </p>
                         </div>
                         <div className="turst_right reveal">
-                            <Image style={{ height: "auto" }} src={trust_right} alt="trust_right" className="turst_right_img" />
+                            {trust ?
+                                <Image style={{ height: "auto" }} src={trust_right_active} alt="trust_right" className="turst_right_img" />
+                                :
+                                <Image style={{ height: "auto" }} src={trust_right} alt="trust_right" className="turst_right_img" />
+                            }
                         </div>
                     </div>
                     <div className="trust_bottom reveal">
-                        <div className="trust_bottom_left ">
+                        <button onClick={() => setTrust(!trust)} className="trust_bottom_left ">
                             <h3 className="trust_bottom_left_title">Audit Certificate</h3>
-                            <div className="trust_bottom_left_toogle">
-                                <span className="trust_bottom_left_toogle_round" />
+                            <div className={`trust_bottom_left_toogle ${trust ? "trust_bottom_left_toogle_active" : "trust_bottom_left_toogle_default"}`}>
+                                <span className={`trust_bottom_left_toogle_round_default ${trust ? "trust_bottom_left_toogle_round_active" : "trust_bottom_left_toogle_round"}`} />
                             </div>
-                        </div>
+                        </button>
                         <div className="trust_bottom_right">
                             <div className="trust_bottom_right_text_box">
                                 <span className="trust_bottom_right_text_box_round green" />
