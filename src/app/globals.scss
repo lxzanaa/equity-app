@@ -1066,6 +1066,30 @@ a {
         padding-top: 0;
     }
 
+    .risk_points {
+        position: relative;
+        bottom: unset;
+        right: unset;
+
+        width: 95%;
+        height: 400px;
+        margin-inline: auto;
+    }
+
+    .risk_points_item {
+        max-width: 120px;
+        gap: 10px;
+
+        font-size: 12px;
+
+        img {
+            position: relative;
+
+            height: 35px;
+            width: auto;
+        }
+    }
+
     .verify {
         flex-direction: column;
         gap: 30px;

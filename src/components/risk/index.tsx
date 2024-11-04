@@ -31,7 +31,7 @@ export const Risk: FC<IRisk> = () => {
                     start: "top top+=30%",
                     end: "bottom top",
                     toggleActions: "play none none reverse",
-                    markers: true,
+                    // markers: true,
                 },
             }
         )
