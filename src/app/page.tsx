@@ -75,6 +75,7 @@ import { Navigation, Autoplay } from "swiper/modules"
 import { dataHeroOpportunity } from "@/data/dataHeroOpportunity"
 import clsx from "clsx"
 import { Ai } from "@/components/ai"
+import { VideoScroll } from "@/components/video-scroll"
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
@@ -953,9 +954,11 @@ export default function Home() {
 
             <Trust />
 
-            <Protsessor />
+            <VideoScroll />
 
-            <section className="revolution-section">
+            {/* <Protsessor /> */}
+
+            {/* <section className="revolution-section">
                 <div className="revolution-section__container">
                     <div className="revolution-section__content">
                         <div className="revolution-section__header">
@@ -1106,9 +1109,9 @@ export default function Home() {
                         <h3 className="secure-ai-infrastructure__description">Rooted in the Silicon of the Most Powerful AI Processors.</h3>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
-            <section className="zero-trust-wrapper">
+            {/* <section className="zero-trust-wrapper">
                 <div className="zero-trust">
                     <div className="zero-trust__content">
                         <h3 className="zero-trust__title reveal">Zero-trust </h3>
@@ -1119,9 +1122,9 @@ export default function Home() {
                         <Image style={{ height: "auto" }} src={mother_board} alt="Mother Board" className="zero-trust__image" />
                     </div>
                 </div>
-            </section>
+            </section> */}
 
-            <section className="compliant-ready-section">
+            {/* <section className="compliant-ready-section">
                 <div className="compliant-ready-content">
                     <h3 className="compliant-ready-title reveal">Compliant Ready</h3>
 
@@ -1151,9 +1154,9 @@ export default function Home() {
 
                     <Image style={{ height: "auto" }} src={dell_server} alt="Dell Server Image" className="compliant-ready-image reveal" />
                 </div>
-            </section>
+            </section> */}
 
-            <Ai />
+            {/* <Ai /> */}
 
             <section className="trust">
                 <div className="trust_container">
