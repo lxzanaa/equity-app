@@ -351,7 +351,6 @@ a {
     margin-right: auto;
     padding-left: 20px;
     padding-right: 20px;
-
     padding-top: 134px;
     padding-bottom: 20px;
 }
@@ -398,6 +397,7 @@ a {
 
 .compute_center {
     position: absolute;
+    z-index: -1;
     top: 53%;
     left: 50%;
     translate: -50% -50%;
@@ -457,7 +457,7 @@ a {
 .hero_card {
     position: absolute;
     bottom: 20px;
-    right: 0;
+    right: 20px;
 }
 
 .compute_card_animation {
@@ -1575,7 +1575,7 @@ a {
 }
 
 .runtime {
-    padding-top: 271px;
+    padding-top: 140px;
     padding-bottom: 141px;
     background-color: #fff;
     position: relative;
@@ -3443,14 +3443,16 @@ a {
 }
 
 .across_title {
+    margin-bottom: 21px;
+
     font-size: 56px;
     font-weight: 400;
-    line-height: 56px;
+    line-height: 110%;
     letter-spacing: -0.01em;
+
     background: linear-gradient(100.9deg, #000000 3.51%, #8b8b8b 66.48%);
     -webkit-background-clip: text;
     color: transparent;
-    margin-bottom: 21px;
 }
 
 .across_arrow {
