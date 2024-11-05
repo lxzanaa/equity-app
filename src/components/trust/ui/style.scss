@@ -272,9 +272,13 @@
     .trust-evolves {
         display: none;
     }
+    .trust_wrap{
+        height: auto;
+    }
 }
 
 @media (min-width: 1024px) {
+    
     .text {
         font-size: 80px;
         line-height: 80px;

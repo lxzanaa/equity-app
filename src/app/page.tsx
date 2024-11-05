@@ -83,9 +83,11 @@ export default function Home() {
     const [across_text, setAcross_text] = useState(false)
     const videoRef = useRef<HTMLVideoElement>(null)
     const [trust, setTrust] = useState(false)
+    const [windowInnerWidth, setWindeowInnerWidth] = useState(window.innerWidth)
 
     useEffect(() => {
         function header_hero_animation_fun() {
+            setWindeowInnerWidth(window.innerWidth)
             if (window.innerWidth > 1024) {
                 if (videoRef.current) {
                     videoRef.current.play()
@@ -459,7 +461,7 @@ export default function Home() {
                 }
             )
         })
-    }, [])
+    }, [windowInnerWidth])
 
     return (
         <>

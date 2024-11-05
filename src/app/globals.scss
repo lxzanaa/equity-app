@@ -409,7 +409,7 @@ a {
 
 .compute_card_img {
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .compute_bottom_card {
@@ -503,6 +503,12 @@ a {
         right: 20px;
     }
 }
+@media(max-width:1024px){
+    .compute_card_img{
+        width: 320px;
+        object-fit: contain;
+    }
+}
 
 @media (max-width: 768px) {
     .compute {
@@ -513,6 +519,7 @@ a {
 
     .compute_center {
         flex-direction: column;
+        gap: 50px;
     }
 
     .compute_title {
@@ -542,9 +549,13 @@ a {
     }
 
     .compute_card_img {
-        width: 100%;
+        width: 300px;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
+    }
+    .compute_card_animation{
+        position: static;
+        display: none;
     }
 }
 
@@ -2477,6 +2488,11 @@ a {
     .site-control-wrapper {
         padding-top: 60px;
         padding-bottom: 150px;
+        height: auto;
+        position: static;
+    }
+    .site-control-wrapper_wrap{
+        height: auto;
     }
 
     .site-control__list_box:nth-child(2n) {
