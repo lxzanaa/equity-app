@@ -90,10 +90,10 @@ export default function Home() {
         if (typeof window !== "undefined") {
             // Set initial window width
             setWindowInnerWidth(window.innerWidth);
-    
+
             // Event listener to handle window resize
             window.addEventListener("resize", updateWindowWidth);
-    
+
             // Define the function as a function expression
             const header_hero_animation_fun = () => {
                 if (window.innerWidth > 1024) {
@@ -112,19 +112,19 @@ export default function Home() {
                         stagger: 0.1,
                     })
                     const timeline = gsap.timeline()
-    
+
                     timeline
                         .to(".jump_animation", { scale: 1 }) // Scale 1.2 ga o'tadi
                         .to(".jump_animation", { scale: 0.9 }) // Scale 1.2 ga o'tadi
                         .to(".jump_animation", { scale: 1 }) // Scale 1 ga qaytadi
-    
+
                     const time_line_navlist = gsap.timeline()
-    
+
                     time_line_navlist
                         .to(".header_nav_list", { scale: 1 }) // Scale 0 ga ketadi
                         .to(".header_nav_list", { scale: 0.9 }) // Scale 1.2 ga o'tadi
                         .to(".header_nav_list", { scale: 1 }) // Scale 1 ga qaytadi
-    
+
                     gsap.to(".hero_title_span", {
                         y: -100,
                         opacity: 1,
@@ -154,7 +154,7 @@ export default function Home() {
                         duration: 0.3,
                         delay: 0.3,
                     })
-    
+
                     const word_timeLine = gsap.timeline()
                     word_timeLine
                         .to(".hero_bottom_text_word", {
@@ -180,7 +180,7 @@ export default function Home() {
                             duration: 0.3,
                             delay: 0.3,
                         })
-    
+
                     gsap.to(".hero_big_wrapper", {
                         ease: "slow(0.3,0.7,false)",
                         duration: 0.5,
@@ -206,7 +206,7 @@ export default function Home() {
                         duration: 0.5,
                         delay: 11,
                     })
-    
+
                     const time_line_center_card = gsap.timeline()
                     time_line_center_card
                         .to(".compute_center_card_left", {
@@ -242,7 +242,7 @@ export default function Home() {
                             duration: 0.5,
                             x: 250,
                         })
-    
+
                     const time_line_center_card2 = gsap.timeline()
                     time_line_center_card2
                         .to(".compute_center_card_left_right", {
@@ -278,7 +278,7 @@ export default function Home() {
                             duration: 0.5,
                             x: -250,
                         })
-    
+
                     gsap.to(".compute_title span", {
                         delay: 11.5,
                         y: -60,
@@ -313,7 +313,8 @@ export default function Home() {
                 }
             }
             header_hero_animation_fun();
-    
+
+
             gsap.fromTo(
                 ".compliant-ready-content",
                 {
@@ -335,7 +336,7 @@ export default function Home() {
                     yPercent: 100,
                 }
             )
-    
+
             gsap.to(".dont_bg", {
                 scrollTrigger: {
                     trigger: ".risk",
@@ -343,7 +344,7 @@ export default function Home() {
                     end: "bottom top", // Element yuqoriga chiqqanida animatsiya tugaydi
                     scrub: true,
                     pin: true, // Tepaga yopishtiradi
-                    pinSpacing: false // Scroll joyini o'zgartirmaslik uchun
+                    pinSpacing: false, // Scroll joyini o'zgartirmaslik uchun
                 },
             })
             gsap.fromTo(
@@ -353,7 +354,7 @@ export default function Home() {
                     scrollTrigger: {
                         trigger: ".customer__wrap",
                         start: "top bottom", // Ekranning o'rtasiga kelganda animatsiya boshlanadi
-    
+
                         toggleActions: "play none none reset",
                     },
                     scale: 1,
@@ -365,76 +366,16 @@ export default function Home() {
                     },
                 }
             )
-    
-            gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".site-control-wrapper",
-                    start: "top top",
-                    end: "top+=100% top",
-                    scrub: 2,
-                    toggleActions: "play none none reset",
-                },
-            })
-                .fromTo(
-                    ".site_controll_card_line",
-                    { height: 0 },
-                    {
-                        duration: 0.5,
-                        height: 64,
-                        stagger: 0.5,
-                    },
-                    "<"
-                )
-                .fromTo(
-                    ".site_controll_card_line_1",
-                    { width: 0 },
-                    {
-                        duration: 0.5,
-                        width: 300,
-                        stagger: 0.5,
-                    },
-                    "<"
-                )
-                .fromTo(
-                    ".site_controll_text",
-                    {
-                        yPercent: "93",
-                        opacity: 0,
-                    },
-                    {
-                        duration: 0.5,
-                        yPercent: "-30",
-                        opacity: 1,
-                        stagger: 0.5,
-                    },
-                    "<"
-                )
-    
-    
-            gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".site-control-wrapper",
-                    start: "top top",
-                    end: "top+=100% top",
-                    scrub: 2,
-                    toggleActions: "play none none reset",
-                },
-            })
-                .to(".control__img_1", {
-                    duration: 1,
-                    rotate: 360,
-                    ease: "linear" // Smooth continuous rotation
-                }, "<");
-    
+
             const varifable = gsap.utils.toArray(`.varifable-basic`) as HTMLDivElement[]
-    
-            varifable.map((e) => {
+
+            varifable.map((e, i) => {
                 gsap.timeline({
                     scrollTrigger: {
                         trigger: e,
                         start: "top bottom-=20%",
                         end: "top+=100% top",
-    
+
                         toggleActions: "play none none reverse",
                     },
                 }).fromTo(
@@ -447,16 +388,16 @@ export default function Home() {
                     }
                 )
             })
-    
+
             const reveals = gsap.utils.toArray(`.reveal`) as HTMLDivElement[]
-    
-            reveals.map((e) => {
+
+            reveals.map((e, i) => {
                 gsap.timeline({
                     scrollTrigger: {
                         trigger: e,
                         start: "top bottom-=20%",
                         end: "top+=100% top",
-    
+
                         toggleActions: "play none none reverse",
                     },
                 }).fromTo(
@@ -470,13 +411,12 @@ export default function Home() {
                     }
                 )
             })
-    
             return () => {
                 window.removeEventListener("resize", updateWindowWidth);
             };
         }
     }, [windowInnerWidth]);
-    
+
     return (
         <>
             <div className="hero_header_compute_bg">
