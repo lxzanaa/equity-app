@@ -17,14 +17,14 @@ export const VideoScroll = () => {
         const video = refVideo.current
         const src = video.currentSrc || video.src
 
-        function once(el: HTMLElement, event: string, fn: () => void, opts?: any) {
+        function once(el: HTMLElement, event: string, fn: () => void, opts?: AddEventListenerOptions) {
             const onceFn = function () {
                 el.removeEventListener(event, onceFn)
-                // fn.apply(this, arguments)
                 fn()
             }
             el.addEventListener(event, onceFn, opts)
         }
+
 
         // Ініціалізаці для iOS
         once(document.documentElement, "touchstart", () => {

@@ -10,10 +10,9 @@ import { dataList } from "./data/dataList"
 
 export const ControlPlane = () => {
     const [isActive, setIsActive] = useState<boolean>(false)
-
     const tl = useRef<gsap.core.Timeline>()
 
-    const { contextSafe } = useGSAP(() => {
+    useGSAP(() => {
         tl.current = gsap
             .timeline({
                 paused: true,
@@ -54,13 +53,12 @@ export const ControlPlane = () => {
             )
     }, [])
 
-    const triggerButton = contextSafe((isActive: boolean) => {
-        if (!tl.current) return
-
-        tl.current[isActive ? "play" : "reverse"]()
-    })
-
     useEffect(() => {
+        const triggerButton = (isActive: boolean) => {
+            if (!tl.current) return
+            tl.current[isActive ? "play" : "reverse"]()
+        }
+    
         triggerButton(isActive)
     }, [isActive])
 
@@ -80,7 +78,6 @@ export const ControlPlane = () => {
                             <li className="site-control__item">
                                 <div className="site-control__list-img">
                                     <Image className="site-control__img" src={e.image} alt="control-media" width={116} height={116} quality={100} />
-                                    {/* <video src={e.video} autoPlay loop playsInline /> */}
                                 </div>
                                 <h2>{e.title}</h2>
                                 <h3>{e.subtitle}</h3>
