@@ -219,13 +219,168 @@ export default function Home() {
                         stagger: 0.2,
                     });
     
-                    // Other animations as needed
+                   
                 }
             };
     
             header_hero_animation_fun();
     
-            // Additional GSAP animations and scroll triggers here
+            gsap.fromTo(
+                ".compliant-ready-content",
+                {
+                    scale: 1,
+                    opacity: 1,
+                    yPercent: 0,
+                },
+                {
+                    scrollTrigger: {
+                        trigger: ".compliant-ready-section",
+                        start: "top top",
+                        end: "bottom top",
+                        scrub: 1.5,
+                        // pin: true,
+                        // pinSpacing: false,
+                    },
+                    scale: 0.5,
+                    opacity: 0,
+                    yPercent: 100,
+                }
+            )
+    
+            gsap.to(".dont_bg", {
+                scrollTrigger: {
+                    trigger: ".risk",
+                    start: "50% top", // Ekranning o'rtasiga kelganda animatsiya boshlanadi
+                    end: "bottom top", // Element yuqoriga chiqqanida animatsiya tugaydi
+                    scrub: true,
+                    pin: true, // Tepaga yopishtiradi
+                    pinSpacing: false, // Scroll joyini o'zgartirmaslik uchun
+                },
+            })
+            gsap.fromTo(
+                ".customer_card_animation",
+                { scale: 0 },
+                {
+                    scrollTrigger: {
+                        trigger: ".customer__wrap",
+                        start: "top bottom", // Ekranning o'rtasiga kelganda animatsiya boshlanadi
+    
+                        toggleActions: "play none none reset",
+                    },
+                    scale: 1,
+                    opacity: 1,
+                    duration: 0.5,
+                    stagger: {
+                        amount: 0.2,
+                        from: "random",
+                    },
+                }
+            )
+    
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".site-control-wrapper",
+                    start: "top top",
+                    end: "top+=100% top",
+                    scrub: 2,
+                    toggleActions: "play none none reset",
+                },
+            })
+                .fromTo(
+                    ".site_controll_card_line",
+                    { height: 0 },
+                    {
+                        duration: 0.5,
+                        height: 64,
+                        stagger: 0.5,
+                    },
+                    "<"
+                )
+                .fromTo(
+                    ".site_controll_card_line_1",
+                    { width: 0 },
+                    {
+                        duration: 0.5,
+                        width: 300,
+                        stagger: 0.5,
+                    },
+                    "<"
+                )
+                .fromTo(
+                    ".site_controll_text",
+                    {
+                        yPercent: "93",
+                        opacity: 0,
+                    },
+                    {
+                        duration: 0.5,
+                        yPercent: "-30",
+                        opacity: 1,
+                        stagger: 0.5,
+                    },
+                    "<"
+                )
+    
+    
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".site-control-wrapper",
+                    start: "top top",
+                    end: "top+=100% top",
+                    scrub: 2,
+                    toggleActions: "play none none reset",
+                },
+            })
+                .to(".control__img_1", {
+                    duration: 1,
+                    rotate: 360,
+                    ease: "linear" // Smooth continuous rotation
+                }, "<");
+    
+            const varifable = gsap.utils.toArray(`.varifable-basic`) as HTMLDivElement[]
+    
+            varifable.map((e) => {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: e,
+                        start: "top bottom-=20%",
+                        end: "top+=100% top",
+    
+                        toggleActions: "play none none reverse",
+                    },
+                }).fromTo(
+                    e,
+                    { opacity: 0 },
+                    {
+                        opacity: 1,
+                        duration: 1,
+                        ease: "power2.inOut",
+                    }
+                )
+            })
+    
+            const reveals = gsap.utils.toArray(`.reveal`) as HTMLDivElement[]
+    
+            reveals.map((e) => {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: e,
+                        start: "top bottom-=20%",
+                        end: "top+=100% top",
+    
+                        toggleActions: "play none none reverse",
+                    },
+                }).fromTo(
+                    e,
+                    { opacity: 0, y: 20 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 1,
+                        ease: "power2.inOut",
+                    }
+                )
+            })
     
             return () => {
                 window.removeEventListener("resize", updateWindowWidth);

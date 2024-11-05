@@ -291,6 +291,9 @@
 }
 
 @media (max-width: 768px) {
+    .input-container .label{
+        font-size: 18px;
+    }
     .footer {
         padding-top: 25px;
     }
