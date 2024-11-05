@@ -1,13 +1,10 @@
-import { FC, useEffect } from "react"
-import clsx from "clsx"
-import styles from "./index.module.scss"
+import { useEffect } from "react"
+import "./index.module.scss"
 
 import aiImage from "../../app/img/ai/ai_bg.png"
 import gsap from "gsap"
 
-interface IAi {}
-
-export const Ai: FC<IAi> = () => {
+export const Ai = () => {
     useEffect(() => {
         gsap.to(".ai", {
             scrollTrigger: {

@@ -1,16 +1,14 @@
 "use client"
 
-import { FC, useEffect, useRef, useState } from "react"
-import clsx from "clsx"
-import styles from "./index.module.scss"
+import { useEffect, useRef, useState } from "react"
+import "./index.module.scss"
 import Image from "next/image"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { dataList } from "./data/dataList"
 
-interface IControlPlane {}
 
-export const ControlPlane: FC<IControlPlane> = () => {
+export const ControlPlane = () => {
     const [isActive, setIsActive] = useState<boolean>(false)
 
     const tl = useRef<gsap.core.Timeline>()

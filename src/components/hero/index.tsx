@@ -1,13 +1,12 @@
-import { FC, useEffect, useRef } from "react"
+import { useEffect, useRef } from "react"
 import clsx from "clsx"
 import styles from "./index.module.scss"
 import Link from "next/link"
 import Image from "next/image"
 import gsap from "gsap"
 
-interface IHero {}
 
-export const Hero: FC<IHero> = () => {
+export const Hero = () => {
     const refVideo = useRef<HTMLVideoElement>(null)
 
     useEffect(() => {
@@ -117,6 +116,7 @@ export const Hero: FC<IHero> = () => {
 
             const time_line_center_card = gsap
                 .timeline()
+                time_line_center_card
                 .to(".compute_center_card_left", {
                     duration: 0.5,
                     delay: 11.5,
@@ -153,6 +153,7 @@ export const Hero: FC<IHero> = () => {
 
             const time_line_center_card2 = gsap
                 .timeline()
+                time_line_center_card2
                 .to(".compute_center_card_left_right", {
                     duration: 0.5,
                     delay: 11.5,

@@ -1,14 +1,11 @@
-import { FC } from "react"
-import clsx from "clsx"
-import styles from "./index.module.scss"
+import  "./index.module.scss"
 import Image from "next/image"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-interface IVarifable {}
 
-export const Varifable: FC<IVarifable> = () => {
+export const Varifable = () => {
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger)
 

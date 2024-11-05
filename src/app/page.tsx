@@ -71,15 +71,13 @@ import Resources from "@/components/resources/resources"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Footer from "@/components/footer/footer"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { SwiperOptions, Swiper as SwiperType } from "swiper/types"
-import { Navigation, Autoplay } from "swiper/modules"
+import { Autoplay } from "swiper/modules"
 import { dataHeroOpportunity } from "@/data/dataHeroOpportunity"
 import clsx from "clsx"
 import { Ai } from "@/components/ai"
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
-    const [site_conrtol_animation, set_site_conrtol_animation] = useState<boolean>(false)
     const [across_text, setAcross_text] = useState(false)
     const videoRef = useRef<HTMLVideoElement>(null)
     const [trust, setTrust] = useState(false)
@@ -419,7 +417,7 @@ export default function Home() {
 
         const varifable = gsap.utils.toArray(`.varifable-basic`) as HTMLDivElement[]
 
-        varifable.map((e, i) => {
+        varifable.map((e) => {
             gsap.timeline({
                 scrollTrigger: {
                     trigger: e,
@@ -441,7 +439,7 @@ export default function Home() {
 
         const reveals = gsap.utils.toArray(`.reveal`) as HTMLDivElement[]
 
-        reveals.map((e, i) => {
+        reveals.map((e) => {
             gsap.timeline({
                 scrollTrigger: {
                     trigger: e,

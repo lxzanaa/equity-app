@@ -1,15 +1,13 @@
-import { FC } from "react"
 import clsx from "clsx"
-import styles from "./index.module.scss"
+import "./index.module.scss"
 import { dataPoints } from "./data/dataPoints"
 import Image from "next/image"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-interface IRisk {}
 
-export const Risk: FC<IRisk> = () => {
+export const Risk = () => {
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger)
 

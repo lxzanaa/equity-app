@@ -2,7 +2,6 @@
 
 import "./ui/style.css"
 
-import { useEffect } from "react"
 import Image from "next/image"
 
 import gsap from "gsap"
@@ -25,6 +24,7 @@ export default function Protsessor() {
                     scrub: 1.5,
                 },
             })
+            card_box_time_line
             .to([".trust_title_4", ".trust_title_5"], {
                 duration: 0.5,
                 y: -50,

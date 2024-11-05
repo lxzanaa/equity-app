@@ -1,4 +1,4 @@
-import { FC, useRef } from "react"
+import { useRef } from "react"
 import clsx from "clsx"
 import styles from "./index.module.scss"
 
@@ -6,9 +6,8 @@ import { useEffect } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-interface IVideoScroll {}
 
-export const VideoScroll: FC<IVideoScroll> = () => {
+export const VideoScroll = () => {
     const refRoot = useRef<HTMLDivElement>(null)
     const refVideo = useRef<HTMLVideoElement>(null)
 
