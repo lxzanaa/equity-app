@@ -98,50 +98,77 @@ export default function Home() {
             const header_hero_animation_fun = () => {
                 if (window.innerWidth > 1024) {
                     if (videoRef.current) {
-                        videoRef.current.play();
+                        videoRef.current.play()
                     }
                     gsap.to(".Header_top", {
                         y: 50,
                         duration: 0.2,
-                    });
+                        // ease: "power3.inOut",
+                    })
                     gsap.to(".nav_item", {
                         x: -200,
                         opacity: 1,
                         duration: 0.5,
                         stagger: 0.1,
-                    });
-                    const timeline = gsap.timeline();
+                    })
+                    const timeline = gsap.timeline()
     
                     timeline
-                        .to(".jump_animation", { scale: 1 })
-                        .to(".jump_animation", { scale: 0.9 })
-                        .to(".jump_animation", { scale: 1 });
+                        .to(".jump_animation", { scale: 1 }) // Scale 1.2 ga o'tadi
+                        .to(".jump_animation", { scale: 0.9 }) // Scale 1.2 ga o'tadi
+                        .to(".jump_animation", { scale: 1 }) // Scale 1 ga qaytadi
     
-                    const time_line_navlist = gsap.timeline();
+                    const time_line_navlist = gsap.timeline()
     
                     time_line_navlist
-                        .to(".header_nav_list", { scale: 1 })
-                        .to(".header_nav_list", { scale: 0.9 })
-                        .to(".header_nav_list", { scale: 1 });
+                        .to(".header_nav_list", { scale: 1 }) // Scale 0 ga ketadi
+                        .to(".header_nav_list", { scale: 0.9 }) // Scale 1.2 ga o'tadi
+                        .to(".header_nav_list", { scale: 1 }) // Scale 1 ga qaytadi
     
                     gsap.to(".hero_title_span", {
                         y: -100,
                         opacity: 1,
                         duration: 0.3,
                         stagger: 0.2,
-                    });
+                    })
+                    gsap.to(".hero_text p", {
+                        y: -30,
+                        opacity: 1,
+                        duration: 0.5,
+                        stagger: 0.2,
+                    })
+                    gsap.to(".hero_bottom_text", {
+                        y: -30,
+                        opacity: 1,
+                        duration: 0.2,
+                        stagger: 0.1,
+                    })
+                    gsap.to(".hero_bottom_text span", {
+                        y: -20,
+                        opacity: 1,
+                        duration: 0.3,
+                        stagger: 0.2,
+                    })
+                    gsap.to(".hero_bottom_text_word", {
+                        filter: "drop-shadow(0px 0px 5px #61FFB0)",
+                        duration: 0.3,
+                        delay: 0.3,
+                    })
     
-                    // Add all other GSAP animations as needed here
-    
-                    const word_timeLine = gsap.timeline();
+                    const word_timeLine = gsap.timeline()
                     word_timeLine
-                        .to(".hero_bottom_text_word", { display: "none", delay: 1 })
+                        .to(".hero_bottom_text_word", {
+                            display: "none",
+                            delay: 1,
+                        })
                         .to(".hero_bottom_text_word_2", {
                             display: "block",
                             filter: "drop-shadow(0px 0px 5px #29A2FF)",
                             duration: 0.5,
                         })
-                        .to(".hero_bottom_text_word_2", { display: "none" })
+                        .to(".hero_bottom_text_word_2", {
+                            display: "none",
+                        })
                         .to(".hero_bottom_text_word_3", {
                             display: "block",
                             filter: "drop-shadow(0px 0px 5px #61FFB0)",
@@ -152,7 +179,7 @@ export default function Home() {
                             filter: "drop-shadow(0px 0px 0px #61FFB0)",
                             duration: 0.3,
                             delay: 0.3,
-                        });
+                        })
     
                     gsap.to(".hero_big_wrapper", {
                         ease: "slow(0.3,0.7,false)",
@@ -160,23 +187,27 @@ export default function Home() {
                         delay: 9,
                         scale: 0.5,
                         opacity: 0,
-                    });
-    
+                    })
                     gsap.to(".top_animation", {
                         y: 30,
                         opacity: 0,
                         duration: 0.5,
                         delay: 9,
-                    });
-    
+                    })
                     gsap.to(".compute_center_logo", {
                         scale: 1,
                         opacity: 1,
                         duration: 0.5,
                         delay: 11,
-                    });
+                    })
+                    gsap.to(".compute_center_logo", {
+                        scale: 1,
+                        opacity: 1,
+                        duration: 0.5,
+                        delay: 11,
+                    })
     
-                    const time_line_center_card = gsap.timeline();
+                    const time_line_center_card = gsap.timeline()
                     time_line_center_card
                         .to(".compute_center_card_left", {
                             duration: 0.5,
@@ -184,13 +215,35 @@ export default function Home() {
                             x: 250,
                             opacity: 1,
                         })
-                        .to(".compute_center_card_left", { duration: 0.3, x: 260 })
-                        .to(".compute_center_card_left", { duration: 0.3, x: 240 })
-                        .to(".compute_center_card_left", { duration: 0.5, x: 255 })
-                        .to(".compute_center_card_left", { duration: 0.5, x: 245 })
-                        .to(".compute_center_card_left", { duration: 0.5, x: 250 });
+                        .to(".compute_center_card_left", {
+                            // ease: "power4.out",
+                            duration: 0.3,
+                            x: 260,
+                        })
+                        .to(".compute_center_card_left", {
+                            // ease: "power4.out",
+                            duration: 0.3,
+                            // duration:0.5,
+                            x: 240,
+                        })
+                        .to(".compute_center_card_left", {
+                            // ease: "power4.out",
+                            duration: 0.5,
+                            x: 255,
+                        })
+                        .to(".compute_center_card_left", {
+                            // ease: "power4.out",
+                            duration: 0.5,
+                            // duration:0.5,
+                            x: 245,
+                        })
+                        .to(".compute_center_card_left", {
+                            // ease: "power4.out",
+                            duration: 0.5,
+                            x: 250,
+                        })
     
-                    const time_line_center_card2 = gsap.timeline();
+                    const time_line_center_card2 = gsap.timeline()
                     time_line_center_card2
                         .to(".compute_center_card_left_right", {
                             duration: 0.5,
@@ -198,11 +251,33 @@ export default function Home() {
                             x: -250,
                             opacity: 1,
                         })
-                        .to(".compute_center_card_left_right", { duration: 0.3, x: -260 })
-                        .to(".compute_center_card_left_right", { duration: 0.3, x: -240 })
-                        .to(".compute_center_card_left_right", { duration: 0.5, x: -255 })
-                        .to(".compute_center_card_left_right", { duration: 0.5, x: -245 })
-                        .to(".compute_center_card_left_right", { duration: 0.5, x: -250 });
+                        .to(".compute_center_card_left_right", {
+                            // ease: "power4.out",
+                            duration: 0.3,
+                            x: -260,
+                        })
+                        .to(".compute_center_card_left_right", {
+                            // ease: "power4.out",
+                            duration: 0.3,
+                            // duration:0.5,
+                            x: -240,
+                        })
+                        .to(".compute_center_card_left_right", {
+                            // ease: "power4.out",
+                            duration: 0.5,
+                            x: -255,
+                        })
+                        .to(".compute_center_card_left_right", {
+                            // ease: "power4.out",
+                            duration: 0.5,
+                            // duration:0.5,
+                            x: -245,
+                        })
+                        .to(".compute_center_card_left_right", {
+                            // ease: "power4.out",
+                            duration: 0.5,
+                            x: -250,
+                        })
     
                     gsap.to(".compute_title span", {
                         delay: 11.5,
@@ -210,19 +285,33 @@ export default function Home() {
                         opacity: 1,
                         duration: 0.5,
                         stagger: 0.2,
-                    });
+                    })
                     gsap.to(".compute_text p", {
                         delay: 11.5,
                         y: -20,
                         opacity: 1,
                         duration: 0.5,
                         stagger: 0.2,
-                    });
-    
-                   
+                    })
+                    gsap.fromTo(
+                        ".compute_card_animation",
+                        {
+                            opacity: 0,
+                            scale: 0,
+                            rotate: 270,
+                            marginTop: -266,
+                        },
+                        {
+                            delay: 11.5,
+                            duration: 1,
+                            opacity: 1,
+                            scale: 1,
+                            rotate: 360,
+                            marginTop: -56,
+                        }
+                    )
                 }
-            };
-    
+            }
             header_hero_animation_fun();
     
             gsap.fromTo(
@@ -254,7 +343,7 @@ export default function Home() {
                     end: "bottom top", // Element yuqoriga chiqqanida animatsiya tugaydi
                     scrub: true,
                     pin: true, // Tepaga yopishtiradi
-                    pinSpacing: false, // Scroll joyini o'zgartirmaslik uchun
+                    pinSpacing: false // Scroll joyini o'zgartirmaslik uchun
                 },
             })
             gsap.fromTo(
