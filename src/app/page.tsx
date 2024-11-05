@@ -369,7 +369,7 @@ export default function Home() {
 
             const varifable = gsap.utils.toArray(`.varifable-basic`) as HTMLDivElement[]
 
-            varifable.map((e, i) => {
+            varifable.map((e) => {
                 gsap.timeline({
                     scrollTrigger: {
                         trigger: e,
@@ -391,7 +391,7 @@ export default function Home() {
 
             const reveals = gsap.utils.toArray(`.reveal`) as HTMLDivElement[]
 
-            reveals.map((e, i) => {
+            reveals.map((e) => {
                 gsap.timeline({
                     scrollTrigger: {
                         trigger: e,
