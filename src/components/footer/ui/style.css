@@ -264,6 +264,7 @@
         font-size: 48px;
         background: linear-gradient(101.69deg, #000000 9.72%, #8b8b8b 76.57%);
         -webkit-background-clip: text;
+        background-clip: text;
         color: transparent;
         margin-bottom: 20px;
     }
@@ -271,6 +272,8 @@
     .footer_title_responsive > span {
         background: linear-gradient(90deg, #099080 0%, #34869d 100%);
         -webkit-background-clip: text;
+        background-clip: text;
+
         color: transparent;
     }
 

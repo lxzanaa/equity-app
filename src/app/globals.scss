@@ -1609,7 +1609,7 @@ a {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
+    color: transparent;
 }
 
 .runtime__wrap__right__cart__box__pic {
@@ -1667,7 +1667,7 @@ a {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
+    color: transparent;
     padding-right: 300px;
     display: block;
     margin-bottom: 16px;
@@ -1726,7 +1726,6 @@ a {
     padding-top: 121px;
 }
 
-.runtime_bottom_card {}
 
 .runtime_bottom_card_1 {
     position: absolute;
@@ -1862,7 +1861,8 @@ a {
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
-        text-fill-color: transparent;
+        color: transparent;
+
         display: flex;
         margin-bottom: 16px;
         padding-right: 50px;
@@ -1960,7 +1960,8 @@ a {
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
-        text-fill-color: transparent;
+        color: transparent;
+
     }
 
     .runtime__wrap__right__cart__box__pic {
@@ -2039,7 +2040,8 @@ a {
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
-        text-fill-color: transparent;
+        color: transparent;
+
         display: inline-block;
         margin-bottom: 16px;
         padding-right: 0px;
@@ -2129,7 +2131,8 @@ a {
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
-        text-fill-color: transparent;
+        color: transparent;
+
     }
 
     .runtime__wrap__right__cart__box__pic {
@@ -3145,7 +3148,7 @@ a {
     max-width: 600px;
 }
 
-.zero-trust-wrapper {}
+
 
 .zero-trust {
     padding-top: 148px;
@@ -3311,6 +3314,7 @@ a {
     letter-spacing: -0.01em;
     background: linear-gradient(95.36deg, rgba(255, 255, 255, 0.5) 2.93%, rgba(0, 0, 0, 0.5) 81.7%);
     background-blend-mode: multiply;
+    background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     margin-bottom: 32px;
@@ -3432,6 +3436,8 @@ a {
     line-height: 56px;
     letter-spacing: -0.01em;
     background: linear-gradient(100.9deg, #000000 3.51%, #8b8b8b 66.48%);
+    background-clip: text;
+
     -webkit-background-clip: text;
     color: transparent;
     margin-bottom: 21px;
@@ -3504,6 +3510,8 @@ a {
     display: block;
     background: linear-gradient(90deg, #099080 0%, #34869d 56.92%);
     -webkit-background-clip: text;
+    background-clip: text;
+
     color: transparent;
     font-size: 40px;
     font-weight: 400;
@@ -3686,6 +3694,8 @@ a {
     margin-bottom: 89px;
     background: linear-gradient(100.04deg, #000000 -8.29%, #8b8b8b 66.36%);
     -webkit-background-clip: text;
+    background-clip: text;
+
     color: transparent;
 }
 
@@ -3968,6 +3978,8 @@ a {
     background: linear-gradient(100.04deg, #000000 -8.29%, #8b8b8b 66.36%);
     -webkit-background-clip: text;
     color: transparent;
+    background-clip: text;
+
     margin-bottom: 48px;
 }
 
@@ -4258,7 +4270,7 @@ a {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
+   color: transparent;
     display: inline-block;
 }
 
@@ -4550,7 +4562,7 @@ a {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
+color: transparent;
     display: inline-block;
     margin-bottom: 80px;
 }
